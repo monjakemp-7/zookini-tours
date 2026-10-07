@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 214" role="img" aria-labelledby="title desc">
+  <title id="title">Zookini Tours</title>
+  <desc id="desc">Circular sunburst in logo sky, with ZOOKINI TOURS arched above and CELEBRATE LIFE! below.</desc>
+  <path id="arch" d="M 28 112 A 72 72 0 0 1 172 112" fill="none" />
+  <text fill="#607D82" font-family="Raleway, system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="2.2">
+    <textPath href="#arch" startOffset="50%" text-anchor="middle">ZOOKINI TOURS</textPath>
+  </text>
+  <mask id="hole">
+    <rect width="200" height="214" fill="white" />
+    <circle cx="100" cy="128" r="11" fill="black" />
+  </mask>
+  <g mask="url(#hole)">
+    <g fill="#6EC8E8">
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(0 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(22.5 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(45 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(67.5 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(90 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(112.5 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(135 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(157.5 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(180 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(202.5 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(225 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(247.5 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(270 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(292.5 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(315 100 128)" />
+      <rect x="97.4" y="80" width="5.2" height="20" rx="2.6" transform="rotate(337.5 100 128)" />
+      <circle cx="100" cy="128" r="27" />
+    </g>
+  </g>
+  <text x="100" y="198" text-anchor="middle" fill="#607D82" font-family="Raleway, system-ui, sans-serif" font-size="11" font-weight="500" letter-spacing="2.4">CELEBRATE LIFE!</text>
+</svg>
