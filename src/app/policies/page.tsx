@@ -13,7 +13,7 @@ export default function PoliciesPage() {
         title="Booking conditions"
         lede="One page for the terms. Tour pages keep a short summary and send you here."
       />
-      <section className="py-14">
+      <section className="band">
         <div className="wrap max-w-3xl space-y-8">
           <p>
             These notes follow the conditions published by Zookini Tours. A quote is not a contract until the

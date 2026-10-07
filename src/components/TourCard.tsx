@@ -15,18 +15,15 @@ export function TourCard({ tour, large = false }: { tour: Tour; large?: boolean 
             className="object-cover"
           />
         </div>
-        <div className="flex flex-1 flex-col gap-3 p-5">
+        <div className="flex flex-col gap-2 p-4">
           <p className="eyebrow">{themeLabel(tour.themes[0])}</p>
           <h3 className="card-title text-xl">{tour.title}</h3>
           <p className="text-sm leading-6">{tour.hook}</p>
-          <p className="mt-auto text-sm text-[var(--color-teal-dark)]">
+          <p className="text-sm text-[var(--color-teal-dark)]">
             {tour.duration}
             <span aria-hidden="true"> · </span>
             {tour.groupSize} guests
           </p>
-          <span className="text-sm font-medium tracking-wide text-[var(--color-teal-ink)] uppercase">
-            Enquire about this tour
-          </span>
         </div>
       </Link>
     </article>

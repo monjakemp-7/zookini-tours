@@ -17,9 +17,7 @@ export type CommunityTile = {
 const instagram = socials.find((social) => social.label === "Instagram");
 
 export const communityFeed = {
-  eyebrow: "From the road",
-  title: "Celebrate with us",
-  lede: "A few frames from the table, the veld, and the road. The real feed can replace these tiles without moving the section.",
+  title: "From the road",
   handle: "@zookinitours",
   profileUrl: instagram?.href ?? "https://www.instagram.com/zookinitours/",
   cta: "Follow on Instagram",

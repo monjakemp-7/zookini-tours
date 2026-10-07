@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { clients, whatsappHref } from "@/content/site";
+import { clients } from "@/content/site";
 
 export const metadata = {
   title: "Corporate",
@@ -27,8 +27,8 @@ export default function CorporatePage() {
         image="/images/corporate.jpg"
         imageAlt="People sharing a meal around a long table"
       />
-      <section className="py-14 md:py-20">
-        <div className="wrap grid gap-12 md:grid-cols-[1.2fr_0.8fr]">
+      <section className="band">
+        <div className="wrap grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-4">
             <p>
               Organising a breakaway can swallow a month. Zookini holds the detail: coaches, rooms, excursions,
@@ -51,14 +51,9 @@ export default function CorporatePage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex flex-col gap-3">
-              <Link className="btn btn-solid" href="/enquire?tour=corporate">
-                Plan a corporate breakaway
-              </Link>
-              <a className="btn btn-line" href={whatsappHref("Hello Anita, I would like to plan a corporate breakaway with Zookini.")}>
-                WhatsApp Anita
-              </a>
-            </div>
+            <Link className="btn btn-solid mt-6" href="/enquire?tour=corporate">
+              Plan a corporate breakaway
+            </Link>
           </aside>
         </div>
       </section>

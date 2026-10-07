@@ -360,7 +360,6 @@ export const tours: Tour[] = [
     image: "/images/west-coast.jpg",
     imageAlt: "Pale sand and blue sea under a bright sky",
     featured: true,
-    note: "Day-by-day is a starter outline until Anita confirms the season’s route.",
   },
   {
     slug: "glorious-garden-route",
@@ -409,7 +408,6 @@ export const tours: Tour[] = [
     image: "/images/garden-route.jpg",
     imageAlt: "A wave breaking toward a sandy shore",
     featured: true,
-    note: "Day-by-day is a starter outline until Anita confirms the route.",
   },
   {
     slug: "overwhelming-overberg",
@@ -457,7 +455,6 @@ export const tours: Tour[] = [
     image: "/images/overberg.jpg",
     imageAlt: "Green hills under soft morning light",
     featured: false,
-    note: "Day-by-day is a starter outline until Anita confirms the season’s route.",
   },
   {
     slug: "bushveld-safari",
@@ -511,7 +508,7 @@ export const tours: Tour[] = [
     image: "/images/safari.jpg",
     imageAlt: "Elephants walking through dry bushveld grass",
     featured: true,
-    note: "Day-by-day is a starter outline. The reserve is confirmed when you enquire.",
+    note: "The reserve is confirmed when you enquire.",
   },
   {
     slug: "drakensberg-adventure",
@@ -560,7 +557,6 @@ export const tours: Tour[] = [
     image: "/images/drakensberg.jpg",
     imageAlt: "A sharp mountain ridge above a green valley",
     featured: false,
-    note: "Day-by-day is a starter outline until Anita confirms the trails.",
   },
 ];
 

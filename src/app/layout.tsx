@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     template: "%s · Zookini Tours",
   },
   description:
-    "Boutique South African tours, hand-crafted in the Cape Winelands. Leisure, corporate, and educational journeys. You pack your bags.",
+    "Boutique South African tours, hand-crafted in the Cape Winelands for leisure travellers, teams, and schools.",
   openGraph: {
     title: "Zookini Tours — Celebrating Life!",
     description:
-      "Hand-crafted South African tours for leisure travellers, teams, and schools. Celebrating Life!",
+      "Hand-crafted South African tours for leisure travellers, teams, and schools.",
     locale: "en_ZA",
     type: "website",
     siteName: "Zookini Tours",

@@ -20,24 +20,20 @@ export default function EnquirePage({
         title="Tell us what you want to celebrate"
         lede="A short note is enough. Anita replies in person — there is no cart and no calendar to fight with."
       />
-      <section className="py-14">
-        <div className="wrap grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
-          <div id="enquire" className="rounded-[var(--radius-lg)] bg-white p-5 md:p-8">
+      <section className="band">
+        <div className="wrap grid gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
+          <div id="enquire" className="rounded-[var(--radius-lg)] bg-white p-4 md:p-6">
             <Suspense fallback={<p>Loading the form…</p>}>
               <EnquireWithTour searchParams={searchParams} />
             </Suspense>
           </div>
-          <aside className="space-y-4">
+          <aside className="hidden space-y-3 lg:block">
             <h2 className="text-xl">Prefer to talk?</h2>
-            <p className="text-sm">WhatsApp and the phone are both Anita. Use whichever is easier.</p>
             <a className="btn btn-solid btn-block" href={whatsappHref(defaultWhatsAppMessage)}>
-              WhatsApp {site.phoneDisplay}
+              WhatsApp
             </a>
             <a className="btn btn-line btn-block" href={`tel:${site.phoneTel}`}>
               Call
-            </a>
-            <a className="btn btn-line btn-block" href={`mailto:${site.email}`}>
-              {site.email}
             </a>
           </aside>
         </div>
@@ -52,5 +48,5 @@ async function EnquireWithTour({
   searchParams: Promise<{ tour?: string }>;
 }) {
   const { tour } = await searchParams;
-  return <EnquireForm defaultTour={tour ?? "not-sure"} />;
+  return <EnquireForm defaultTour={tour ?? "not-sure"} heading="Send a note" />;
 }

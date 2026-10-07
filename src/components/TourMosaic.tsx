@@ -51,11 +51,11 @@ export function TourMosaic({ tours, initialTheme, showDoorChips = true }: TourMo
         ) : null}
       </div>
       {visible.length === 0 ? (
-        <p className="mt-8 max-w-lg">
+        <p className="mt-6 max-w-lg">
           Nothing in that theme in this set. Tell Anita what you are celebrating and she will hand-craft it.
         </p>
       ) : (
-        <ul className="mt-8 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-6 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((tour, index) => {
             const large = index === 0 && theme === "all";
             return (

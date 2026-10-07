@@ -22,7 +22,7 @@ export function PageHero({ eyebrow, title, lede, image, imageAlt }: PageHeroProp
         />
       ) : null}
       <div className="hero-scrim" aria-hidden="true" />
-      <div className="wrap relative z-10 py-14 md:py-20">
+      <div className="intro wrap relative z-10 py-8 md:py-10">
         <p className="eyebrow light">{eyebrow}</p>
         <h1 className="display text-white">{title}</h1>
         <p className="lede light">{lede}</p>

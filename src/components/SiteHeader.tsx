@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
-import { defaultWhatsAppMessage, nav, whatsappHref } from "@/content/site";
+import { nav } from "@/content/site";
 import { Logo } from "@/components/Logo";
 
 export function SiteHeader() {
@@ -40,16 +40,16 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 ${solid ? "bg-white/95 shadow-sm backdrop-blur" : "on-photo"}`}
     >
-      <div className="wrap flex items-center justify-between gap-4 py-2">
+      <div className="wrap flex h-20 items-center justify-between gap-4 sm:h-24">
         <Link href="/" aria-label="Zookini Tours home" className="shrink-0">
           <Logo
             variant={solid ? "colour" : "white"}
             labelled={false}
             priority
-            className="h-20 w-auto sm:h-24"
+            className="h-14 w-auto sm:h-16"
           />
         </Link>
-        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-4 lg:flex" aria-label="Primary">
           {nav.map((item) => {
             const active =
               item.href === "/tours" ? pathname.startsWith("/tours") : pathname === item.href;
@@ -65,14 +65,9 @@ export function SiteHeader() {
             );
           })}
         </nav>
-        <div className="hidden items-center gap-2 lg:flex">
-          <a className="btn btn-line" href={whatsappHref(defaultWhatsAppMessage)}>
-            WhatsApp
-          </a>
-          <Link className="btn btn-solid" href="/enquire">
-            Enquire
-          </Link>
-        </div>
+        <Link className="btn btn-solid hidden lg:inline-flex" href="/enquire">
+          Enquire
+        </Link>
         <button
           type="button"
           className="btn btn-line lg:hidden"
@@ -92,8 +87,6 @@ export function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/enquire">Enquire</Link>
-              <a href={whatsappHref(defaultWhatsAppMessage)}>WhatsApp</a>
             </nav>
           </div>
         </div>

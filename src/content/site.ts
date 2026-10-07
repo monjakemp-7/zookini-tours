@@ -94,7 +94,6 @@ export const clients = ["KPMG", "SBS", "Horsch", "Terratill", "PSG"] as const;
 
 export const bookingGlance = [
   "A quote is not a booking until the deposit is received.",
-  "Most journeys host 12–16 guests, with a Tour Director.",
   "The balance is due six weeks before departure.",
   "Cancellation terms and the full conditions live on one page.",
 ] as const;

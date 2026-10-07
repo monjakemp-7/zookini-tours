@@ -2,14 +2,14 @@
 
 import { useState, type FormEvent } from "react";
 import { enquiryLabel, enquiryOptions } from "@/content/tours";
-import { site, tourWhatsAppMessage, whatsappHref, defaultWhatsAppMessage } from "@/content/site";
+import { site } from "@/content/site";
 
 type EnquireFormProps = {
   defaultTour?: string;
   heading?: string;
 };
 
-export function EnquireForm({ defaultTour = "not-sure", heading = "Plan your celebration" }: EnquireFormProps) {
+export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" }: EnquireFormProps) {
   const known = enquiryOptions.some((option) => option.value === defaultTour);
   const initialTour = known ? defaultTour : "not-sure";
   const [status, setStatus] = useState("");
@@ -51,20 +51,13 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Plan your cel
     );
   }
 
-  const whatsappMessage =
-    initialTour !== "not-sure" && initialTour !== "corporate" && initialTour !== "educational"
-      ? tourWhatsAppMessage(enquiryLabel(initialTour))
-      : defaultWhatsAppMessage;
-
   return (
     <form className="grid gap-4" onSubmit={onSubmit} noValidate={false}>
       <div>
         <h2 className="section-title" id="enquire-heading">
           {heading}
         </h2>
-        <p className="mt-2 max-w-xl text-sm">
-          Tell Anita a little. She will come back with a hand-crafted quote. Fields marked * are required.
-        </p>
+        <p className="mt-2 max-w-xl text-sm">Fields marked * are required.</p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="field" htmlFor="enquiry-name">
@@ -117,14 +110,9 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Plan your cel
           />
         </label>
       </div>
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <button className="btn btn-solid" type="submit">
-          Email Anita
-        </button>
-        <a className="btn btn-line" href={whatsappHref(whatsappMessage)}>
-          WhatsApp {site.phoneDisplay}
-        </a>
-      </div>
+      <button className="btn btn-solid w-fit" type="submit">
+        Email Anita
+      </button>
       {status ? (
         <p role="status" className="text-sm text-[var(--color-teal-ink)]">
           {status}

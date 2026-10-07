@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { whatsappHref } from "@/content/site";
 
 export const metadata = {
   title: "Educational",
@@ -32,8 +31,8 @@ export default function EducationalPage() {
         image="/images/educational.jpg"
         imageAlt="Learners outdoors with books"
       />
-      <section className="py-14 md:py-20">
-        <div className="wrap grid gap-12 md:grid-cols-[1.2fr_0.8fr]">
+      <section className="band">
+        <div className="wrap grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-4">
             <p>
               Every child remembers a school trip. Zookini builds those days for learners of any age — epic enough
@@ -58,17 +57,9 @@ export default function EducationalPage() {
               Share the grade, the dates you hope for, and whether you need a day out or a camp. Anita will come
               back with a clear plan.
             </p>
-            <div className="mt-6 flex flex-col gap-3">
-              <Link className="btn btn-solid" href="/enquire?tour=educational">
-                Plan a school trip
-              </Link>
-              <a
-                className="btn btn-line"
-                href={whatsappHref("Hello Anita, I would like to plan a school trip with Zookini.")}
-              >
-                WhatsApp Anita
-              </a>
-            </div>
+            <Link className="btn btn-solid mt-6" href="/enquire?tour=educational">
+              Plan a school trip
+            </Link>
           </aside>
         </div>
       </section>

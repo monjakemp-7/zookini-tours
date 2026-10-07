@@ -16,7 +16,7 @@ export function SiteFrame({ children }: { children: ReactNode }) {
         Skip to content
       </a>
       <SiteHeader />
-      <main id="content" className={home ? undefined : "pt-24"}>
+      <main id="content" className={home ? undefined : "pt-20 sm:pt-24"}>
         {children}
       </main>
       <SiteFooter />

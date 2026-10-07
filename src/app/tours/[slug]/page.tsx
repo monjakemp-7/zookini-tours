@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EnquireForm } from "@/components/EnquireForm";
-import { bookingGlance, site, tourWhatsAppMessage, whatsappHref } from "@/content/site";
+import { bookingGlance, tourWhatsAppMessage, whatsappHref } from "@/content/site";
 import { getTour, themeLabel, tours } from "@/content/tours";
 
 export function generateStaticParams() {
@@ -31,7 +31,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
 
   return (
     <article>
-      <section className="page-hero min-h-[420px]">
+      <section className="page-hero min-h-80">
         <Image
           src={tour.image}
           alt={tour.imageAlt}
@@ -41,15 +41,15 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
           className="object-cover"
         />
         <div className="hero-scrim" aria-hidden="true" />
-        <div className="wrap relative z-10 py-16">
+        <div className="intro wrap relative z-10 py-8 md:py-10">
           <p className="eyebrow light">{themeLabel(tour.themes[0])}</p>
           <h1 className="display text-white">{tour.title}</h1>
           <p className="lede light">{tour.hook}</p>
         </div>
       </section>
 
-      <div className="wrap grid gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_300px] lg:py-16">
-        <div className="space-y-12">
+      <div className="wrap grid gap-8 py-[var(--space-6)] lg:grid-cols-[minmax(0,1fr)_16rem] lg:py-[var(--space-7)]">
+        <div className="space-y-8">
           <div className="max-w-2xl space-y-4">
             {tour.story.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
@@ -146,29 +146,19 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             </p>
           </section>
 
-          <section id="enquire" className="rounded-[var(--radius-lg)] bg-white p-5 md:p-8" aria-labelledby="enquire-heading">
-            <EnquireForm defaultTour={tour.slug} heading={`Enquire about ${tour.title}`} />
+          <section id="enquire" className="rounded-[var(--radius-lg)] bg-white p-4 md:p-6" aria-labelledby="enquire-heading">
+            <EnquireForm defaultTour={tour.slug} heading="Send a note" />
           </section>
         </div>
 
         <aside className="hidden lg:block">
-          <div className="sticky top-28 rounded-[var(--radius-lg)] bg-white p-6 shadow-sm">
-            <p className="eyebrow">This tour</p>
-            <h2 className="text-2xl">{tour.title}</h2>
-            <p className="mt-2 text-sm">
-              {tour.duration} · {tour.groupSize} guests · {tour.region}
-            </p>
-            <div className="mt-5 flex flex-col gap-3">
-              <a className="btn btn-solid" href="#enquire">
-                Enquire about this tour
-              </a>
-              <a className="btn btn-line" href={whatsappHref(tourWhatsAppMessage(tour.title))}>
-                WhatsApp Anita
-              </a>
-              <a className="btn btn-line" href={`tel:${site.phoneTel}`}>
-                Call {site.phoneDisplay}
-              </a>
-            </div>
+          <div className="sticky top-28 flex flex-col gap-3 rounded-[var(--radius-lg)] bg-white p-4 shadow-sm">
+            <a className="btn btn-solid" href="#enquire">
+              Enquire
+            </a>
+            <a className="btn btn-line" href={whatsappHref(tourWhatsAppMessage(tour.title))}>
+              WhatsApp
+            </a>
           </div>
         </aside>
       </div>

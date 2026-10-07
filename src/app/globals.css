@@ -136,7 +136,7 @@
 }
 
 .eyebrow {
-  margin: 0 0 0.75rem;
+  margin: 0;
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 500;
@@ -153,7 +153,7 @@
 .flourish {
   margin: 0;
   font-family: var(--font-flourish);
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1;
@@ -179,9 +179,30 @@
 
 .lede {
   max-width: 40rem;
-  margin: 1rem 0 0;
+  margin: 0;
   font-size: 1.05rem;
   line-height: 1.6;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.intro > .lede {
+  margin-top: var(--space-2);
+}
+
+.band {
+  padding-block: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .band {
+    padding-block: var(--space-7);
+  }
 }
 
 @layer components {
@@ -300,7 +321,7 @@
 .page-hero {
   position: relative;
   display: flex;
-  min-height: 320px;
+  min-height: 280px;
   align-items: flex-end;
   overflow: hidden;
   background: var(--color-teal-ink);
@@ -324,7 +345,7 @@
 
 .fact-strip {
   display: grid;
-  gap: 0.75rem;
+  gap: var(--space-3);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -351,7 +372,7 @@
 }
 
 .fact-strip dd {
-  margin: 0.25rem 0 0;
+  margin: var(--space-1) 0 0;
   color: var(--color-teal-ink);
 }
 
@@ -418,10 +439,10 @@ textarea {
   z-index: 40;
   display: grid;
   grid-template-columns: 1.2fr 1fr 0.8fr;
-  gap: 0.45rem;
+  gap: var(--space-2);
   border-top: 1px solid var(--color-teal-accent);
   background: var(--color-surface-white);
-  padding: 0.55rem 0.7rem calc(0.55rem + env(safe-area-inset-bottom));
+  padding: var(--space-2) var(--space-3) calc(var(--space-2) + env(safe-area-inset-bottom));
 }
 
 .mobile-bar .btn {
@@ -431,7 +452,7 @@ textarea {
   letter-spacing: 0.08em;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .mobile-bar {
     display: none;
   }
@@ -440,7 +461,7 @@ textarea {
 .site-footer {
   background: var(--color-teal-ink);
   color: var(--color-text-on-teal);
-  padding: 3.5rem 0 2.5rem;
+  padding: var(--space-6) 0 var(--space-5);
 }
 
 .site-footer a {
@@ -452,9 +473,9 @@ textarea {
   text-underline-offset: 0.25em;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .site-footer {
-    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
   }
 }
 
@@ -483,8 +504,8 @@ textarea {
 .community-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem;
-  margin: 2rem 0 0;
+  gap: var(--space-2);
+  margin: var(--space-5) 0 0;
   padding: 0;
   list-style: none;
 }

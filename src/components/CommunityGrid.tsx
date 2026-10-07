@@ -6,19 +6,15 @@ type CommunityGridProps = {
 };
 
 export function CommunityGrid({ tiles }: CommunityGridProps) {
-  const { eyebrow, title, lede, handle, profileUrl, cta } = communityFeed;
+  const { title, handle, profileUrl, cta } = communityFeed;
 
   return (
-    <section className="bg-white py-16 md:py-24" aria-labelledby="community-heading">
+    <section className="band bg-white" aria-labelledby="community-heading">
       <div className="wrap-wide">
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="flourish">{eyebrow}</p>
-            <h2 id="community-heading" className="section-title mt-2">
-              {title}
-            </h2>
-            <p className="lede">{lede}</p>
-          </div>
+        <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+          <h2 id="community-heading" className="section-title">
+            {title}
+          </h2>
           <a className="btn btn-solid shrink-0" href={profileUrl} target="_blank" rel="noopener noreferrer">
             {cta}
           </a>

@@ -19,11 +19,11 @@ export default function ToursPage({
       <PageHero
         eyebrow="Leisure"
         title="Tours with a point of view"
-        lede="Theme-led journeys for 12 to 16 guests. No prices on the page — enquire, and Anita will shape the quote."
+        lede="Theme-led journeys for 12 to 16 guests. Anita shapes the quote."
         image="/images/cape-town.jpg"
         imageAlt="Cape Town beneath Table Mountain"
       />
-      <section className="py-14 md:py-20">
+      <section className="band">
         <div className="wrap-wide">
           <Suspense fallback={<TourMosaic tours={tours} />}>
             <FilteredTours searchParams={searchParams} />
