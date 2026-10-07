@@ -48,7 +48,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
-      <div className="wrap grid gap-8 py-[var(--space-6)] lg:grid-cols-[minmax(0,1fr)_16rem] lg:py-[var(--space-7)]">
+      <div className="wrap grid gap-8 py-[var(--space-5)] lg:grid-cols-[minmax(0,1fr)_16rem] lg:py-[var(--space-6)]">
         <div className="space-y-8">
           <div className="max-w-2xl space-y-4">
             {tour.story.map((paragraph) => (
@@ -68,10 +68,6 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             <div>
               <dt>Region</dt>
               <dd>{tour.region}</dd>
-            </div>
-            <div>
-              <dt>With you</dt>
-              <dd>Tour Director</dd>
             </div>
           </dl>
           {tour.note ? <p className="text-sm">{tour.note}</p> : null}

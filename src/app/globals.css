@@ -196,12 +196,12 @@
 }
 
 .band {
-  padding-block: var(--space-6);
+  padding-block: var(--space-5);
 }
 
 @media (min-width: 768px) {
   .band {
-    padding-block: var(--space-7);
+    padding-block: var(--space-6);
   }
 }
 
@@ -353,7 +353,7 @@
 
 @media (min-width: 700px) {
   .fact-strip {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
