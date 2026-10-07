@@ -18,8 +18,8 @@ export default function AboutPage() {
         lede="Zookini believes in celebrating life — people, food, nature, art, and wine. The things that give a day its meaning."
       />
       <section className="py-14 md:py-20">
-        <div className="wrap grid items-start gap-12 md:grid-cols-[180px_1fr]">
-          <Logo variant="colour" className="h-auto w-56" />
+        <div className="wrap grid items-start gap-12 md:grid-cols-[16rem_1fr]">
+          <Logo variant="colour" className="h-auto w-64" />
           <div className="max-w-2xl space-y-4">
             <p>
               Every tour is made for the group in front of us. We research, we negotiate, we organise. You pack

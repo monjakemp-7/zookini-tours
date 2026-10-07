@@ -43,10 +43,10 @@ export function SiteHeader() {
       <div className="wrap flex items-center justify-between gap-4 py-2">
         <Link href="/" aria-label="Zookini Tours home" className="shrink-0">
           <Logo
-            layout="lockup"
             variant={solid ? "colour" : "white"}
             labelled={false}
-            className="h-16 w-auto"
+            priority
+            className="h-20 w-auto sm:h-24"
           />
         </Link>
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">

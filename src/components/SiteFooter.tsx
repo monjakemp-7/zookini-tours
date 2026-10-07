@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="wrap grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <Logo variant="white" className="h-auto w-52" />
+          <Logo variant="white" className="h-auto w-44" />
           <p className="mt-4 max-w-xs text-sm leading-6 text-white/90">
             Hand-crafted tours from the Cape Winelands. We always have something special in mind.
           </p>
