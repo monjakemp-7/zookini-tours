@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CommunityGrid } from "@/components/CommunityGrid";
 import { TourMosaic } from "@/components/TourMosaic";
+import { getCommunityTiles } from "@/content/community";
 import {
   defaultWhatsAppMessage,
   pillars,
@@ -13,6 +15,7 @@ import { getFeaturedTours } from "@/content/tours";
 
 export default function HomePage() {
   const featured = getFeaturedTours();
+  const communityTiles = getCommunityTiles();
 
   return (
     <>
@@ -126,6 +129,8 @@ export default function HomePage() {
           </ol>
         </div>
       </section>
+
+      <CommunityGrid tiles={communityTiles} />
 
       <section className="py-16 md:py-24" aria-labelledby="host-heading">
         <div className="wrap grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
