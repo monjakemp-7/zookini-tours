@@ -13,7 +13,7 @@ export default function CreditsPage() {
         <p className="eyebrow">Credits</p>
         <h1 className="section-title">Photographs</h1>
         <p className="mt-4 max-w-xl">
-          These are placeholder pictures from Unsplash, all taken in South Africa, until Anita&apos;s own photographs
+          These are placeholder pictures from Unsplash, all taken in South Africa, until the house&apos;s own photographs
           take their place. They are published under the Unsplash licence. The photographers are credited here.
           The people in the pictures are not endorsing Zookini Tours.
         </p>

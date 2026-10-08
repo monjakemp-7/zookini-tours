@@ -28,7 +28,7 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
     const tourName = enquiryLabel(tour);
 
     const body = [
-      `Hello Anita,`,
+      `Hello,`,
       ``,
       `I would like to enquire about a Zookini celebration.`,
       ``,
@@ -44,10 +44,10 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
 
     // TODO: Replace this mailto stub with a real enquiry backend
     // (for example a Route Handler plus an email provider). v1 only opens the guest's mail app.
-    const mailto = `mailto:${site.email}?subject=${encodeURIComponent(`Zookini enquiry — ${tourName}`)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:${site.email}?subject=${encodeURIComponent(`Zookini enquiry: ${tourName}`)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     setStatus(
-      `Your email app should open a message to ${site.email}. If it does not, write to Anita directly or use WhatsApp.`,
+      `Your email app should open a message to ${site.email}. If it does not, write to us at that address or use WhatsApp.`,
     );
   }
 
@@ -105,7 +105,7 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
               type="number"
               min={1}
               inputMode="numeric"
-              placeholder="Usually 12–16"
+              placeholder="Usually 12 to 16"
             />
           </label>
           <label className="field field-span" htmlFor="enquiry-message">
@@ -119,7 +119,7 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
         </div>
       </div>
       <button className="btn btn-solid w-fit" type="submit">
-        Email Anita
+        Send the note
       </button>
       {status ? (
         <p role="status" className="text-sm text-[var(--color-teal-ink)]">

@@ -4,27 +4,13 @@ import { FactBar } from "@/components/FactBar";
 import { PageHero } from "@/components/PageHero";
 import { PhotoStrip } from "@/components/PhotoStrip";
 import { photos } from "@/content/photos";
-import { defaultWhatsAppMessage, whatsappHref } from "@/content/site";
+import { defaultWhatsAppMessage, educationalStory, whatsappHref } from "@/content/site";
 
 export const metadata = {
   title: "Educational",
   description:
-    "School trips, camps, and curriculum days with Zookini. The outdoor classroom, planned with care for learners and staff.",
+    "School trips, camps, and curriculum days. We hold the plan so teachers are not carrying it alone.",
 };
-
-const classroom = [
-  "Education can be fun without being thin",
-  "Ideas show up more clearly outside the classroom",
-  "Learners practise looking, asking, and looking after one another",
-];
-
-const offers = [
-  "Curriculum day excursions",
-  "Sport groups: the day, the stay, and the transport",
-  "Camps for adventure, leadership, choir, sport, or mother and daughter weekends",
-  "All-inclusive tours for achievers, art, consumer studies, and recreation",
-  "Grade farewells and end-of-year functions",
-];
 
 export default function EducationalPage() {
   return (
@@ -33,7 +19,7 @@ export default function EducationalPage() {
         short
         eyebrow="Educational"
         title="The outdoor classroom"
-        lede="A plan that teachers do not have to carry alone."
+        lede={educationalStory.lede}
         image={photos.educational.src}
         imageAlt={photos.educational.alt}
       />
@@ -47,12 +33,9 @@ export default function EducationalPage() {
       <section className="band" aria-labelledby="arrange-heading">
         <div className="wrap split reverse">
           <div className="split-copy">
-            <p>
-              Every child remembers a school trip. Zookini builds those days for learners of any age — epic enough
-              to matter, organised enough for the staff on the bus.
-            </p>
+            <p>{educationalStory.intro}</p>
             <ul className="list-disc space-y-2 pl-5">
-              {classroom.map((item) => (
+              {educationalStory.classroom.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -60,7 +43,7 @@ export default function EducationalPage() {
               We can arrange
             </h2>
             <ul className="list-disc space-y-2 pl-5">
-              {offers.map((offer) => (
+              {educationalStory.offers.map((offer) => (
                 <li key={offer}>{offer}</li>
               ))}
             </ul>
@@ -76,6 +59,12 @@ export default function EducationalPage() {
           </div>
         </div>
       </section>
+      <section className="band bg-white">
+        <div className="wrap max-w-3xl">
+          <p>{educationalStory.journeys}</p>
+          <p className="mt-4">{educationalStory.outcomes}</p>
+        </div>
+      </section>
       <div className="wrap-wide pb-[var(--space-7)]">
         <PhotoStrip photos={[photos.heritage, photos.gardenRoute, photos.educational]} />
       </div>
@@ -84,9 +73,7 @@ export default function EducationalPage() {
           <h2 id="tailor-heading" className="section-title text-white">
             Can this trip be tailored?
           </h2>
-          <p className="mt-4 max-w-xl text-white/90">
-            Share the grade, the dates you hope for, and whether you need a day out or a camp.
-          </p>
+          <p className="mt-4 max-w-xl text-white/90">{educationalStory.tailor}</p>
         </div>
       </section>
       <section id="enquire" className="band" aria-labelledby="ready-heading">

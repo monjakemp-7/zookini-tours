@@ -15,6 +15,7 @@ export function PortraitCard({ tour, showRegion = false }: { tour: Tour; showReg
       <span className="portrait-scrim" aria-hidden="true" />
       <span className="portrait-copy">
         <span className="portrait-title">{tour.title}</span>
+        <span className="portrait-line">{tour.atmosphere}</span>
         <span className="card-meta light">
           {tour.duration}
           <span aria-hidden="true"> · </span>

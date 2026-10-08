@@ -15,7 +15,7 @@ export function CommunityGrid({ tiles }: CommunityGridProps) {
           <h2 id="community-heading" className="section-title">
             {title}
           </h2>
-          <a className="btn btn-solid shrink-0" href={profileUrl} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn-line shrink-0" href={profileUrl} target="_blank" rel="noopener noreferrer">
             {cta}
           </a>
         </div>

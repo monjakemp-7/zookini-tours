@@ -60,8 +60,10 @@ export default function PoliciesPage() {
           <section>
             <h2 className="section-title">Group size</h2>
             <p className="mt-3">
-              Most tours run with a minimum of 12 and a maximum of 16 guests, with a Tour Director. Women & Wine
-              Weekend is for women only. I Love Cape Town can host a larger group — ask before you assume.
+              Every tour asks for at least 12 guests and travels with a Tour Director. Women & Wine, Life is Art,
+              Protea & Fynbos, and Time to Taste hold up to 16. Several journeys can host up to 52, and the
+              Drakensberg adventure up to 60. Women & Wine Weekend is for women only. The number is confirmed in
+              your quote.
             </p>
           </section>
         </div>

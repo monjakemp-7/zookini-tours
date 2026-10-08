@@ -1,8 +1,8 @@
 /**
  * Placeholder photography for the marketing site.
- * Swap Anita's own pictures by replacing `src` (and clearing the Unsplash
+ * Swap the house's own pictures by replacing `src` (and clearing the Unsplash
  * credit fields when the photo is no longer from Unsplash).
- * Components read this file only — they do not hard-code photo paths.
+ * Components read this file only. They do not hard-code photo paths.
  */
 export type Photo = {
   id: string;

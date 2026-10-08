@@ -4,7 +4,7 @@ import { site, socials, whatsappHref, defaultWhatsAppMessage } from "@/content/s
 
 export const metadata = {
   title: "Contact",
-  description: "Call, email, or WhatsApp Anita at Zookini Tours in the Cape Winelands.",
+  description: "Call, email, or WhatsApp Zookini Tours in the Cape Winelands.",
 };
 
 export default function ContactPage() {
@@ -13,7 +13,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Get in touch"
-        lede="The shortest path to a Zookini tour is a conversation with Anita."
+        lede="Call, email, or send a WhatsApp. We look forward to helping you bring a trip to life."
       />
       <section className="band">
         <div className="wrap max-w-xl space-y-4">
@@ -32,8 +32,8 @@ export default function ContactPage() {
             <br />
             {site.region}
           </p>
-          <a className="btn btn-solid hidden lg:inline-flex" href={whatsappHref(defaultWhatsAppMessage)}>
-            WhatsApp Anita
+          <a className="btn btn-line hidden lg:inline-flex" href={whatsappHref(defaultWhatsAppMessage)}>
+            WhatsApp
           </a>
           <ul className="flex flex-wrap gap-4 pt-1 text-sm">
             {socials.map((social) => (

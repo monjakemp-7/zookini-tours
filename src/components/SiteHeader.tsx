@@ -12,8 +12,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [menuPath, setMenuPath] = useState(pathname);
   const [scrolled, setScrolled] = useState(false);
-  const onHome = pathname === "/";
-  const solid = !onHome || scrolled || open;
+  const solid = true;
 
   if (menuPath !== pathname) {
     setMenuPath(pathname);
@@ -38,7 +37,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 ${solid ? "bg-white/95 shadow-sm backdrop-blur" : "on-photo"}`}
+      className={`fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur ${scrolled || open ? "shadow-sm" : ""}`}
     >
       <div className="wrap flex h-20 items-center justify-between gap-4 sm:h-24">
         <Link href="/" aria-label="Zookini Tours home" className="shrink-0">

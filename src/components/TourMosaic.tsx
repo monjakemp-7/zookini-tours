@@ -52,7 +52,7 @@ export function TourMosaic({ tours, initialTheme, showDoorChips = true }: TourMo
       </div>
       {visible.length === 0 ? (
         <p className="mt-6 max-w-lg">
-          Nothing in that theme in this set. Tell Anita what you are celebrating and she will hand-craft it.
+          Nothing in that theme in this set. Tell us what you are celebrating and we will hand-craft it.
         </p>
       ) : (
         <ul className="mt-8 grid list-none gap-[var(--space-5)] p-0 sm:grid-cols-2 lg:grid-cols-3">

@@ -59,7 +59,7 @@ export function TourIndex({ tours }: { tours: Tour[] }) {
             <h2 className="section-title">{signature.title}</h2>
             <p>{signature.hook}</p>
             <p>{signature.story[0]}</p>
-            <Link className="btn btn-solid" href={`/tours/${signature.slug}`}>
+            <Link className="btn btn-line" href={`/tours/${signature.slug}`}>
               View tour
             </Link>
           </div>
@@ -70,7 +70,7 @@ export function TourIndex({ tours }: { tours: Tour[] }) {
         <p className="mt-8 max-w-lg">
           {showSignature
             ? "That celebration is the signature tour above."
-            : "Nothing in that theme in this set. Tell Anita what you are celebrating and she will hand-craft it."}
+            : "Nothing in that theme in this set. Tell us what you are celebrating and we will hand-craft it."}
         </p>
       ) : (
         <ul className="portrait-grid">

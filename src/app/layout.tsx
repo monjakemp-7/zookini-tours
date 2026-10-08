@@ -21,13 +21,13 @@ const cookie = Cookie({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Zookini Tours — Celebrating Life!",
+    default: "Zookini Tours. Celebrating Life!",
     template: "%s · Zookini Tours",
   },
   description:
     "Boutique South African tours, hand-crafted in the Cape Winelands for leisure travellers, teams, and schools.",
   openGraph: {
-    title: "Zookini Tours — Celebrating Life!",
+    title: "Zookini Tours. Celebrating Life!",
     description:
       "Hand-crafted South African tours for leisure travellers, teams, and schools.",
     locale: "en_ZA",

@@ -5,7 +5,7 @@ import { ExperienceCarousel } from "@/components/ExperienceCarousel";
 import { TravelTabs } from "@/components/TravelTabs";
 import { getCommunityTiles } from "@/content/community";
 import { photos } from "@/content/photos";
-import { clients, defaultWhatsAppMessage, doors, steps, whatsappHref } from "@/content/site";
+import { clients, defaultWhatsAppMessage, doors, hostStory, houseStory, steps, whatsappHref } from "@/content/site";
 import { getFeaturedTours } from "@/content/tours";
 
 export default function HomePage() {
@@ -30,12 +30,12 @@ export default function HomePage() {
             Boutique South African tours for leisure travellers, teams, and schools.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-light" href="#tours">
-              Explore tours
-            </a>
-            <Link className="btn btn-line" href="/enquire">
+            <Link className="btn btn-solid" href="/enquire">
               Enquire
             </Link>
+            <a className="btn btn-line" href="#tours">
+              Explore tours
+            </a>
           </div>
         </div>
         <nav className="offer-bar" aria-label="Ways to travel">
@@ -68,12 +68,11 @@ export default function HomePage() {
           </div>
           <div className="split-copy">
             <h2 id="house-heading" className="section-title">
-              A small house with a long table
+              {houseStory.title}
             </h2>
-            <p>
-              Zookini is a small house in the Winelands. Every tour is built for the people in front of us, not
-              pulled off a shelf.
-            </p>
+            {houseStory.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
             <Link className="text-link" href="/about">
               Read our story
             </Link>
@@ -126,9 +125,11 @@ export default function HomePage() {
         <div className="wrap split reverse">
           <div className="split-copy">
             <h2 id="host-heading" className="section-title">
-              Anita still answers.
+              {hostStory.title}
             </h2>
-            <p>Guest stories will live here once they are theirs to share.</p>
+            {hostStory.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
             <ol className="step-inline">
               {steps.map((step) => (
                 <li key={step.number}>
@@ -169,7 +170,21 @@ export default function HomePage() {
           </blockquote>
           <ul className="client-names">
             {clients.map((client) => (
-              <li key={client}>{client}</li>
+              <li key={client.name}>
+                {"logo" in client && client.logo ? (
+                  <span className="client-mark">
+                    {/* Official SVG/PNG marks, sized in CSS so they share one optical height. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className="client-logo" src={client.logo} alt={client.name} />
+                    {"colorLogo" in client && client.colorLogo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img className="client-logo is-color" src={client.colorLogo} alt="" />
+                    ) : null}
+                  </span>
+                ) : (
+                  client.name
+                )}
+              </li>
             ))}
           </ul>
         </div>
@@ -189,7 +204,7 @@ export default function HomePage() {
             Tell us what you&apos;re celebrating
           </h2>
           <div className="hero-actions">
-            <Link className="btn btn-light" href="/enquire">
+            <Link className="btn btn-solid" href="/enquire">
               Enquire
             </Link>
             <a className="btn btn-line" href={whatsappHref(defaultWhatsAppMessage)}>

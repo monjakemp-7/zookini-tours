@@ -12,6 +12,7 @@
   --color-text-on-teal: #ffffff;
   /* Same teal as --color-teal-dark, deepened so small white text clears WCAG AA. */
   --color-teal-ink: #3e5559;
+  --color-teal-press: #2e4245;
 
   --font-display: var(--font-raleway), "Raleway", system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -86,8 +87,14 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-teal-dark);
-    outline-offset: 3px;
+    outline: 2px solid var(--color-teal-ink);
+    outline-offset: 2px;
+  }
+
+  .on-photo :focus-visible,
+  .steps-band :focus-visible,
+  .site-footer :focus-visible {
+    outline-color: #ffffff;
   }
 
   a {
@@ -217,10 +224,10 @@
   justify-content: center;
   gap: 0.5rem;
   border-radius: var(--radius-pill);
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   padding: 0.75rem 1.2rem;
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.12em;
   line-height: 1;
@@ -231,30 +238,68 @@
 
 .btn-solid {
   background: var(--color-teal-ink);
+  border-color: var(--color-teal-ink);
   color: var(--color-text-on-teal);
 }
 
 .btn-solid:hover {
-  background: var(--color-teal-dark);
-}
-
-.btn-light {
-  background: var(--color-surface-white);
-  color: var(--color-teal-ink);
-}
-
-.btn-light:hover {
-  background: var(--color-teal-accent);
+  background: var(--color-teal-press);
+  border-color: var(--color-teal-press);
 }
 
 .btn-line {
   background: transparent;
-  border-color: currentColor;
+  border-color: var(--color-teal-ink);
   color: var(--color-teal-ink);
 }
 
 .btn-line:hover {
+  background: var(--color-surface-offwhite);
+}
+
+.on-photo .btn-solid,
+.steps-band .btn-solid {
+  background: var(--color-surface-white);
+  border-color: var(--color-surface-white);
+  color: var(--color-teal-ink);
+}
+
+.on-photo .btn-solid:hover,
+.steps-band .btn-solid:hover {
+  background: var(--color-surface-offwhite);
+  border-color: var(--color-surface-offwhite);
+}
+
+.on-photo .btn-line,
+.steps-band .btn-line {
+  border-color: var(--color-text-on-teal);
+  color: var(--color-text-on-teal);
+  background: transparent;
+}
+
+.on-photo .btn-line:hover,
+.steps-band .btn-line:hover {
   background: rgb(255 255 255 / 0.14);
+}
+
+@media (max-width: 1023px) {
+  .hero-actions .btn-solid,
+  .center-block .btn-solid,
+  .fact-bar .btn-solid,
+  .steps-band .btn-solid,
+  .enquire-panel .btn-solid {
+    background: transparent;
+    border-color: var(--color-teal-ink);
+    color: var(--color-teal-ink);
+  }
+
+  .on-photo .hero-actions .btn-solid,
+  .on-photo .center-block .btn-solid,
+  .steps-band .btn-solid {
+    border-color: var(--color-text-on-teal);
+    color: var(--color-text-on-teal);
+    background: transparent;
+  }
 }
 
 .btn-block {
@@ -298,16 +343,15 @@
   cursor: pointer;
 }
 
-.chip[aria-pressed="true"],
 .chip:hover {
-  background: var(--color-teal-accent);
+  border-color: var(--color-teal-ink);
 }
 
 .chip[aria-pressed="true"],
 .chip[aria-selected="true"] {
-  background: var(--color-teal-ink);
-  color: var(--color-text-on-teal);
-  border-color: var(--color-teal-ink);
+  background: var(--color-teal-accent);
+  color: var(--color-teal-ink);
+  border-color: var(--color-teal-accent);
 }
 
 .card {
@@ -556,9 +600,9 @@ textarea:hover {
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--color-teal-dark);
+  outline: 2px solid var(--color-teal-ink);
   outline-offset: 2px;
-  border-color: var(--color-teal-dark);
+  border-color: var(--color-teal-ink);
 }
 
 input::placeholder,
@@ -614,10 +658,10 @@ textarea {
 }
 
 .mobile-bar .btn {
-  min-height: 44px;
-  padding-inline: 0.6rem;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
+  min-height: 48px;
+  padding-inline: 0.45rem;
+  font-size: 12px;
+  letter-spacing: 0.06em;
 }
 
 @media (min-width: 1024px) {
@@ -1048,6 +1092,7 @@ textarea {
 @media (min-width: 768px) {
   .split {
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     gap: var(--space-8);
   }
 
@@ -1117,6 +1162,12 @@ textarea {
   font-weight: 400;
   letter-spacing: 0.06em;
   line-height: 1.25;
+  color: var(--color-text-on-teal);
+}
+
+.portrait-line {
+  font-size: 0.92rem;
+  line-height: 1.35;
   color: var(--color-text-on-teal);
 }
 
@@ -1225,6 +1276,18 @@ textarea {
   max-width: 32rem;
 }
 
+.way-points {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.way-points p {
+  margin: 0;
+}
+
 @media (min-width: 768px) {
   .travel-panel {
     grid-template-columns: 1.15fr 0.85fr;
@@ -1296,7 +1359,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 3.5rem;
+  min-height: 4.5rem;
   margin: 0;
   border: 1px solid var(--color-teal-accent);
   border-radius: var(--radius-md);
@@ -1309,6 +1372,39 @@ textarea {
   text-align: center;
   text-transform: uppercase;
   color: var(--color-teal-ink);
+}
+
+.client-mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 1.7rem;
+}
+
+.client-logo {
+  display: block;
+  height: 1.7rem;
+  width: auto;
+  max-width: 86%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.client-logo.is-color {
+  position: absolute;
+  opacity: 0;
+}
+
+.client-names li:hover .client-logo.is-color,
+.client-names li:focus-within .client-logo.is-color {
+  opacity: 1;
+}
+
+.client-names li:hover .client-mark:has(.is-color) .client-logo:not(.is-color),
+.client-names li:focus-within .client-mark:has(.is-color) .client-logo:not(.is-color) {
+  opacity: 0;
 }
 
 @media (min-width: 640px) {
@@ -1452,9 +1548,9 @@ textarea {
 }
 
 .door-link[aria-current="page"] {
-  border-color: var(--color-teal-ink);
-  background: var(--color-teal-ink);
-  color: var(--color-text-on-teal);
+  border-color: var(--color-teal-accent);
+  background: var(--color-teal-accent);
+  color: var(--color-teal-ink);
 }
 
 @media (min-width: 768px) {
