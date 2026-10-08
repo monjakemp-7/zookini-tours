@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrushHeading } from "@/components/BrushHeading";
 import { SocialLinks } from "@/components/SocialLinks";
 import { communityFeed, communityTileLabel, type CommunityTile } from "@/content/community";
 
@@ -13,9 +14,9 @@ export function CommunityGrid({ tiles }: CommunityGridProps) {
     <section className="band ig-band bg-white" aria-labelledby="community-heading">
       <div className="wrap-wide">
         <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
-          <h2 id="community-heading" className="section-title">
+          <BrushHeading id="community-heading" className="section-title">
             {title}
-          </h2>
+          </BrushHeading>
           <SocialLinks only="Instagram" className="shrink-0" />
         </div>
         <ul className="ig-row">

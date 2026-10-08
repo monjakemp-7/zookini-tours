@@ -40,7 +40,7 @@ export function SiteHeader() {
       className={`fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur ${scrolled || open ? "shadow-sm" : ""}`}
     >
       <div className="wrap flex h-20 items-center justify-between gap-4 sm:h-24">
-        <Link href="/" aria-label="Zookini Tours logo, Celebrating Life!" className="shrink-0">
+        <Link href="/" aria-label="Zookini Tours logo, Celebrating Life!" className="logo-link shrink-0">
           <Logo
             variant={solid ? "colour" : "white"}
             labelled={false}

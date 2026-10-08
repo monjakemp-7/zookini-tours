@@ -64,6 +64,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${raleway.variable} ${cookie.variable} h-full antialiased`}>
       <body className="min-h-full">
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce||sessionStorage.getItem('zookini-sun')){document.documentElement.classList.add('sun-done')}else{sessionStorage.setItem('zookini-sun','1')}}catch(e){}",
+          }}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <SiteFrame>{children}</SiteFrame>
       </body>

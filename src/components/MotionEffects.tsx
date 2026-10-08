@@ -27,6 +27,10 @@ export function MotionEffects() {
       const nodes: HTMLElement[] = [];
       root.querySelectorAll<HTMLElement>(PIECE).forEach((el) => {
         if (el.closest(".home-hero, .page-hero")) return;
+        if (el.classList.contains("split") && el.querySelector(".polaroid")) {
+          el.querySelectorAll<HTMLElement>(":scope > .split-copy").forEach((copy) => nodes.push(copy));
+          return;
+        }
         nodes.push(el);
       });
       root.querySelectorAll<HTMLElement>("section.band").forEach((section) => {
@@ -34,6 +38,7 @@ export function MotionEffects() {
         nodes.push(section);
       });
       root.querySelectorAll<HTMLElement>("h1, h2, h3").forEach((heading) => {
+        if (heading.classList.contains("brush-title")) return;
         if (heading.closest(".home-hero, .page-hero")) return;
         if (nodes.some((node) => node === heading || node.contains(heading))) return;
         nodes.push(heading);
@@ -75,12 +80,73 @@ export function MotionEffects() {
       nodes.forEach((node) => {
         if (!node.classList.contains("is-in")) observer.observe(node);
       });
+      const brushes = [...root.querySelectorAll<HTMLElement>(".brush-title")];
+      const brushObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-drawn");
+            brushObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.5, rootMargin: "0px 0px -8% 0px" },
+      );
+      brushes.forEach((heading) => {
+        if (inView(heading)) heading.classList.add("is-drawn");
+        else brushObserver.observe(heading);
+      });
+
+      const polaroids = [...root.querySelectorAll<HTMLElement>(".polaroid")];
+      const polaroidGroups = new Map<Element, HTMLElement[]>();
+      polaroids.forEach((frame) => {
+        frame.classList.add("drop");
+        const group = frame.closest("section") ?? frame.parentElement;
+        if (!group) return;
+        const list = polaroidGroups.get(group) ?? [];
+        list.push(frame);
+        polaroidGroups.set(group, list);
+      });
+      polaroidGroups.forEach((list) => {
+        list.forEach((frame, index) => {
+          frame.style.setProperty("--drop-delay", `${Math.min(index, 4) * 90}ms`);
+        });
+      });
+      const polaroidObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-settled");
+            polaroidObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.22, rootMargin: "0px 0px -4% 0px" },
+      );
+      polaroids.forEach((frame) => {
+        if (inView(frame)) frame.classList.add("is-settled");
+        else polaroidObserver.observe(frame);
+      });
+      const onSettleEnd = (event: AnimationEvent) => {
+        const frame = event.target;
+        if (!(frame instanceof HTMLElement) || event.animationName !== "polaroid-settle") return;
+        frame.classList.remove("drop", "is-settled");
+        frame.style.removeProperty("--drop-delay");
+      };
+      root.addEventListener("animationend", onSettleEnd);
+
       html.classList.add("motion-ok");
       cleanups.push(() => {
         observer.disconnect();
+        brushObserver.disconnect();
+        polaroidObserver.disconnect();
+        root.removeEventListener("animationend", onSettleEnd);
         nodes.forEach((node) => {
           node.classList.remove("reveal", "is-in");
           node.style.transitionDelay = "";
+        });
+        brushes.forEach((heading) => heading.classList.remove("is-drawn"));
+        polaroids.forEach((frame) => {
+          frame.classList.remove("drop", "is-settled");
+          frame.style.removeProperty("--drop-delay");
         });
         html.classList.remove("motion-ok");
       });

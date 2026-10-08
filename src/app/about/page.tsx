@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrushHeading } from "@/components/BrushHeading";
 import { Logo } from "@/components/Logo";
 import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { photos } from "@/content/photos";
@@ -26,9 +27,9 @@ export default function AboutPage() {
           <div className="split-copy">
             <Logo variant="colour" className="h-auto w-40" />
             <p className="eyebrow">About</p>
-            <h1 id="about-heading" className="section-title">
+            <BrushHeading as="h1" id="about-heading" className="section-title">
               {aboutStory.title}
-            </h1>
+            </BrushHeading>
             {aboutStory.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BrushHeading } from "@/components/BrushHeading";
 import { CommunityGrid } from "@/components/CommunityGrid";
 import { ExperienceCarousel } from "@/components/ExperienceCarousel";
 import { HomeHero } from "@/components/HomeHero";
 import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { TravelTabs } from "@/components/TravelTabs";
+import { StepRoute } from "@/components/StepRoute";
 import { getCommunityTiles } from "@/content/community";
 import { photos } from "@/content/photos";
 import { clients, defaultWhatsAppMessage, homeQuote, hostStory, houseStory, steps, whatsappHref } from "@/content/site";
@@ -26,9 +28,9 @@ export default function HomePage() {
             sizes="(min-width: 768px) 42vw, 92vw"
           />
           <div className="split-copy">
-            <h2 id="house-heading" className="section-title">
+            <BrushHeading id="house-heading" className="section-title">
               {houseStory.title}
-            </h2>
+            </BrushHeading>
             {houseStory.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -42,9 +44,9 @@ export default function HomePage() {
       <section id="tours" className="band bg-white" aria-labelledby="journeys-heading">
         <div className="wrap-wide">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
-            <h2 id="journeys-heading" className="section-title">
+            <BrushHeading id="journeys-heading" className="section-title">
               Leisure
-            </h2>
+            </BrushHeading>
             <Link className="text-link" href="/tours">
               Leisure Tours
             </Link>
@@ -73,9 +75,9 @@ export default function HomePage() {
 
       <section className="band contour-band" aria-labelledby="ways-heading">
         <div className="wrap">
-          <h2 id="ways-heading" className="section-title">
+          <BrushHeading id="ways-heading" className="section-title">
             Leisure, Educational, Corporate
-          </h2>
+          </BrushHeading>
           <div className="mt-8">
             <TravelTabs />
           </div>
@@ -85,25 +87,13 @@ export default function HomePage() {
       <section className="band" aria-labelledby="host-heading">
         <div className="wrap split reverse">
           <div className="split-copy">
-            <h2 id="host-heading" className="section-title">
+            <BrushHeading id="host-heading" className="section-title">
               {hostStory.title}
-            </h2>
+            </BrushHeading>
             {hostStory.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <ol className="step-inline">
-              {steps.map((step) => (
-                <li key={step.number}>
-                  <p className="font-[family-name:var(--font-display)] text-sm tracking-[0.16em] text-[var(--color-teal-ink)]">
-                    {step.number}
-                  </p>
-                  <div>
-                    <h3 className="text-lg">{step.title}</h3>
-                    <p className="mt-1 text-sm leading-6">{step.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <StepRoute steps={steps} />
           </div>
           <div className="host-photo">
             <div className="host-wash" aria-hidden="true" />
@@ -158,9 +148,9 @@ export default function HomePage() {
         </div>
         <div className="hero-scrim" aria-hidden="true" />
         <div className="wrap center-block">
-          <h2 id="close-heading" className="display text-white">
+          <BrushHeading id="close-heading" className="display text-white">
             Come celebrate life with us!
-          </h2>
+          </BrushHeading>
           <div className="hero-actions">
             <Link className="btn btn-solid" href="/enquire">
               Get in touch

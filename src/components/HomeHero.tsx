@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { heroSlides } from "@/content/photos";
+import { BrushHeading } from "@/components/BrushHeading";
 import { doors } from "@/content/site";
 
 const HOLD_MS = 6000;
@@ -91,7 +92,9 @@ export function HomeHero() {
       <div className="hero-scrim" aria-hidden="true" />
       <div className="intro center relative z-10 text-white">
         <p className="eyebrow light">Hand Crafted and Unique Tours</p>
-        <h1 className="display text-white">Celebrating Life!</h1>
+        <BrushHeading as="h1" className="display text-white">
+          Celebrating Life!
+        </BrushHeading>
         <p className="lede light">
           We celebrate people, food, nature, art, wine, all the finer things in life that give meaning to our souls!
         </p>

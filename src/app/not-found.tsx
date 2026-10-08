@@ -1,11 +1,14 @@
 import Link from "next/link";
+import { BrushHeading } from "@/components/BrushHeading";
 
 export default function NotFound() {
   return (
     <section className="wrap band">
       <div className="intro">
         <p className="flourish">Oops!</p>
-        <h1 className="display">Sorry, we cannot find that page.</h1>
+        <BrushHeading as="h1" className="display">
+          Sorry, we cannot find that page.
+        </BrushHeading>
         <p className="lede">The link may be out of date. Have a look at our tours, or get in touch.</p>
       </div>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">

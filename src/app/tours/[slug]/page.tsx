@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BrushHeading } from "@/components/BrushHeading";
 import { EnquireForm } from "@/components/EnquireForm";
 import { ExperienceCarousel } from "@/components/ExperienceCarousel";
 import { FactBar } from "@/components/FactBar";
@@ -50,7 +51,9 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
         <div className="hero-scrim" aria-hidden="true" />
         <div className="intro wrap relative z-10 py-8 md:py-10">
           <p className="eyebrow light">{tour.eyebrow}</p>
-          <h1 className="display text-white">{tour.title}</h1>
+          <BrushHeading as="h1" className="display text-white">
+            {tour.title}
+          </BrushHeading>
           <p className="lede light">{tour.hook}</p>
         </div>
       </section>
