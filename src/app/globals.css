@@ -1868,3 +1868,47 @@ textarea {
 #tours {
   scroll-margin-top: 6.5rem;
 }
+
+/* Tour-bus cursor. Hotspot is the front bumper. The hand and the I-beam stay on controls. */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url("/cursors/bus.svg") 2 16, url("/cursors/bus-32.png") 2 16, auto;
+    cursor:
+      image-set(url("/cursors/bus-32.png") 1x, url("/cursors/bus-64.png") 2x) 2 16,
+      url("/cursors/bus.svg") 2 16,
+      url("/cursors/bus-32.png") 2 16,
+      auto;
+  }
+
+  a,
+  button,
+  summary,
+  label,
+  select,
+  [role="button"],
+  [role="link"] {
+    cursor: pointer;
+  }
+
+  input,
+  textarea {
+    cursor: text;
+  }
+
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="range"],
+  input[type="file"],
+  input[type="image"],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"] {
+    cursor: pointer;
+  }
+}
