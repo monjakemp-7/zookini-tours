@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CommunityGrid } from "@/components/CommunityGrid";
 import { ExperienceCarousel } from "@/components/ExperienceCarousel";
 import { HomeHero } from "@/components/HomeHero";
+import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { TravelTabs } from "@/components/TravelTabs";
 import { getCommunityTiles } from "@/content/community";
 import { photos } from "@/content/photos";
@@ -18,15 +19,12 @@ export default function HomePage() {
 
       <section className="band" aria-labelledby="house-heading">
         <div className="wrap split">
-          <div className="split-photo">
-            <Image
-              src={photos.signature.src}
-              alt={photos.signature.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <PolaroidPhoto
+            photo={photos.signature}
+            tilt="left"
+            className="split-photo"
+            sizes="(min-width: 768px) 42vw, 92vw"
+          />
           <div className="split-copy">
             <h2 id="house-heading" className="section-title">
               {houseStory.title}
@@ -109,15 +107,13 @@ export default function HomePage() {
           </div>
           <div className="host-photo">
             <div className="host-wash" aria-hidden="true" />
-            <div className="host-frame split-photo">
-              <Image
-                src={photos.foodie.src}
-                alt={photos.foodie.alt}
-                fill
-                sizes="(min-width: 768px) 46vw, 100vw"
-                className="object-cover"
-              />
-            </div>
+            <PolaroidPhoto
+              photo={photos.foodie}
+              tilt="left"
+              tape
+              className="host-frame split-photo"
+              sizes="(min-width: 768px) 40vw, 92vw"
+            />
           </div>
         </div>
       </section>

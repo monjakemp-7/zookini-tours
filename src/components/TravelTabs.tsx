@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useId, useState } from "react";
+import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { photos } from "@/content/photos";
 import { ways } from "@/content/site";
 
@@ -36,9 +36,12 @@ export function TravelTabs() {
         aria-labelledby={`${base}-${current.id}`}
         className="travel-panel"
       >
-        <div className="travel-panel-photo">
-          <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
-        </div>
+        <PolaroidPhoto
+          photo={photo}
+          tilt="right"
+          className="travel-panel-photo"
+          sizes="(min-width: 768px) 46vw, 92vw"
+        />
         <div className="travel-panel-copy">
           <h3 className="section-title">{current.title}</h3>
           <ul className="way-points">

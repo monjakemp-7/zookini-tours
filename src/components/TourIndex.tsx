@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { PortraitCard } from "@/components/PortraitCard";
+import { photoBySrc } from "@/content/photos";
 import { themes, type ThemeId, type Tour } from "@/content/tours";
 
 const signatureSlug = "women-and-wine-weekend";
@@ -45,15 +46,18 @@ export function TourIndex({ tours }: { tours: Tour[] }) {
 
       {showSignature && signature ? (
         <article className="split signature-split">
-          <div className="split-photo">
-            <Image
-              src={signature.image}
-              alt={signature.imageAlt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <PolaroidPhoto
+            photo={
+              photoBySrc(signature.image) ?? {
+                src: signature.image,
+                alt: signature.imageAlt,
+                caption: "",
+              }
+            }
+            tilt="left"
+            className="split-photo"
+            sizes="(min-width: 768px) 42vw, 92vw"
+          />
           <div className="split-copy">
             <p className="eyebrow">Women only</p>
             <h2 className="section-title">{signature.title}</h2>

@@ -6,6 +6,7 @@ import { EnquireForm } from "@/components/EnquireForm";
 import { ExperienceCarousel } from "@/components/ExperienceCarousel";
 import { FactBar } from "@/components/FactBar";
 import { PhotoStrip } from "@/components/PhotoStrip";
+import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { galleryFor } from "@/content/photos";
 import { bookingGlance, tourTailor, tourWhatsAppMessage, whatsappHref } from "@/content/site";
 import { getRelatedTours, getTour, themeLabel, tours } from "@/content/tours";
@@ -77,15 +78,12 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
                 ))}
               </ul>
             </div>
-            <div className="split-photo">
-              <Image
-                src={highlightsPhoto.src}
-                alt={highlightsPhoto.alt}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
+            <PolaroidPhoto
+              photo={highlightsPhoto}
+              tilt="left"
+              className="split-photo"
+              sizes="(min-width: 768px) 42vw, 92vw"
+            />
           </div>
           <div className="story">
             {lead.map((paragraph) => (
@@ -200,15 +198,12 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
               <EnquireForm defaultTour={tour.slug} heading="" />
             </div>
           </div>
-          <div className="split-photo">
-            <Image
-              src={enquirePhoto.src}
-              alt={enquirePhoto.alt}
-              fill
-              sizes="(min-width: 768px) 46vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <PolaroidPhoto
+            photo={enquirePhoto}
+            tilt="right"
+            className="split-photo"
+            sizes="(min-width: 768px) 40vw, 92vw"
+          />
         </div>
       </section>
 

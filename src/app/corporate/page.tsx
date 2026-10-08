@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { EnquireForm } from "@/components/EnquireForm";
+import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { FactBar } from "@/components/FactBar";
 import { PageHero } from "@/components/PageHero";
 import { PhotoStrip } from "@/components/PhotoStrip";
@@ -32,15 +32,12 @@ export default function CorporatePage() {
       />
       <section className="band" aria-labelledby="host-offers">
         <div className="wrap split">
-          <div className="split-photo">
-            <Image
-              src={photos.signature.src}
-              alt={photos.signature.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <PolaroidPhoto
+            photo={photos.signature}
+            tilt="left"
+            className="split-photo"
+            sizes="(min-width: 768px) 42vw, 92vw"
+          />
           <div className="split-copy">
             <p>{corporateStory.intro}</p>
             <p>{corporateStory.clients}</p>
@@ -116,15 +113,12 @@ export default function CorporatePage() {
               <EnquireForm defaultTour="corporate" heading="" />
             </div>
           </div>
-          <div className="split-photo">
-            <Image
-              src={photos.corporate.src}
-              alt={photos.corporate.alt}
-              fill
-              sizes="(min-width: 768px) 46vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <PolaroidPhoto
+            photo={photos.corporate}
+            tilt="right"
+            className="split-photo"
+            sizes="(min-width: 768px) 40vw, 92vw"
+          />
         </div>
       </section>
     </>

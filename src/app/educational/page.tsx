@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { EnquireForm } from "@/components/EnquireForm";
+import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { FactBar } from "@/components/FactBar";
 import { PageHero } from "@/components/PageHero";
 import { PhotoStrip } from "@/components/PhotoStrip";
@@ -48,15 +48,12 @@ export default function EducationalPage() {
               ))}
             </ul>
           </div>
-          <div className="split-photo">
-            <Image
-              src={photos.fynbos.src}
-              alt={photos.fynbos.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <PolaroidPhoto
+            photo={photos.fynbos}
+            tilt="left"
+            className="split-photo"
+            sizes="(min-width: 768px) 42vw, 92vw"
+          />
         </div>
       </section>
       <section className="band bg-white">
@@ -86,15 +83,12 @@ export default function EducationalPage() {
               <EnquireForm defaultTour="educational" heading="" />
             </div>
           </div>
-          <div className="split-photo">
-            <Image
-              src={photos.houtBay.src}
-              alt={photos.houtBay.alt}
-              fill
-              sizes="(min-width: 768px) 46vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <PolaroidPhoto
+            photo={photos.houtBay}
+            tilt="right"
+            className="split-photo"
+            sizes="(min-width: 768px) 40vw, 92vw"
+          />
         </div>
       </section>
     </>

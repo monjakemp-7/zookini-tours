@@ -12,6 +12,8 @@ export type Photo = {
   profile: string;
   page: string;
   location: string;
+  /** Short place name for a polaroid caption. Empty when the place is unknown. */
+  caption: string;
 };
 
 export const photos = {
@@ -23,6 +25,7 @@ export const photos = {
     profile: "https://unsplash.com/@mattvs",
     page: "https://unsplash.com/photos/green-forest-AJjaMQeLUak",
     location: "Holden Manz Country House, Franschhoek",
+    caption: "Franschhoek",
   },
   wine: {
     id: "wine",
@@ -32,6 +35,7 @@ export const photos = {
     profile: "https://unsplash.com/@anna_fothers",
     page: "https://unsplash.com/photos/a-woman-holding-a-glass-of-wine-in-front-of-another-woman-fHq5Jsop01c",
     location: "Cape Town",
+    caption: "Cape Town",
   },
   capeTown: {
     id: "cape-town",
@@ -41,6 +45,7 @@ export const photos = {
     profile: "https://unsplash.com/@brentninaber",
     page: "https://unsplash.com/photos/a-rocky-beach-with-a-body-of-water-and-mountains-in-the-background-with-table-mountain-in-the-background-zrOjcQXAdvk",
     location: "Cape Town",
+    caption: "Cape Town",
   },
   art: {
     id: "art",
@@ -50,6 +55,7 @@ export const photos = {
     profile: "https://unsplash.com/@qld_traveller",
     page: "https://unsplash.com/photos/a-statue-of-a-person-laying-on-the-ground-pxzn1QO4lZw",
     location: "Leeu Estates, Franschhoek",
+    caption: "Franschhoek",
   },
   fynbos: {
     id: "fynbos",
@@ -59,6 +65,7 @@ export const photos = {
     profile: "https://unsplash.com/@lauraflint",
     page: "https://unsplash.com/photos/purple-flower-buds-in-tilt-shift-lens-IHKycOIfWf4",
     location: "Kirstenbosch, Cape Town",
+    caption: "Kirstenbosch, Cape Town",
   },
   foodie: {
     id: "foodie",
@@ -68,6 +75,7 @@ export const photos = {
     profile: "https://unsplash.com/@umfoti",
     page: "https://unsplash.com/photos/a-row-of-multi-colored-houses-on-a-street-5oYjOEsK0iw",
     location: "Bo-Kaap, Cape Town",
+    caption: "Bo-Kaap, Cape Town",
   },
   westCoast: {
     id: "west-coast",
@@ -77,6 +85,7 @@ export const photos = {
     profile: "https://unsplash.com/@grant_durr",
     page: "https://unsplash.com/photos/a-house-on-a-hill-overlooking-a-body-of-water-NaJ1yAMVrkA",
     location: "Paternoster",
+    caption: "Paternoster",
   },
   gardenRoute: {
     id: "garden-route",
@@ -86,6 +95,7 @@ export const photos = {
     profile: "https://unsplash.com/@janaawarrington01",
     page: "https://unsplash.com/photos/green-trees-on-mountain-near-body-of-water-during-daytime-HKK_aO22SIg",
     location: "Knysna",
+    caption: "Knysna",
   },
   overberg: {
     id: "overberg",
@@ -95,6 +105,7 @@ export const photos = {
     profile: "https://unsplash.com/@huntleytography",
     page: "https://unsplash.com/photos/grapes-field-viewing-mountain-b-Tr-l0iGLQ",
     location: "Hermanus",
+    caption: "Hermanus",
   },
   safari: {
     id: "safari",
@@ -104,6 +115,7 @@ export const photos = {
     profile: "https://unsplash.com/@gilleyaguilar",
     page: "https://unsplash.com/photos/people-on-a-safari-game-drive-at-sunset-09vynThd8EI",
     location: "Madikwe",
+    caption: "Madikwe",
   },
   drakensberg: {
     id: "drakensberg",
@@ -113,6 +125,7 @@ export const photos = {
     profile: "https://unsplash.com/@rooszan",
     page: "https://unsplash.com/photos/landscape-photo-of-brown-mountain-during-daytime-_wI8FVyZB3M",
     location: "Drakensberg",
+    caption: "Drakensberg",
   },
   corporate: {
     id: "corporate",
@@ -122,6 +135,7 @@ export const photos = {
     profile: "https://unsplash.com/@anna_fothers",
     page: "https://unsplash.com/photos/a-group-of-people-sitting-at-a-table-with-wine-glasses-sRl4Azjob8I",
     location: "Cape Town",
+    caption: "Cape Town",
   },
   educational: {
     id: "educational",
@@ -131,6 +145,7 @@ export const photos = {
     profile: "https://unsplash.com/@generein",
     page: "https://unsplash.com/photos/a-young-boy-standing-in-a-field-looking-at-the-sun-D_NHk96lNG4",
     location: "Gondwana Private Game Reserve",
+    caption: "Gondwana Private Game Reserve",
   },
   signature: {
     id: "signature",
@@ -140,6 +155,7 @@ export const photos = {
     profile: "https://unsplash.com/@matt_j",
     page: "https://unsplash.com/photos/three-person-holding-wine-glasses-ZvqoxOrIiYI",
     location: "Delaire Graff Estate, Stellenbosch",
+    caption: "Stellenbosch",
   },
   winelands: {
     id: "winelands",
@@ -149,6 +165,7 @@ export const photos = {
     profile: "https://unsplash.com/@ommyjay",
     page: "https://unsplash.com/photos/view-through-a-white-archway-to-people-walking-among-trees-8ErSaR6zpqM",
     location: "Stellenbosch",
+    caption: "Stellenbosch",
   },
   houtBay: {
     id: "hout-bay",
@@ -158,6 +175,7 @@ export const photos = {
     profile: "https://unsplash.com/@matt_j",
     page: "https://unsplash.com/photos/photo-of-mountain-near-body-of-water-7y-7d7i1NPM",
     location: "Hout Bay, Cape Town",
+    caption: "Hout Bay, Cape Town",
   },
   corporateOutdoors: {
     id: "corporate-outdoors",
@@ -167,6 +185,7 @@ export const photos = {
     profile: "https://unsplash.com/@arthurhick",
     page: "https://unsplash.com/photos/group-of-people-walking-on-grass-field-during-golden-hour-MVT0Nz9YClY",
     location: "Wild Coast",
+    caption: "Wild Coast",
   },
   heritage: {
     id: "heritage",
@@ -176,6 +195,7 @@ export const photos = {
     profile: "https://unsplash.com/@coachpotatoes",
     page: "https://unsplash.com/photos/people-walking-on-sidewalk-during-daytime-IR-64Oe8S7A",
     location: "Apartheid Museum, Johannesburg",
+    caption: "Johannesburg",
   },
   enquireBand: {
     id: "enquire-band",
@@ -185,6 +205,7 @@ export const photos = {
     profile: "https://unsplash.com/@bengerber05",
     page: "https://unsplash.com/photos/a-view-of-a-field-with-a-mountain-in-the-background-IOjs8WutjtM",
     location: "Stellenbosch",
+    caption: "Stellenbosch",
   },
 } as const satisfies Record<string, Photo>;
 
@@ -220,4 +241,8 @@ export const tourGalleries: Record<string, readonly Photo[]> = {
 
 export function galleryFor(slug: string): Photo[] {
   return [...(tourGalleries[slug] ?? [photos.winelands, photos.houtBay, photos.capeTown])];
+}
+
+export function photoBySrc(src: string): Photo | undefined {
+  return photoLibrary.find((photo) => photo.src === src);
 }
