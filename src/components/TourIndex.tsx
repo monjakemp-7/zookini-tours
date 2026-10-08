@@ -26,7 +26,7 @@ export function TourIndex({ tours }: { tours: Tour[] }) {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Filter tours by theme">
+      <div className="pill-row" role="group" aria-label="Filter tours by theme">
         <button type="button" className="chip" aria-pressed={theme === "all"} onClick={() => setTheme("all")}>
           All
         </button>

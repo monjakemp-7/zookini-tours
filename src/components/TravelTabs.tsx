@@ -42,7 +42,7 @@ export function TravelTabs() {
 
   return (
     <div className="travel-tabs">
-      <div role="tablist" aria-label="Ways to travel">
+      <div className="pill-row" role="tablist" aria-label="Ways to travel">
         {ways.map((way) => (
           <button
             key={way.id}

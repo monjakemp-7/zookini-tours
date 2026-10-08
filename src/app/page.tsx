@@ -5,7 +5,7 @@ import { ExperienceCarousel } from "@/components/ExperienceCarousel";
 import { TravelTabs } from "@/components/TravelTabs";
 import { getCommunityTiles } from "@/content/community";
 import { photos } from "@/content/photos";
-import { clients, defaultWhatsAppMessage, steps, whatsappHref } from "@/content/site";
+import { clients, defaultWhatsAppMessage, doors, steps, whatsappHref } from "@/content/site";
 import { getFeaturedTours } from "@/content/tours";
 
 export default function HomePage() {
@@ -39,20 +39,19 @@ export default function HomePage() {
           </div>
         </div>
         <nav className="offer-bar" aria-label="Ways to travel">
-          <ul className="offer-links">
-            <li>
-              <Link href="/tours">Leisure tours</Link>
-            </li>
-            <li>
-              <Link href="/corporate">Corporate</Link>
-            </li>
-            <li>
-              <Link href="/educational">Schools</Link>
-            </li>
+          <ul className="offer-doors">
+            {doors.map((door) => (
+              <li key={door.href}>
+                <Link className="offer-door" href={door.href}>
+                  <span className="offer-label">{door.label}</span>
+                  <span className="offer-line">{door.line}</span>
+                  <span className="offer-arrow" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
+              </li>
+            ))}
           </ul>
-          <a className="btn btn-solid" href={whatsappHref(defaultWhatsAppMessage)}>
-            WhatsApp
-          </a>
         </nav>
       </section>
 
@@ -161,14 +160,12 @@ export default function HomePage() {
 
       <section className="band client-strip" aria-label="Clients">
         <div className="wrap relative z-10">
-          <blockquote>
-            <p className="section-title mx-auto max-w-3xl text-center">
+          <blockquote className="quote-block">
+            <p>
               “A travel adventure has no substitute. It is the ultimate experience, your one big opportunity for
               flair.”
             </p>
-            <footer className="mt-4 text-center text-sm tracking-[0.12em] text-[var(--color-teal-ink)] uppercase">
-              Rosalind Massow
-            </footer>
+            <footer>Rosalind Massow</footer>
           </blockquote>
           <ul className="client-names">
             {clients.map((client) => (
@@ -178,20 +175,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="photo-break on-photo" aria-labelledby="close-heading">
+      <section className="photo-break is-close on-photo" aria-labelledby="close-heading">
         <Image
           src={photos.enquireBand.src}
           alt={photos.enquireBand.alt}
           fill
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-close"
         />
         <div className="hero-scrim" aria-hidden="true" />
-        <div className="wrap">
+        <div className="wrap center-block">
           <h2 id="close-heading" className="display text-white">
             Tell us what you&apos;re celebrating
           </h2>
-          <div className="hero-actions justify-start">
+          <div className="hero-actions">
             <Link className="btn btn-light" href="/enquire">
               Enquire
             </Link>

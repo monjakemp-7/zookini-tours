@@ -39,11 +39,11 @@ export default function ToursPage() {
         </div>
       </section>
       <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="handcraft-heading">
-        <div className="wrap">
+        <div className="wrap center-block">
           <h2 id="handcraft-heading" className="section-title text-white">
             Don&apos;t see your celebration? Anita will hand-craft it
           </h2>
-          <div className="hero-actions justify-start">
+          <div className="hero-actions">
             <Link className="btn btn-light" href="/enquire">
               Enquire
             </Link>

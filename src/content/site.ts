@@ -46,6 +46,24 @@ export function tourWhatsAppMessage(title: string) {
   return `Hello Anita, I would like to enquire about ${title}.`;
 }
 
+export const doors = [
+  {
+    href: "/tours",
+    label: "Leisure",
+    line: "For friends and families.",
+  },
+  {
+    href: "/corporate",
+    label: "Corporate",
+    line: "For teams and colleagues.",
+  },
+  {
+    href: "/educational",
+    label: "Schools",
+    line: "For learners and teachers.",
+  },
+] as const;
+
 export const pillars = [
   {
     href: "/tours",

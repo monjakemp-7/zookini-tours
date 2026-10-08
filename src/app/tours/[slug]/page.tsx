@@ -60,12 +60,11 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
         ]}
         whatsappHref={whatsappHref(tourWhatsAppMessage(tour.title))}
       />
-      {tour.note ? <p className="wrap py-4 text-sm">{tour.note}</p> : null}
-
       <section className="band" aria-labelledby="highlights-heading">
         <div className="wrap">
           <div className="split">
             <div className="split-copy">
+              {tour.note ? <p className="text-sm">{tour.note}</p> : null}
               <h2 id="highlights-heading" className="section-title">
                 Highlights
               </h2>
