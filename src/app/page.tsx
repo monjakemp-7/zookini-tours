@@ -171,19 +171,19 @@ export default function HomePage() {
           <ul className="client-names">
             {clients.map((client) => (
               <li key={client.name}>
-                {"logo" in client && client.logo ? (
-                  <span className="client-mark">
-                    {/* Official SVG/PNG marks, sized in CSS so they share one optical height. */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img className="client-logo" src={client.logo} alt={client.name} />
-                    {"colorLogo" in client && client.colorLogo ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img className="client-logo is-color" src={client.colorLogo} alt="" />
-                    ) : null}
-                  </span>
-                ) : (
-                  client.name
-                )}
+                <span className="client-mark">
+                  {/* Official marks, sized in CSS so they share one optical height. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="client-logo"
+                    src={client.logo}
+                    alt={"alt" in client ? client.alt : client.name}
+                  />
+                  {"colorLogo" in client && client.colorLogo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img className="client-logo is-color" src={client.colorLogo} alt="" />
+                  ) : null}
+                </span>
               </li>
             ))}
           </ul>

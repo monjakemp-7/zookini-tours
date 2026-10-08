@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { site, socials } from "@/content/site";
+import { SocialLinks } from "@/components/SocialLinks";
+import { site } from "@/content/site";
 
 export function SiteFooter() {
   return (
@@ -18,20 +19,11 @@ export function SiteFooter() {
             <li>
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </li>
-            <li>
-              {site.address}, {site.region}
-            </li>
+            <li>{site.address}</li>
+            <li>{site.region}</li>
           </ul>
         </div>
-        <ul className="flex flex-wrap gap-4 text-sm md:justify-end">
-          {socials.map((social) => (
-            <li key={social.href}>
-              <a href={social.href} target="_blank" rel="noopener noreferrer">
-                {social.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <SocialLinks tone="on-dark" className="md:justify-end" />
       </div>
       <div className="wrap mt-6 flex flex-col gap-2 border-t border-white/20 pt-4 text-sm text-white/80 sm:flex-row sm:justify-between">
         <p>{site.copyright}</p>

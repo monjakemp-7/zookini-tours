@@ -21,7 +21,6 @@ export const communityFeed = {
   title: "From the road",
   handle: "@zookinitours",
   profileUrl: instagram?.href ?? "https://www.instagram.com/zookinitours/",
-  cta: "Follow on Instagram",
 } as const;
 
 const profile = communityFeed.profileUrl;

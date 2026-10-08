@@ -685,6 +685,48 @@ textarea {
   text-underline-offset: 0.25em;
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  color: var(--color-teal-ink);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: var(--color-teal-accent);
+  color: var(--color-teal-ink);
+  text-decoration: none;
+}
+
+.social-links.on-dark a {
+  color: var(--color-text-on-teal);
+}
+
+.social-links.on-dark a:hover {
+  background: rgb(255 255 255 / 0.14);
+  color: var(--color-text-on-teal);
+  text-decoration: none;
+}
+
+.social-links svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  fill: currentColor;
+}
+
 @media (max-width: 1023px) {
   .site-footer {
     padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
@@ -930,6 +972,12 @@ textarea {
   z-index: 1;
 }
 
+@media (max-width: 767px) {
+  .host-photo {
+    overflow: hidden;
+  }
+}
+
 .enquire-panel {
   overflow: hidden;
   isolation: isolate;
@@ -1098,6 +1146,11 @@ textarea {
 
   .split.reverse .split-photo {
     order: 2;
+  }
+
+  /* The wash hangs 19% of the photo column into the gap. Hold a 2.5rem gutter. */
+  .split:has(.host-wash) .split-copy {
+    padding-right: max(0px, calc(19% - 3.5rem));
   }
 }
 

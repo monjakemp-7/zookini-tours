@@ -7,15 +7,14 @@ export const site = {
   phoneDisplay: "+27 82 334 8854",
   phoneTel: "+27823348854",
   whatsappNumber: "27823348854",
-  address: "10A Foxglove Street, Paarl",
+  address: "2 Fortune Street, D'Grande Vredenburg Estate, Vrykyk, Paarl, 7646",
   region: "Cape Winelands, South Africa",
   copyright: "© 2012 to 2026 Zookini Tours",
 } as const;
 
 /**
  * TODO confirm before the next wording pass:
- * - The live business listing gives 10A Foxglove Street, Paarl, 7690.
- *   An earlier line on this site said Boschenmeer Estate. Confirm the public address.
+ * - Address confirmed by Monja: 2 Fortune Street, D'Grande Vredenburg Estate, Vrykyk, Paarl, 7646.
  * - No About page and no testimonials page exist on zookini.co.za.
  *   The Rosalind Massow line is on the contact page. Guest reviews are not published.
  * - Pickup is not published for any journey.
@@ -24,10 +23,12 @@ export const site = {
  *   while the visits are Garden Route places. Stays are left to the quote.
  * - The bushveld safari is described as exclusive for young people. No age range is given.
  * - Unnamed awards (a vineyard, a protea farm, "finest wines") are left out until they can be named.
- * - SBS is only a name on the corporate page. No logo, and no way to tell which company it is.
  * - Client logos: KPMG wordmark from the KPMG file on Wikimedia (kpmg.com blue #003087).
  *   HORSCH wordmark from horsch.com (logo_footer.svg). PSG from the psg.co.za header SVG.
- *   TERRATILL wordmark cropped from the white logo on terratill.co.za. SBS stays as text.
+ *   TERRATILL wordmark cropped from the white logo on terratill.co.za.
+ *   STADIO (formerly SBS) from stadio.ac.za/themes/stadio/logo.svg. The word is white
+ *   in that file, so the saved marks use #3E5559 for the word. Colour squares stay
+ *   on the hover file.
  */
 
 export const socials = [
@@ -82,7 +83,7 @@ export const hostStory = {
 export const aboutStory = {
   title: "Every tour is made for the group in front of us.",
   paragraphs: [
-    "The house is at 10A Foxglove Street, Paarl. Journeys run through Cape Town, the West Coast, the Overberg, the Garden Route, the bushveld near Kruger, and the Northern and Central Drakensberg.",
+    "The house is at 2 Fortune Street, D'Grande Vredenburg Estate, Vrykyk, Paarl, 7646. Journeys run through Cape Town, the West Coast, the Overberg, the Garden Route, the bushveld near Kruger, and the Northern and Central Drakensberg.",
     "Anita founded Zookini. Our team plans the journeys and answers every enquiry.",
     "South Africa holds a great deal in a short distance: landscapes, wildlife, food and wine, and a culture with many strands. Our team is part of that rainbow nation, which is how we can open the country to a guest.",
   ],
@@ -319,7 +320,10 @@ export const clients = [
     colorLogo: "/clients/kpmg-color.svg",
   },
   {
-    name: "SBS",
+    name: "STADIO",
+    alt: "STADIO (formerly SBS)",
+    logo: "/clients/stadio.svg",
+    colorLogo: "/clients/stadio-color.svg",
   },
   {
     name: "HORSCH",

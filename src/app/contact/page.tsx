@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { site, socials, whatsappHref, defaultWhatsAppMessage } from "@/content/site";
+import { SocialLinks } from "@/components/SocialLinks";
+import { site, whatsappHref, defaultWhatsAppMessage } from "@/content/site";
 
 export const metadata = {
   title: "Contact",
@@ -35,15 +36,7 @@ export default function ContactPage() {
           <a className="btn btn-line hidden lg:inline-flex" href={whatsappHref(defaultWhatsAppMessage)}>
             WhatsApp
           </a>
-          <ul className="flex flex-wrap gap-4 pt-1 text-sm">
-            {socials.map((social) => (
-              <li key={social.href}>
-                <a href={social.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
-                  {social.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <SocialLinks className="pt-1" />
           <p className="text-sm">
             <Link href="/enquire" className="underline underline-offset-4">
               Send dates and a group size

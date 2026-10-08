@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SocialLinks } from "@/components/SocialLinks";
 import { communityFeed, type CommunityTile } from "@/content/community";
 
 type CommunityGridProps = {
@@ -6,7 +7,7 @@ type CommunityGridProps = {
 };
 
 export function CommunityGrid({ tiles }: CommunityGridProps) {
-  const { title, handle, profileUrl, cta } = communityFeed;
+  const { title, handle } = communityFeed;
 
   return (
     <section className="band ig-band bg-white" aria-labelledby="community-heading">
@@ -15,9 +16,7 @@ export function CommunityGrid({ tiles }: CommunityGridProps) {
           <h2 id="community-heading" className="section-title">
             {title}
           </h2>
-          <a className="btn btn-line shrink-0" href={profileUrl} target="_blank" rel="noopener noreferrer">
-            {cta}
-          </a>
+          <SocialLinks only="Instagram" className="shrink-0" />
         </div>
         <ul className="ig-row">
           {tiles.map((tile) => (
