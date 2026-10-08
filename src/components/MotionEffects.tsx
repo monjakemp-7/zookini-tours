@@ -119,7 +119,7 @@ export function MotionEffects() {
             polaroidObserver.unobserve(entry.target);
           });
         },
-        { threshold: 0.22, rootMargin: "0px 0px -4% 0px" },
+        { threshold: 0.08, rootMargin: "0px 0px -2% 0px" },
       );
       polaroids.forEach((frame) => {
         if (inView(frame)) frame.classList.add("is-settled");
