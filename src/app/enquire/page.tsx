@@ -5,7 +5,7 @@ import { site, whatsappHref, defaultWhatsAppMessage } from "@/content/site";
 
 export const metadata = {
   title: "Enquire",
-  description: "Ask Anita about a Zookini tour, a corporate breakaway, or a school trip.",
+  description: "Ask us about a Zookini tour, a corporate breakaway, or a school trip.",
 };
 
 export default function EnquirePage({
@@ -17,19 +17,19 @@ export default function EnquirePage({
     <>
       <PageHero
         eyebrow="Enquire"
-        title="Tell us what you want to celebrate"
-        lede="A short note is enough. Anita replies in person — there is no cart and no calendar to fight with."
+        title="A short note is enough"
+        lede="We reply in person. Tell us who is coming, and the dates you have in mind."
       />
       <section className="band">
         <div className="wrap grid gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
           <div id="enquire" className="enquire-panel rounded-[var(--radius-lg)] bg-white p-5 md:p-8">
-            <Suspense fallback={<p>Loading the form…</p>}>
+            <Suspense fallback={<p>Loading the form.</p>}>
               <EnquireWithTour searchParams={searchParams} />
             </Suspense>
           </div>
           <aside className="hidden space-y-3 lg:block">
             <h2 className="text-xl">Prefer to talk?</h2>
-            <a className="btn btn-solid btn-block" href={whatsappHref(defaultWhatsAppMessage)}>
+            <a className="btn btn-line btn-block" href={whatsappHref(defaultWhatsAppMessage)}>
               WhatsApp
             </a>
             <a className="btn btn-line btn-block" href={`tel:${site.phoneTel}`}>

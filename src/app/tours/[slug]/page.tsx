@@ -3,8 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EnquireForm } from "@/components/EnquireForm";
-import { bookingGlance, tourWhatsAppMessage, whatsappHref } from "@/content/site";
-import { getTour, themeLabel, tours } from "@/content/tours";
+import { ExperienceCarousel } from "@/components/ExperienceCarousel";
+import { FactBar } from "@/components/FactBar";
+import { PhotoStrip } from "@/components/PhotoStrip";
+import { PolaroidPhoto } from "@/components/PolaroidPhoto";
+import { galleryFor } from "@/content/photos";
+import { bookingGlance, tourTailor, tourWhatsAppMessage, whatsappHref } from "@/content/site";
+import { getRelatedTours, getTour, themeLabel, tours } from "@/content/tours";
 
 export function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.slug }));
@@ -29,17 +34,19 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
   const tour = getTour(slug);
   if (!tour) notFound();
 
+  const gallery = galleryFor(tour.slug);
+  const highlightsPhoto = gallery[0];
+  const enquirePhoto = gallery[2] ?? gallery[1];
+  const lead = tour.story.slice(0, 2);
+  const more = tour.story.slice(2);
+  const related = getRelatedTours(tour.slug);
+
   return (
     <article>
-      <section className="page-hero has-photo">
-        <Image
-          src={tour.image}
-          alt={tour.imageAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+      <section className="page-hero has-photo is-short">
+        <div className="parallax-frame" data-parallax>
+          <Image src={tour.image} alt={tour.imageAlt} fill priority sizes="100vw" className="object-cover" />
+        </div>
         <div className="hero-scrim" aria-hidden="true" />
         <div className="intro wrap relative z-10 py-8 md:py-10">
           <p className="eyebrow light">{themeLabel(tour.themes[0])}</p>
@@ -48,118 +55,168 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
-      <div className="wrap grid gap-8 py-[var(--space-5)] lg:grid-cols-[minmax(0,1fr)_16rem] lg:py-[var(--space-6)]">
-        <div className="space-y-8">
-          <div className="max-w-2xl space-y-4">
-            {tour.story.map((paragraph) => (
+      <FactBar
+        facts={[
+          { label: "Duration", value: tour.duration },
+          { label: "Group size", value: tour.groupSize },
+          { label: "Region", value: tour.region },
+        ]}
+        whatsappHref={whatsappHref(tourWhatsAppMessage(tour.title))}
+      />
+      <section className="band" aria-labelledby="highlights-heading">
+        <div className="wrap">
+          <div className="split">
+            <div className="split-copy">
+              {tour.note ? <p className="text-sm">{tour.note}</p> : null}
+              <h2 id="highlights-heading" className="section-title">
+                On this tour
+              </h2>
+              <p>{tour.special}</p>
+              <ul className="list-disc space-y-2 pl-5">
+                {tour.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <PolaroidPhoto
+              photo={highlightsPhoto}
+              tilt="left"
+              className="split-photo"
+              sizes="(min-width: 768px) 42vw, 92vw"
+            />
+          </div>
+          <div className="story">
+            {lead.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            {more.length > 0 ? (
+              <details className="read-more">
+                <summary>Read more</summary>
+                <div className="mt-3 space-y-3">
+                  {more.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </details>
+            ) : null}
           </div>
+        </div>
+      </section>
 
-          <dl className="fact-strip">
-            <div>
-              <dt>Duration</dt>
-              <dd>{tour.duration}</dd>
-            </div>
-            <div>
-              <dt>Group size</dt>
-              <dd>{tour.groupSize}</dd>
-            </div>
-            <div>
-              <dt>Region</dt>
-              <dd>{tour.region}</dd>
-            </div>
-          </dl>
-          {tour.note ? <p className="text-sm">{tour.note}</p> : null}
+      <div className="wrap-wide pb-[var(--space-7)]">
+        <PhotoStrip photos={gallery} />
+      </div>
 
-          <section aria-labelledby="highlights-heading">
-            <h2 id="highlights-heading" className="section-title">
-              Highlights
+      <section className="band bg-white" aria-labelledby="itinerary-heading">
+        <div className="wrap">
+          <h2 id="itinerary-heading" className="section-title">
+            Itinerary outline
+          </h2>
+          <p className="mt-2 max-w-xl text-sm">
+            These are the experiences named for this tour. A day-by-day order is not published. We shape the final
+            plan around your group.
+          </p>
+          <div className="timeline">
+            {tour.itinerary.map((day, index) => (
+              <details key={day.day} className="day" open={index === 0}>
+                <summary>
+                  <span className="day-node" aria-hidden="true" />
+                  <span className="day-copy">
+                    <span className="day-kicker">{day.day}</span>
+                    <span className="day-title">{day.title}</span>
+                  </span>
+                  <span className="day-mark" aria-hidden="true" />
+                </summary>
+                <p className="day-body">{day.body}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="band" aria-labelledby="included-heading">
+        <div className="wrap grid gap-[var(--space-6)] md:grid-cols-2">
+          <div>
+            <h2 id="included-heading" className="section-title">
+              Includes
             </h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5">
-              {tour.highlights.map((item) => (
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
+              {tour.includes.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </section>
-
-          <section aria-labelledby="itinerary-heading">
-            <h2 id="itinerary-heading" className="section-title">
-              Itinerary outline
-            </h2>
-            <p className="mt-2 max-w-xl text-sm">
-              A sketch of the days, not a fixed clock. Anita shapes the final plan around your group.
-            </p>
-            <div className="timeline">
-              {tour.itinerary.map((day, index) => (
-                <details key={day.day} className="day" open={index === 0}>
-                  <summary>
-                    <span className="day-node" aria-hidden="true" />
-                    <span className="day-copy">
-                      <span className="day-kicker">{day.day}</span>
-                      <span className="day-title">{day.title}</span>
-                    </span>
-                    <span className="day-mark" aria-hidden="true" />
-                  </summary>
-                  <p className="day-body">{day.body}</p>
-                </details>
+            <h2 className="section-title mt-8">Excludes</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
+              {tour.excludes.map((item) => (
+                <li key={item}>{item}</li>
               ))}
-            </div>
-          </section>
-
-          <section className="grid gap-8 md:grid-cols-2" aria-labelledby="included-heading">
-            <div>
-              <h2 id="included-heading" className="text-xl">
-                Includes
-              </h2>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm">
-                {tour.includes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="section-title">Who it suits</h2>
+            <p className="mt-3">{tour.suits}</p>
+            {tour.practical.some((item) => !item.startsWith("These are the experiences")) ? (
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
+                {tour.practical
+                  .filter((item) => !item.startsWith("These are the experiences"))
+                  .map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
               </ul>
-            </div>
-            <div>
-              <h2 className="text-xl">Excludes</h2>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm">
-                {tour.excludes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </section>
-
-          <section aria-labelledby="glance-heading">
-            <h2 id="glance-heading" className="section-title">
-              Booking at a glance
-            </h2>
+            ) : null}
+            <h2 className="section-title mt-8">Booking at a glance</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5">
               {bookingGlance.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
             <p className="mt-4">
-              <Link href="/policies" className="underline underline-offset-4">
-                Read the booking policies
+              <Link className="text-link" href="/policies">
+                How booking works
               </Link>
             </p>
-          </section>
-
-          <section id="enquire" className="enquire-panel rounded-[var(--radius-lg)] bg-white p-5 md:p-8" aria-labelledby="enquire-heading">
-            <EnquireForm defaultTour={tour.slug} heading="Send a note" />
-          </section>
-        </div>
-
-        <aside className="hidden lg:block">
-          <div className="sticky top-28 flex flex-col gap-3 rounded-[var(--radius-lg)] border border-[var(--color-teal-accent)] bg-white p-4">
-            <a className="btn btn-solid" href="#enquire">
-              Enquire
-            </a>
-            <a className="btn btn-line" href={whatsappHref(tourWhatsAppMessage(tour.title))}>
-              WhatsApp
-            </a>
           </div>
-        </aside>
-      </div>
+        </div>
+      </section>
+
+      <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="tailor-heading">
+        <div className="wrap">
+          <h2 id="tailor-heading" className="section-title text-white">
+            Can we change this tour?
+          </h2>
+          <p className="mt-4 max-w-xl text-white/90">{tourTailor}</p>
+        </div>
+      </section>
+
+      <section id="enquire" className="band" aria-labelledby="ready-heading">
+        <div className="wrap split">
+          <div className="enquire-panel rounded-[var(--radius-lg)] bg-white p-5 md:p-8">
+            <h2 id="ready-heading" className="section-title">
+              Ready to celebrate?
+            </h2>
+            <div className="mt-4">
+              <EnquireForm defaultTour={tour.slug} heading="" />
+            </div>
+          </div>
+          <PolaroidPhoto
+            photo={enquirePhoto}
+            tilt="right"
+            className="split-photo"
+            sizes="(min-width: 768px) 40vw, 92vw"
+          />
+        </div>
+      </section>
+
+      <section className="band bg-white" aria-labelledby="related-heading">
+        <div className="wrap-wide">
+          <h2 id="related-heading" className="section-title">
+            Other tours you may like
+          </h2>
+          <div className="mt-6">
+            <ExperienceCarousel tours={related} label="Other tours you may like" />
+          </div>
+        </div>
+      </section>
     </article>
   );
 }

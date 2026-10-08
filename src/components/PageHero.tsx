@@ -6,20 +6,23 @@ type PageHeroProps = {
   lede: string;
   image?: string;
   imageAlt?: string;
+  short?: boolean;
 };
 
-export function PageHero({ eyebrow, title, lede, image, imageAlt }: PageHeroProps) {
+export function PageHero({ eyebrow, title, lede, image, imageAlt, short = false }: PageHeroProps) {
   return (
-    <section className={`page-hero${image ? " has-photo" : ""}`}>
+    <section className={`page-hero${image ? " has-photo" : ""}${short ? " is-short" : ""}`}>
       {image ? (
-        <Image
-          src={image}
-          alt={imageAlt ?? ""}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        <div className="parallax-frame" data-parallax>
+          <Image
+            src={image}
+            alt={imageAlt ?? ""}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
       ) : null}
       <div className="hero-scrim" aria-hidden="true" />
       <div className="intro wrap relative z-10 py-[var(--space-6)] md:py-[var(--space-7)]">

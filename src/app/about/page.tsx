@@ -1,36 +1,55 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { PageHero } from "@/components/PageHero";
-import { site } from "@/content/site";
+import { PolaroidPhoto } from "@/components/PolaroidPhoto";
+import { photos } from "@/content/photos";
+import { aboutStory } from "@/content/site";
 
 export const metadata = {
   title: "About",
   description:
-    "Zookini Tours is a boutique house in the Cape Winelands, hand-crafting leisure, corporate, and educational journeys.",
+    "Zookini Tours plans leisure, corporate, and school journeys from Paarl. Someone on the team answers every enquiry.",
 };
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About"
-        title="A small house with a long table"
-        lede="People, food, nature, art, and wine — the things that give a day its meaning."
-      />
-      <section className="band">
-        <div className="wrap grid items-start gap-8 md:grid-cols-[12rem_1fr]">
-          <Logo variant="colour" className="h-auto w-48" />
-          <div className="max-w-2xl space-y-3">
-            <p>Every tour is made for the group in front of us.</p>
-            <p>
-              The house is at {site.address}. Journeys run through Cape Town, the West Coast, the Overberg, the
-              Garden Route, the bushveld, and the Drakensberg.
-            </p>
-            <p>Anita is the person on the phone and in the inbox. There is no call centre between you and the plan.</p>
-            <Link className="btn btn-line mt-2" href="/tours">
-              Browse tours
+      <section className="band" aria-labelledby="about-heading">
+        <div className="wrap split">
+          <PolaroidPhoto
+            photo={photos.overberg}
+            tilt="right"
+            tape
+            priority
+            className="split-photo"
+            sizes="(min-width: 768px) 42vw, 92vw"
+          />
+          <div className="split-copy">
+            <Logo variant="colour" className="h-auto w-40" />
+            <p className="eyebrow">About</p>
+            <h1 id="about-heading" className="section-title">
+              {aboutStory.title}
+            </h1>
+            {aboutStory.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <Link className="text-link" href="/tours">
+              See the journeys
             </Link>
           </div>
+        </div>
+      </section>
+      <section className="band bg-white" aria-labelledby="approach-heading">
+        <div className="wrap">
+          <h2 id="approach-heading" className="section-title">
+            {aboutStory.approachTitle}
+          </h2>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            {aboutStory.approach.map((item) => (
+              <li key={item} className="rounded-[var(--radius-md)] border border-[var(--color-teal-accent)] bg-[var(--color-surface-offwhite)] p-4">
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>
