@@ -4,7 +4,9 @@ import { site, socials } from "@/content/site";
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
+    <>
+      <div className="footer-ridge" aria-hidden="true" />
+      <footer className="site-footer">
       <div className="wrap grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-start">
         <Logo variant="white" className="h-auto w-36" />
         <div>
@@ -36,5 +38,6 @@ export function SiteFooter() {
         <Link href="/policies">Policies</Link>
       </div>
     </footer>
+    </>
   );
 }

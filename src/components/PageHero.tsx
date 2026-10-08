@@ -10,7 +10,7 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, lede, image, imageAlt }: PageHeroProps) {
   return (
-    <section className="page-hero">
+    <section className={`page-hero${image ? " has-photo" : ""}`}>
       {image ? (
         <Image
           src={image}
@@ -22,7 +22,7 @@ export function PageHero({ eyebrow, title, lede, image, imageAlt }: PageHeroProp
         />
       ) : null}
       <div className="hero-scrim" aria-hidden="true" />
-      <div className="intro wrap relative z-10 py-8 md:py-10">
+      <div className="intro wrap relative z-10 py-[var(--space-6)] md:py-[var(--space-7)]">
         <p className="eyebrow light">{eyebrow}</p>
         <h1 className="display text-white">{title}</h1>
         <p className="lede light">{lede}</p>

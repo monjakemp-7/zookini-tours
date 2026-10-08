@@ -23,7 +23,7 @@ export default function ToursPage({
         image="/images/cape-town.jpg"
         imageAlt="Cape Town beneath Table Mountain"
       />
-      <section className="band">
+      <section className="band contour-band">
         <div className="wrap-wide">
           <Suspense fallback={<TourMosaic tours={tours} />}>
             <FilteredTours searchParams={searchParams} />

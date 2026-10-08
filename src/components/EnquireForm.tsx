@@ -52,63 +52,69 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
   }
 
   return (
-    <form className="grid gap-4" onSubmit={onSubmit} noValidate={false}>
+    <form className="form" onSubmit={onSubmit} noValidate={false}>
       <div>
         <h2 className="section-title" id="enquire-heading">
           {heading}
         </h2>
         <p className="mt-2 max-w-xl text-sm">Fields marked * are required.</p>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="field" htmlFor="enquiry-name">
-          <span className="field-label">Name *</span>
-          <input id="enquiry-name" name="name" autoComplete="name" required />
-        </label>
-        <label className="field" htmlFor="enquiry-email">
-          <span className="field-label">Email *</span>
-          <input id="enquiry-email" name="email" type="email" autoComplete="email" required />
-        </label>
-        <label className="field" htmlFor="enquiry-phone">
-          <span className="field-label">Phone *</span>
-          <input id="enquiry-phone" name="phone" type="tel" autoComplete="tel" required />
-        </label>
-        <label className="field" htmlFor="enquiry-tour">
-          <span className="field-label">Tour or pillar *</span>
-          <select id="enquiry-tour" name="tour" defaultValue={initialTour} required>
-            {enquiryOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="field" htmlFor="enquiry-from">
-          <span className="field-label">Preferred start</span>
-          <input id="enquiry-from" name="dateFrom" type="date" />
-        </label>
-        <label className="field" htmlFor="enquiry-to">
-          <span className="field-label">Preferred end</span>
-          <input id="enquiry-to" name="dateTo" type="date" />
-        </label>
-        <label className="field sm:col-span-2" htmlFor="enquiry-group">
-          <span className="field-label">Group size</span>
-          <input
-            id="enquiry-group"
-            name="groupSize"
-            type="number"
-            min={1}
-            inputMode="numeric"
-            placeholder="Usually 12–16"
-          />
-        </label>
-        <label className="field sm:col-span-2" htmlFor="enquiry-message">
-          <span className="field-label">Message</span>
-          <textarea
-            id="enquiry-message"
-            name="message"
-            placeholder="Who is travelling, and what you hope the days will feel like."
-          />
-        </label>
+      <div className="form-groups">
+        <div className="form-group">
+          <label className="field" htmlFor="enquiry-name">
+            <span className="field-label">Name *</span>
+            <input id="enquiry-name" name="name" autoComplete="name" required />
+          </label>
+          <label className="field" htmlFor="enquiry-email">
+            <span className="field-label">Email *</span>
+            <input id="enquiry-email" name="email" type="email" autoComplete="email" required />
+          </label>
+          <label className="field" htmlFor="enquiry-phone">
+            <span className="field-label">Phone *</span>
+            <input id="enquiry-phone" name="phone" type="tel" autoComplete="tel" required />
+          </label>
+          <label className="field" htmlFor="enquiry-tour">
+            <span className="field-label">Tour or pillar *</span>
+            <select id="enquiry-tour" name="tour" defaultValue={initialTour} required>
+              {enquiryOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="form-group">
+          <label className="field" htmlFor="enquiry-from">
+            <span className="field-label">Preferred start</span>
+            <input id="enquiry-from" name="dateFrom" type="date" />
+          </label>
+          <label className="field" htmlFor="enquiry-to">
+            <span className="field-label">Preferred end</span>
+            <input id="enquiry-to" name="dateTo" type="date" />
+          </label>
+        </div>
+        <div className="form-group">
+          <label className="field field-span" htmlFor="enquiry-group">
+            <span className="field-label">Group size</span>
+            <input
+              id="enquiry-group"
+              name="groupSize"
+              type="number"
+              min={1}
+              inputMode="numeric"
+              placeholder="Usually 12–16"
+            />
+          </label>
+          <label className="field field-span" htmlFor="enquiry-message">
+            <span className="field-label">Message</span>
+            <textarea
+              id="enquiry-message"
+              name="message"
+              placeholder="Who is travelling, and what you hope the days will feel like."
+            />
+          </label>
+        </div>
       </div>
       <button className="btn btn-solid w-fit" type="submit">
         Email Anita

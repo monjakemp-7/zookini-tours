@@ -22,7 +22,7 @@ export default function EnquirePage({
       />
       <section className="band">
         <div className="wrap grid gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
-          <div id="enquire" className="rounded-[var(--radius-lg)] bg-white p-4 md:p-6">
+          <div id="enquire" className="enquire-panel rounded-[var(--radius-lg)] bg-white p-5 md:p-8">
             <Suspense fallback={<p>Loading the form…</p>}>
               <EnquireWithTour searchParams={searchParams} />
             </Suspense>

@@ -31,7 +31,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
 
   return (
     <article>
-      <section className="page-hero min-h-80">
+      <section className="page-hero has-photo">
         <Image
           src={tour.image}
           alt={tour.imageAlt}
@@ -90,16 +90,18 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             <p className="mt-2 max-w-xl text-sm">
               A sketch of the days, not a fixed clock. Anita shapes the final plan around your group.
             </p>
-            <div className="mt-2">
+            <div className="timeline">
               {tour.itinerary.map((day, index) => (
                 <details key={day.day} className="day" open={index === 0}>
                   <summary>
-                    <span>
-                      {day.day} — {day.title}
+                    <span className="day-node" aria-hidden="true" />
+                    <span className="day-copy">
+                      <span className="day-kicker">{day.day}</span>
+                      <span className="day-title">{day.title}</span>
                     </span>
-                    <span aria-hidden="true">+</span>
+                    <span className="day-mark" aria-hidden="true" />
                   </summary>
-                  <p className="pb-4 text-sm">{day.body}</p>
+                  <p className="day-body">{day.body}</p>
                 </details>
               ))}
             </div>
@@ -142,13 +144,13 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             </p>
           </section>
 
-          <section id="enquire" className="rounded-[var(--radius-lg)] bg-white p-4 md:p-6" aria-labelledby="enquire-heading">
+          <section id="enquire" className="enquire-panel rounded-[var(--radius-lg)] bg-white p-5 md:p-8" aria-labelledby="enquire-heading">
             <EnquireForm defaultTour={tour.slug} heading="Send a note" />
           </section>
         </div>
 
         <aside className="hidden lg:block">
-          <div className="sticky top-28 flex flex-col gap-3 rounded-[var(--radius-lg)] bg-white p-4 shadow-sm">
+          <div className="sticky top-28 flex flex-col gap-3 rounded-[var(--radius-lg)] border border-[var(--color-teal-accent)] bg-white p-4">
             <a className="btn btn-solid" href="#enquire">
               Enquire
             </a>

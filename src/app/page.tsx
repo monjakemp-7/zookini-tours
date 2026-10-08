@@ -31,30 +31,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section aria-label="What we celebrate" className="border-b border-[var(--color-teal-accent)] bg-white">
-        <ul className="wrap flex flex-wrap justify-between gap-x-4 gap-y-2 py-3 text-sm tracking-[0.16em] text-[var(--color-teal-dark)] uppercase">
+      <section aria-label="What we celebrate" className="senses">
+        <ul className="wrap relative z-10 flex flex-wrap justify-between gap-x-6 gap-y-2 px-0 pt-4 pb-10 text-sm tracking-[0.2em] text-[var(--color-teal-ink)] uppercase">
           {senses.map((sense) => (
             <li key={sense}>{sense}</li>
           ))}
         </ul>
       </section>
 
-      <section className="band" aria-labelledby="pillars-heading">
+      <section className="band contour-band" aria-labelledby="pillars-heading">
         <div className="wrap">
           <h2 id="pillars-heading" className="section-title">
             Three ways to celebrate
           </h2>
-          <ul className="mt-6 grid list-none gap-4 p-0 md:grid-cols-3">
+          <ul className="mt-8 grid list-none gap-[var(--space-5)] p-0 md:grid-cols-3">
             {pillars.map((pillar) => (
               <li key={pillar.href}>
                 <Link href={pillar.href} className="card flex h-full flex-col">
-                  <div className="relative aspect-[4/3]">
+                  <div className="card-media relative aspect-[4/3]">
                     <Image
                       src={pillar.image}
                       alt={pillar.imageAlt}
                       fill
                       sizes="(min-width: 768px) 30vw, 100vw"
-                      className="object-cover"
+                      className="card-photo object-cover"
                     />
                   </div>
                   <div className="flex flex-col gap-2 p-4">
@@ -74,7 +74,7 @@ export default function HomePage() {
             <h2 id="journeys-heading" className="section-title">
               Find your celebration
             </h2>
-            <Link href="/tours" className="text-sm tracking-wide text-[var(--color-teal-dark)] uppercase">
+            <Link href="/tours" className="text-sm tracking-[0.16em] text-[var(--color-teal-ink)] uppercase">
               See all tours
             </Link>
           </div>
@@ -84,15 +84,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="band bg-[var(--color-teal-ink)] text-white" aria-labelledby="steps-heading">
+      <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="steps-heading">
         <div className="wrap">
           <h2 id="steps-heading" className="section-title text-white">
             How a tour comes together
           </h2>
-          <ol className="mt-6 grid list-none gap-6 p-0 md:grid-cols-3">
+          <ol className="steps-list mt-8 grid list-none gap-[var(--space-6)] p-0 md:grid-cols-3">
             {steps.map((step) => (
               <li key={step.number}>
-                <p className="font-[family-name:var(--font-display)] text-sm tracking-[0.16em] text-[var(--color-logo-sky)]">
+                <p className="step-index font-[family-name:var(--font-display)] text-sm tracking-[0.2em] text-white">
                   {step.number}
                 </p>
                 <h3 className="mt-2 text-xl text-white">{step.title}</h3>
@@ -106,7 +106,7 @@ export default function HomePage() {
       <CommunityGrid tiles={communityTiles} />
 
       <section className="band" aria-labelledby="host-heading">
-        <div className="wrap grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
+        <div className="wrap grid items-center gap-[var(--space-6)] md:grid-cols-[1.05fr_0.95fr] md:gap-[var(--space-8)]">
           <div>
             <h2 id="host-heading" className="section-title">
               Anita still answers.
@@ -126,14 +126,17 @@ export default function HomePage() {
               <footer className="mt-2 text-sm">Rosalind Massow</footer>
             </blockquote>
           </div>
-          <div className="relative min-h-64 overflow-hidden rounded-[var(--radius-lg)]">
-            <Image
-              src="/images/foodie.jpg"
-              alt="A table laid for a shared meal"
-              fill
-              sizes="(min-width: 768px) 40vw, 100vw"
-              className="object-cover"
-            />
+          <div className="host-photo">
+            <div className="host-wash" aria-hidden="true" />
+            <div className="host-frame relative min-h-80 overflow-hidden rounded-[var(--radius-lg)] md:min-h-[28rem]">
+              <Image
+                src="/images/foodie.jpg"
+                alt="A table laid for a shared meal"
+                fill
+                sizes="(min-width: 768px) 46vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
