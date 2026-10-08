@@ -8,7 +8,7 @@ import { tours } from "@/content/tours";
 export const metadata = {
   title: "Tours",
   description:
-    "Hand-crafted Zookini journeys: Cape Town, fynbos, food, art, wine, the Garden Route, bushveld, and the Drakensberg.",
+    "Zookini journeys: Cape Town, fynbos, food, art, wine, the Garden Route, bushveld, and the Drakensberg.",
 };
 
 export default function ToursPage() {
@@ -17,8 +17,8 @@ export default function ToursPage() {
       <PageHero
         short
         eyebrow="Leisure"
-        title="Tours with a point of view"
-        lede="Theme-led journeys for 12 to 16 guests."
+        title="The journeys"
+        lede="Many tours hold 12 to 16 guests. Some can take a larger group."
         image={photos.capeTown.src}
         imageAlt={photos.capeTown.alt}
       />
@@ -41,7 +41,7 @@ export default function ToursPage() {
       <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="handcraft-heading">
         <div className="wrap center-block">
           <h2 id="handcraft-heading" className="section-title text-white">
-            Do not see your celebration? We will hand-craft it
+            Do not see your celebration? We will plan it
           </h2>
           <div className="hero-actions">
             <Link className="btn btn-solid" href="/enquire">

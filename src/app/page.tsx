@@ -24,10 +24,10 @@ export default function HomePage() {
         />
         <div className="hero-scrim" aria-hidden="true" />
         <div className="intro center relative z-10 text-white">
-          <p className="eyebrow light">Cape Winelands · Hand-crafted tours</p>
+          <p className="eyebrow light">Cape Winelands. Small-group tours.</p>
           <h1 className="display text-white">Celebrating Life!</h1>
           <p className="lede light">
-            Boutique South African tours for leisure travellers, teams, and schools.
+            Small South African tours for leisure travellers, teams, and schools.
           </p>
           <div className="hero-actions">
             <Link className="btn btn-solid" href="/enquire">

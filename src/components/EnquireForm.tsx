@@ -35,7 +35,7 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
       `Name: ${name}`,
       `Email: ${email}`,
       `Phone: ${phone}`,
-      `Tour or pillar: ${tourName}`,
+      `Planning: ${tourName}`,
       `Dates: ${dateFrom || "Flexible"}${dateTo ? ` to ${dateTo}` : ""}`,
       `Group size: ${groupSize || "Not sure yet"}`,
       ``,
@@ -76,7 +76,7 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
             <input id="enquiry-phone" name="phone" type="tel" autoComplete="tel" required />
           </label>
           <label className="field" htmlFor="enquiry-tour">
-            <span className="field-label">Tour or pillar *</span>
+            <span className="field-label">What you are planning *</span>
             <select id="enquiry-tour" name="tour" defaultValue={initialTour} required>
               {enquiryOptions.map((option) => (
                 <option key={option.value} value={option.value}>

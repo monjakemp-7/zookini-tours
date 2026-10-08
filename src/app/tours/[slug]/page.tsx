@@ -66,7 +66,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             <div className="split-copy">
               {tour.note ? <p className="text-sm">{tour.note}</p> : null}
               <h2 id="highlights-heading" className="section-title">
-                What makes this special
+                On this tour
               </h2>
               <p>{tour.special}</p>
               <ul className="list-disc space-y-2 pl-5">
@@ -182,7 +182,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
       <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="tailor-heading">
         <div className="wrap">
           <h2 id="tailor-heading" className="section-title text-white">
-            Can this tour be tailored?
+            Can we change this tour?
           </h2>
           <p className="mt-4 max-w-xl text-white/90">{tourTailor}</p>
         </div>

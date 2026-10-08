@@ -18,7 +18,7 @@ export default function CorporatePage() {
       <PageHero
         short
         eyebrow="Corporate"
-        title="Take the team somewhere with a pulse"
+        title="Take the team away"
         lede={corporateStory.lede}
         image={photos.corporate.src}
         imageAlt={photos.corporate.alt}
@@ -101,7 +101,7 @@ export default function CorporatePage() {
       <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="tailor-heading">
         <div className="wrap">
           <h2 id="tailor-heading" className="section-title text-white">
-            Can this breakaway be tailored?
+            Can we change this breakaway?
           </h2>
           <p className="mt-4 max-w-xl text-white/90">{corporateStory.tailor}</p>
         </div>

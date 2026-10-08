@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: "Zookini Tours. Celebrating Life!",
-    template: "%s · Zookini Tours",
+    template: "%s. Zookini Tours",
   },
   description:
-    "Boutique South African tours, hand-crafted in the Cape Winelands for leisure travellers, teams, and schools.",
+    "Small South African tours, planned in the Cape Winelands for leisure travellers, teams, and schools.",
   openGraph: {
     title: "Zookini Tours. Celebrating Life!",
     description:
-      "Hand-crafted South African tours for leisure travellers, teams, and schools.",
+      "Small South African tours for leisure travellers, teams, and schools.",
     locale: "en_ZA",
     type: "website",
     siteName: "Zookini Tours",
@@ -53,7 +53,7 @@ const jsonLd = {
   telephone: site.phoneTel,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "701 Boschenmeer Estate",
+    streetAddress: "10A Foxglove Street",
     addressLocality: "Paarl",
     addressCountry: "ZA",
   },

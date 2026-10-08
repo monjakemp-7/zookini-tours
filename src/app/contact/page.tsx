@@ -13,7 +13,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Get in touch"
-        lede="Call, email, or send a WhatsApp. We look forward to helping you bring a trip to life."
+        lede="Call, email, or send a WhatsApp. Someone on the team will reply."
       />
       <section className="band">
         <div className="wrap max-w-xl space-y-4">

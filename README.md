@@ -48,7 +48,7 @@ Type: Raleway for display and labels, Futura / system sans for body, Cookie for 
 
 The official mark is the supplied sunburst: **ZOOKINI TOURS** arched above, **CELEBRATE LIFE!** below. Files: `public/logo-zookini.jpeg` (original), `public/logo-zookini.png` (white knocked out, for light grounds), and `public/logo-zookini-on-dark.png` (white wordmark, cyan sun, for teal bands). The header, footer, and About page use `src/components/Logo.tsx`. The browser icon is the sunburst; the apple touch icon is the full mark on off-white.
 
-Voice: a warm host. Leisure, corporate, and educational journeys. Small groups, usually 12–16, with a Tour Director.
+Voice: a warm host. Leisure, corporate, and educational journeys. Small groups, usually 12 to 16, with a Tour Director.
 
 ## Contact
 

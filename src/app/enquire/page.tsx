@@ -18,12 +18,12 @@ export default function EnquirePage({
       <PageHero
         eyebrow="Enquire"
         title="A short note is enough"
-        lede="We reply in person. There is no cart and no calendar to fight with."
+        lede="We reply in person. Tell us who is coming, and the dates you have in mind."
       />
       <section className="band">
         <div className="wrap grid gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
           <div id="enquire" className="enquire-panel rounded-[var(--radius-lg)] bg-white p-5 md:p-8">
-            <Suspense fallback={<p>Loading the form…</p>}>
+            <Suspense fallback={<p>Loading the form.</p>}>
               <EnquireWithTour searchParams={searchParams} />
             </Suspense>
           </div>

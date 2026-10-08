@@ -55,7 +55,7 @@ export function TourIndex({ tours }: { tours: Tour[] }) {
             />
           </div>
           <div className="split-copy">
-            <p className="eyebrow">Signature</p>
+            <p className="eyebrow">Women only</p>
             <h2 className="section-title">{signature.title}</h2>
             <p>{signature.hook}</p>
             <p>{signature.story[0]}</p>
@@ -69,8 +69,8 @@ export function TourIndex({ tours }: { tours: Tour[] }) {
       {visible.length === 0 ? (
         <p className="mt-8 max-w-lg">
           {showSignature
-            ? "That celebration is the signature tour above."
-            : "Nothing in that theme in this set. Tell us what you are celebrating and we will hand-craft it."}
+            ? "That weekend is the tour above."
+            : "Nothing in that theme in this set. Tell us what you are celebrating and we will plan it."}
         </p>
       ) : (
         <ul className="portrait-grid">

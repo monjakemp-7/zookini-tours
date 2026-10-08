@@ -66,9 +66,9 @@ export function tourWhatsAppMessage(title: string) {
 export const houseStory = {
   title: "A small house with a long table",
   paragraphs: [
-    "Zookini is a small house in the Winelands. We hand-craft leisure journeys, team breaks, and school trips.",
-    "Celebrating life, for us, is time given to people, food, nature, art, and wine. Those are the finer things that give a day its meaning. Every tour is built for the people in front of us, not pulled off a shelf.",
-    "Plenty of travellers search for a long time, or ask friends, and still come home without a memory they want to keep. We bring the ideas together and make the plan.",
+    "Zookini is a small house in the Winelands. We plan leisure journeys, team breaks, and school trips.",
+    "Celebrating life, for us, is time given to people, food, nature, art, and wine. Every tour is built for the people in front of us, not pulled off a shelf.",
+    "If you have been looking for a while, or asking friends, and still do not have a plan, write to us. We bring the ideas together.",
   ],
 } as const;
 
@@ -88,9 +88,9 @@ export const aboutStory = {
   ],
   approachTitle: "How a tour is made",
   approach: [
-    "Boutique tours, each one made for the group rather than repeated from a shelf.",
-    "Hand-selected excursions, including the road less travelled.",
-    "A personal approach, with time behind the scenes.",
+    "Each tour is made for the group, rather than repeated from a shelf.",
+    "We choose the stops for that group, including places a standard coach tour often skips.",
+    "There is time with the people and the places, not only the front door.",
     "A Zookini Tour Director travels with the group.",
   ],
 } as const;
@@ -186,7 +186,7 @@ export const pillars = [
   {
     href: "/tours",
     title: "Leisure",
-    promise: "Small-group journeys on the road less travelled.",
+    promise: "Small-group journeys in South Africa.",
     image: "/images/wine.jpg",
     imageAlt: "Two women toasting with wine glasses",
   },
@@ -214,8 +214,8 @@ export const steps = [
   },
   {
     number: "02",
-    title: "We hand-craft the plan",
-    body: "Rooms, tables, coaches, and the moment people remember.",
+    title: "We make the plan",
+    body: "Rooms, tables, and the coach.",
   },
   {
     number: "03",
@@ -234,7 +234,7 @@ export const corporateStory = {
     "Incentive programmes",
     "Team building",
     "End-of-year celebrations",
-    "Tailor-made tours with a theme",
+    "Tours built around a theme",
   ],
   clients: "We plan for the size of team you have.",
   kinds: [
@@ -248,7 +248,7 @@ export const corporateStory = {
     },
     {
       title: "Themed tours",
-      body: "An end-of-year celebration, a company visit with a theme, golf, a safari, or a gourmet tour.",
+      body: "An end-of-year celebration, a company visit with a theme, golf, a safari, or a food tour.",
     },
   ],
   activities: [
@@ -285,7 +285,7 @@ export const corporateStory = {
 export const educationalStory = {
   lede: "A plan that teachers do not have to carry alone.",
   intro:
-    "Every child remembers a school trip: learning and laughter, new friends, and a little more discovered about themselves and their classmates. They want days out that feel big, and activities where imagination can run.",
+    "Every child remembers a school trip: learning and laughter, new friends, and a little more found out about themselves and their classmates. They want days out that feel big, and activities where imagination can run.",
   classroom: [
     "Education can be fun",
     "Ideas show up more clearly outside the classroom",
@@ -308,7 +308,7 @@ export const educationalStory = {
 } as const;
 
 export const tourTailor =
-  "Yes. These journeys are written as tailored tours. Tell us who is coming and what you want the days to feel like. We shape the final plan around your group.";
+  "Yes. Tell us who is coming and what you want the days to feel like. We shape the final plan around your group.";
 
 export const senses = ["People", "Food", "Nature", "Art", "Wine"] as const;
 

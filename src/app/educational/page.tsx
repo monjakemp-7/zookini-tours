@@ -71,7 +71,7 @@ export default function EducationalPage() {
       <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="tailor-heading">
         <div className="wrap">
           <h2 id="tailor-heading" className="section-title text-white">
-            Can this trip be tailored?
+            Can we change this trip?
           </h2>
           <p className="mt-4 max-w-xl text-white/90">{educationalStory.tailor}</p>
         </div>
