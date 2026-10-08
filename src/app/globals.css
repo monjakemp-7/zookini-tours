@@ -435,6 +435,128 @@
   );
 }
 
+.home-hero .hero-scrim {
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 78% 50% at 50% 42%, rgb(36 52 56 / 0.84), rgb(36 52 56 / 0.18) 74%),
+    linear-gradient(to top, rgb(36 52 56 / 0.8), rgb(36 52 56 / 0.55) 48%, rgb(36 52 56 / 0.48));
+}
+
+.hero-stage,
+.parallax-frame {
+  position: absolute;
+  z-index: 0;
+  inset: -15% 0;
+  pointer-events: none;
+}
+
+.hero-slides,
+.hero-slide,
+.hero-ken {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  opacity: 0;
+}
+
+.hero-slides.is-live .hero-slide.is-active {
+  transition: opacity 1.8s ease;
+}
+
+.hero-slide.is-previous {
+  z-index: 1;
+  opacity: 1;
+}
+
+.hero-slide.is-active {
+  z-index: 2;
+  opacity: 1;
+}
+
+.hero-ken {
+  transform: scale(1.05);
+}
+
+.hero-slide.is-active .hero-ken {
+  animation: hero-ken 8s linear forwards;
+}
+
+.home-hero.is-paused .hero-ken {
+  animation-play-state: paused;
+}
+
+@keyframes hero-ken {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.hero-toggle {
+  position: absolute;
+  z-index: 3;
+  top: 5.6rem;
+  right: 1rem;
+  min-width: 4.75rem;
+  min-height: 2.75rem;
+  border: 1px solid rgb(255 255 255 / 0.55);
+  border-radius: 999px;
+  background: rgb(36 52 56 / 0.78);
+  padding: 0 0.9rem;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hero-toggle:hover,
+.hero-toggle:focus-visible {
+  background: rgb(36 52 56 / 0.92);
+}
+
+@media (min-width: 640px) {
+  .hero-toggle {
+    top: 7.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-slide.is-active .hero-ken,
+  .hero-ken {
+    animation: none;
+    transform: none;
+  }
+
+  .hero-toggle {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-ok .reveal {
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+  }
+
+  html.motion-ok .reveal:not(.is-in) {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  html.motion-ok .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .fact-strip {
   display: grid;
   gap: var(--space-3);

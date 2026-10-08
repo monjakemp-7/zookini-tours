@@ -2,10 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { CommunityGrid } from "@/components/CommunityGrid";
 import { ExperienceCarousel } from "@/components/ExperienceCarousel";
+import { HomeHero } from "@/components/HomeHero";
 import { TravelTabs } from "@/components/TravelTabs";
 import { getCommunityTiles } from "@/content/community";
 import { photos } from "@/content/photos";
-import { clients, defaultWhatsAppMessage, doors, hostStory, houseStory, steps, whatsappHref } from "@/content/site";
+import { clients, defaultWhatsAppMessage, hostStory, houseStory, steps, whatsappHref } from "@/content/site";
 import { getFeaturedTours } from "@/content/tours";
 
 export default function HomePage() {
@@ -13,47 +14,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="home-hero on-photo relative isolate overflow-hidden">
-        <Image
-          src={photos.hero.src}
-          alt={photos.hero.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="hero-scrim" aria-hidden="true" />
-        <div className="intro center relative z-10 text-white">
-          <p className="eyebrow light">Cape Winelands. Small-group tours.</p>
-          <h1 className="display text-white">Celebrating Life!</h1>
-          <p className="lede light">
-            Small South African tours for leisure travellers, teams, and schools.
-          </p>
-          <div className="hero-actions">
-            <Link className="btn btn-solid" href="/enquire">
-              Enquire
-            </Link>
-            <a className="btn btn-line" href="#tours">
-              Explore tours
-            </a>
-          </div>
-        </div>
-        <nav className="offer-bar" aria-label="Ways to travel">
-          <ul className="offer-doors">
-            {doors.map((door) => (
-              <li key={door.href}>
-                <Link className="offer-door" href={door.href}>
-                  <span className="offer-label">{door.label}</span>
-                  <span className="offer-line">{door.line}</span>
-                  <span className="offer-arrow" aria-hidden="true">
-                    →
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </section>
+      <HomeHero />
 
       <section className="band" aria-labelledby="house-heading">
         <div className="wrap split">
@@ -97,13 +58,15 @@ export default function HomePage() {
       </section>
 
       <section className="photo-break on-photo" aria-label="People, food, nature, art, and wine">
-        <Image
-          src={photos.winelands.src}
-          alt={photos.winelands.alt}
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
+        <div className="parallax-frame" data-parallax>
+          <Image
+            src={photos.winelands.src}
+            alt={photos.winelands.alt}
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
         <div className="hero-scrim" aria-hidden="true" />
         <div className="wrap">
           <p className="section-title text-white">People, food, nature, art, and wine.</p>
@@ -191,13 +154,15 @@ export default function HomePage() {
       </section>
 
       <section className="photo-break is-close on-photo" aria-labelledby="close-heading">
-        <Image
-          src={photos.enquireBand.src}
-          alt={photos.enquireBand.alt}
-          fill
-          sizes="100vw"
-          className="object-cover object-close"
-        />
+        <div className="parallax-frame" data-parallax>
+          <Image
+            src={photos.enquireBand.src}
+            alt={photos.enquireBand.alt}
+            fill
+            sizes="100vw"
+            className="object-cover object-close"
+          />
+        </div>
         <div className="hero-scrim" aria-hidden="true" />
         <div className="wrap center-block">
           <h2 id="close-heading" className="display text-white">

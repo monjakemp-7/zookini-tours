@@ -192,6 +192,18 @@ export type PhotoId = keyof typeof photos;
 
 export const photoLibrary: Photo[] = Object.values(photos);
 
+/**
+ * Home hero sequence. Swap a frame by editing this list.
+ * The group frame is the approved terrace lunch. The social posts are
+ * portrait, or narrower than a full-bleed hero.
+ */
+export const heroSlides: readonly Photo[] = [
+  photos.hero,
+  photos.westCoast,
+  photos.safari,
+  photos.corporate,
+];
+
 /** Three supporting frames per tour. The hero image stays separate. */
 export const tourGalleries: Record<string, readonly Photo[]> = {
   "women-and-wine-weekend": [photos.winelands, photos.signature, photos.overberg],

@@ -43,7 +43,9 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
   return (
     <article>
       <section className="page-hero has-photo is-short">
-        <Image src={tour.image} alt={tour.imageAlt} fill priority sizes="100vw" className="object-cover" />
+        <div className="parallax-frame" data-parallax>
+          <Image src={tour.image} alt={tour.imageAlt} fill priority sizes="100vw" className="object-cover" />
+        </div>
         <div className="hero-scrim" aria-hidden="true" />
         <div className="intro wrap relative z-10 py-8 md:py-10">
           <p className="eyebrow light">{themeLabel(tour.themes[0])}</p>
