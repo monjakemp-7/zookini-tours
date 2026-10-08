@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SocialLinks } from "@/components/SocialLinks";
-import { communityFeed, type CommunityTile } from "@/content/community";
+import { communityFeed, communityTileLabel, type CommunityTile } from "@/content/community";
+import { weddingPhotoCredit } from "@/content/social";
 
 type CommunityGridProps = {
   tiles: CommunityTile[];
@@ -26,14 +27,15 @@ export function CommunityGrid({ tiles }: CommunityGridProps) {
                 href={tile.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${tile.alt}. ${handle} on Instagram`}
+                aria-label={communityTileLabel(tile)}
               >
                 <Image
                   src={tile.src}
-                  alt=""
+                  alt={tile.alt}
                   fill
                   sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                   className="object-cover"
+                  style={{ objectPosition: tile.objectPosition }}
                 />
                 <span className="community-scrim" aria-hidden="true" />
                 <span className="community-handle">{handle}</span>
@@ -41,6 +43,11 @@ export function CommunityGrid({ tiles }: CommunityGridProps) {
             </li>
           ))}
         </ul>
+        <p className="social-credit">
+          <a href={weddingPhotoCredit.href} target="_blank" rel="noopener noreferrer">
+            {weddingPhotoCredit.label}
+          </a>
+        </p>
       </div>
     </section>
   );
