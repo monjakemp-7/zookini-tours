@@ -7,14 +7,13 @@ export const site = {
   phoneDisplay: "+27 82 334 8854",
   phoneTel: "+27823348854",
   whatsappNumber: "27823348854",
-  address: "2 Fortune Street, D'Grande Vredenburg Estate, Vrykyk, Paarl, 7646",
-  region: "Cape Winelands, South Africa",
+  address: "Paarl, Cape Winelands, South Africa",
   copyright: "© 2012 to 2026 Zookini Tours",
 } as const;
 
 /**
  * TODO confirm before the next wording pass:
- * - Address confirmed by Monja: 2 Fortune Street, D'Grande Vredenburg Estate, Vrykyk, Paarl, 7646.
+ * - The public place line is Paarl, Cape Winelands. The street address is not published.
  * - No About page and no testimonials page exist on zookini.co.za.
  *   The Rosalind Massow line is on the contact page. Guest reviews are not published.
  * - Pickup is not published for any journey.
@@ -76,14 +75,14 @@ export const houseStory = {
 export const hostStory = {
   title: "Our team answers every enquiry.",
   paragraphs: [
-    "A note, a call, or a WhatsApp comes to the house in Paarl. Someone on our team replies in person. There is no call centre between you and the plan.",
+    "A note, a call, or a WhatsApp reaches our team directly. Someone replies in person. There is no call centre between you and the plan.",
   ],
 } as const;
 
 export const aboutStory = {
   title: "Every tour is made for the group in front of us.",
   paragraphs: [
-    "The house is at 2 Fortune Street, D'Grande Vredenburg Estate, Vrykyk, Paarl, 7646. Journeys run through Cape Town, the West Coast, the Overberg, the Garden Route, the bushveld near Kruger, and the Northern and Central Drakensberg.",
+    "Our journeys run through Cape Town, the West Coast, the Overberg, the Garden Route, the bushveld near Kruger, and the Northern and Central Drakensberg.",
     "Anita founded Zookini. Our team plans the journeys and answers every enquiry.",
     "South Africa holds a great deal in a short distance: landscapes, wildlife, food and wine, and a culture with many strands. Our team is part of that rainbow nation, which is how we can open the country to a guest.",
   ],

@@ -5,7 +5,7 @@ import { socialPosts, socialSourceLabel, weddingPhotoCredit } from "@/content/so
 export const metadata: Metadata = {
   title: "Photo credits",
   description:
-    "The photographs on Zookini Tours. Most are from Unsplash, taken in South Africa. Six frames are the house's own posts.",
+    "The photographs on Zookini Tours. Most are from Unsplash, taken in South Africa. Six frames are our own posts.",
 };
 
 export default function CreditsPage() {
@@ -15,8 +15,8 @@ export default function CreditsPage() {
         <p className="eyebrow">Credits</p>
         <h1 className="section-title">Photographs</h1>
         <p className="mt-4 max-w-xl">
-          Most of the photographs on this site are from Unsplash, all taken in South Africa. They stand in until the
-          house&apos;s own photographs take their place. They are published under the Unsplash licence. The
+          Most of the photographs on this site are from Unsplash, all taken in South Africa. They stand in until
+          our own photographs take their place. They are published under the Unsplash licence. The
           photographers are credited here. The people in the pictures are not endorsing Zookini Tours.
         </p>
         <ul className="credit-list">
@@ -39,7 +39,7 @@ export default function CreditsPage() {
         </ul>
         <h2 className="section-title mt-10">Zookini Tours&apos; own posts</h2>
         <p className="mt-4 max-w-xl">
-          These six frames are from the house&apos;s own Facebook and Instagram. They appear in the row on the homepage.
+          These six frames are from our own Facebook and Instagram. They appear in the row on the homepage.
         </p>
         <ul className="credit-list">
           {socialPosts.map((post) => (

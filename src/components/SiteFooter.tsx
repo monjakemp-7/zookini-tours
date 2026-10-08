@@ -11,7 +11,7 @@ export function SiteFooter() {
       <div className="wrap grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-start">
         <Logo variant="white" className="h-auto w-36" />
         <div>
-          <p className="eyebrow light">The house</p>
+          <p className="eyebrow light">Get in touch</p>
           <ul className="mt-2 space-y-1 text-sm">
             <li>
               <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
@@ -20,7 +20,6 @@ export function SiteFooter() {
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </li>
             <li>{site.address}</li>
-            <li>{site.region}</li>
           </ul>
         </div>
         <SocialLinks tone="on-dark" className="md:justify-end" />

@@ -53,9 +53,8 @@ const jsonLd = {
   telephone: site.phoneTel,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "2 Fortune Street, D'Grande Vredenburg Estate, Vrykyk",
     addressLocality: "Paarl",
-    postalCode: "7646",
+    addressRegion: "Western Cape",
     addressCountry: "ZA",
   },
   sameAs: socials.map((social) => social.href),

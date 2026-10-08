@@ -7,7 +7,7 @@ import { aboutStory } from "@/content/site";
 export const metadata = {
   title: "About",
   description:
-    "Zookini Tours is a small house in Paarl. We plan leisure, corporate, and school journeys, and someone on the team answers every enquiry.",
+    "Zookini Tours plans leisure, corporate, and school journeys from Paarl. Someone on the team answers every enquiry.",
 };
 
 export default function AboutPage() {
