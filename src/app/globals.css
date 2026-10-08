@@ -821,18 +821,6 @@ textarea {
   opacity: 1;
 }
 
-.social-credit {
-  margin: var(--space-3) 0 0;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-.social-credit a {
-  color: var(--color-teal-ink);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .community-tile:hover img,
   .community-tile:focus-visible img,

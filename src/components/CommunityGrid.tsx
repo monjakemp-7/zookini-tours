@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { SocialLinks } from "@/components/SocialLinks";
 import { communityFeed, communityTileLabel, type CommunityTile } from "@/content/community";
-import { weddingPhotoCredit } from "@/content/social";
 
 type CommunityGridProps = {
   tiles: CommunityTile[];
@@ -43,11 +42,6 @@ export function CommunityGrid({ tiles }: CommunityGridProps) {
             </li>
           ))}
         </ul>
-        <p className="social-credit">
-          <a href={weddingPhotoCredit.href} target="_blank" rel="noopener noreferrer">
-            {weddingPhotoCredit.label}
-          </a>
-        </p>
       </div>
     </section>
   );
