@@ -6,11 +6,12 @@ type PageHeroProps = {
   lede: string;
   image?: string;
   imageAlt?: string;
+  short?: boolean;
 };
 
-export function PageHero({ eyebrow, title, lede, image, imageAlt }: PageHeroProps) {
+export function PageHero({ eyebrow, title, lede, image, imageAlt, short = false }: PageHeroProps) {
   return (
-    <section className={`page-hero${image ? " has-photo" : ""}`}>
+    <section className={`page-hero${image ? " has-photo" : ""}${short ? " is-short" : ""}`}>
       {image ? (
         <Image
           src={image}

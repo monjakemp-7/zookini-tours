@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 import { tours } from "@/content/tours";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", "/tours", "/corporate", "/educational", "/about", "/enquire", "/contact", "/policies"];
+  const paths = ["", "/tours", "/corporate", "/educational", "/about", "/enquire", "/contact", "/policies", "/credits"];
   return [
     ...paths.map((path) => ({
       url: `${site.url}${path || "/"}`,

@@ -17,8 +17,8 @@ export default function EnquirePage({
     <>
       <PageHero
         eyebrow="Enquire"
-        title="Tell us what you want to celebrate"
-        lede="A short note is enough. Anita replies in person — there is no cart and no calendar to fight with."
+        title="A short note is enough"
+        lede="Anita replies in person — there is no cart and no calendar to fight with."
       />
       <section className="band">
         <div className="wrap grid gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">

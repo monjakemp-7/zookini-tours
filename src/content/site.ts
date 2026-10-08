@@ -52,21 +52,21 @@ export const pillars = [
     title: "Leisure",
     promise: "Small-group journeys on the road less travelled.",
     image: "/images/wine.jpg",
-    imageAlt: "A glass of red wine on a wooden table",
+    imageAlt: "Two women toasting with wine glasses",
   },
   {
     href: "/corporate",
     title: "Corporate",
     promise: "Breakaways, incentives, and team days, planned in full.",
     image: "/images/corporate.jpg",
-    imageAlt: "Colleagues sharing a meal around a table",
+    imageAlt: "A group sharing a terrace lunch",
   },
   {
     href: "/educational",
     title: "Educational",
     promise: "An outdoor classroom for camps, curriculum days, and farewells.",
     image: "/images/educational.jpg",
-    imageAlt: "Students gathered outdoors with books",
+    imageAlt: "A child with binoculars in the fynbos",
   },
 ] as const;
 

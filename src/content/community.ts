@@ -1,7 +1,8 @@
+import { photos, type Photo } from "@/content/photos";
 import { socials } from "@/content/site";
 
 /**
- * One tile in the homepage community grid.
+ * One tile in the homepage Instagram row.
  * Keep this shape if the source changes: a later Instagram feed
  * only needs to map media into `{ id, src, alt, href }`.
  * `CommunityGrid` does not care whether `src` is a local file or a CDN URL.
@@ -25,25 +26,25 @@ export const communityFeed = {
 
 const profile = communityFeed.profileUrl;
 
-const placeholders: CommunityTile[] = [
-  { id: "wine", src: "/images/wine.jpg", alt: "Red wine poured into a glass", href: profile },
-  { id: "cape-town", src: "/images/cape-town.jpg", alt: "Cape Town with the mountain behind the city", href: profile },
-  { id: "art", src: "/images/art.jpg", alt: "A painting hanging in a gallery", href: profile },
-  { id: "fynbos", src: "/images/fynbos.jpg", alt: "Pink blooms in a garden", href: profile },
-  { id: "foodie", src: "/images/foodie.jpg", alt: "A table set for a shared meal", href: profile },
-  { id: "west-coast", src: "/images/west-coast.jpg", alt: "Pale sand and blue sea", href: profile },
-  { id: "garden-route", src: "/images/garden-route.jpg", alt: "A wave running up a sandy shore", href: profile },
-  { id: "overberg", src: "/images/overberg.jpg", alt: "Green hills in soft morning light", href: profile },
-  { id: "safari", src: "/images/safari.jpg", alt: "Elephants walking through dry grass", href: profile },
-  { id: "drakensberg", src: "/images/drakensberg.jpg", alt: "A mountain ridge above a green valley", href: profile },
-  { id: "corporate", src: "/images/corporate.jpg", alt: "People sharing a meal around a table", href: profile },
-  { id: "educational", src: "/images/educational.jpg", alt: "Learners outdoors with books", href: profile },
+/** Six frames that are not the homepage hero, intro, pause, or closing band. */
+const row: Photo[] = [
+  photos.houtBay,
+  photos.corporateOutdoors,
+  photos.heritage,
+  photos.overberg,
+  photos.drakensberg,
+  photos.westCoast,
 ];
 
 /**
- * Placeholder grid until a real Instagram feed is connected.
+ * Placeholder row until a real Instagram feed is connected.
  * To swap sources, return tiles from the API here and leave `CommunityGrid` as it is.
  */
 export function getCommunityTiles(): CommunityTile[] {
-  return placeholders;
+  return row.map((photo) => ({
+    id: photo.id,
+    src: photo.src,
+    alt: photo.alt,
+    href: profile,
+  }));
 }

@@ -54,10 +54,12 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
   return (
     <form className="form" onSubmit={onSubmit} noValidate={false}>
       <div>
-        <h2 className="section-title" id="enquire-heading">
-          {heading}
-        </h2>
-        <p className="mt-2 max-w-xl text-sm">Fields marked * are required.</p>
+        {heading ? (
+          <h2 className="section-title" id="enquire-heading">
+            {heading}
+          </h2>
+        ) : null}
+        <p className={heading ? "mt-2 max-w-xl text-sm" : "max-w-xl text-sm"}>Fields marked * are required.</p>
       </div>
       <div className="form-groups">
         <div className="form-group">

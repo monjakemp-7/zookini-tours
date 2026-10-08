@@ -92,7 +92,7 @@ export const tours: Tour[] = [
     ],
     excludes: sharedExcludes,
     image: "/images/wine.jpg",
-    imageAlt: "Red wine poured into a glass",
+    imageAlt: "Two women toasting with wine glasses",
     featured: true,
     note: "Women only.",
   },
@@ -152,7 +152,7 @@ export const tours: Tour[] = [
       "Personal extras such as extra drinks, laundry, calls, and shopping",
     ],
     image: "/images/cape-town.jpg",
-    imageAlt: "Cape Town with Table Mountain beyond the city bowl",
+    imageAlt: "Table Mountain across the water at dusk",
     featured: true,
     note: "Published conditions allow a larger group on this tour. Ask Anita if you are more than 16.",
   },
@@ -202,7 +202,7 @@ export const tours: Tour[] = [
     ],
     excludes: sharedExcludes,
     image: "/images/art.jpg",
-    imageAlt: "A framed painting on a gallery wall",
+    imageAlt: "A sculpture resting in the grass at a Franschhoek wine estate",
     featured: true,
   },
   {
@@ -251,7 +251,7 @@ export const tours: Tour[] = [
     ],
     excludes: sharedExcludes,
     image: "/images/fynbos.jpg",
-    imageAlt: "Soft pink blooms in a garden bed",
+    imageAlt: "Pale protea blooms at Kirstenbosch",
     featured: true,
   },
   {
@@ -310,7 +310,7 @@ export const tours: Tour[] = [
     ],
     excludes: sharedExcludes,
     image: "/images/foodie.jpg",
-    imageAlt: "A dining table set with plates and glassware",
+    imageAlt: "Bright houses along a Bo-Kaap street",
     featured: true,
   },
   {
@@ -358,7 +358,7 @@ export const tours: Tour[] = [
     ],
     excludes: sharedExcludes,
     image: "/images/west-coast.jpg",
-    imageAlt: "Pale sand and blue sea under a bright sky",
+    imageAlt: "A whitewashed cottage above the sea at Paternoster",
     featured: true,
   },
   {
@@ -406,7 +406,7 @@ export const tours: Tour[] = [
     ],
     excludes: sharedExcludes,
     image: "/images/garden-route.jpg",
-    imageAlt: "A wave breaking toward a sandy shore",
+    imageAlt: "Mist over the Knysna Heads",
     featured: true,
   },
   {
@@ -453,7 +453,7 @@ export const tours: Tour[] = [
     ],
     excludes: sharedExcludes,
     image: "/images/overberg.jpg",
-    imageAlt: "Green hills under soft morning light",
+    imageAlt: "Vineyard rows with a mountain behind them",
     featured: false,
   },
   {
@@ -506,7 +506,7 @@ export const tours: Tour[] = [
       "Travel insurance, which we ask every guest to arrange",
     ],
     image: "/images/safari.jpg",
-    imageAlt: "Elephants walking through dry bushveld grass",
+    imageAlt: "Guests on an open game-drive vehicle at sunset",
     featured: true,
     note: "The reserve is confirmed when you enquire.",
   },
@@ -555,7 +555,7 @@ export const tours: Tour[] = [
     ],
     excludes: sharedExcludes,
     image: "/images/drakensberg.jpg",
-    imageAlt: "A sharp mountain ridge above a green valley",
+    imageAlt: "A golden grass ridge under a pale sky",
     featured: false,
   },
 ];
@@ -566,6 +566,15 @@ export function getTour(slug: string) {
 
 export function getFeaturedTours() {
   return tours.filter((tour) => tour.featured);
+}
+
+export function getRelatedTours(slug: string, count = 3) {
+  const current = getTour(slug);
+  const others = tours.filter((tour) => tour.slug !== slug);
+  if (!current) return others.slice(0, count);
+  const sameTheme = others.filter((tour) => tour.themes.some((theme) => current.themes.includes(theme)));
+  const rest = others.filter((tour) => !sameTheme.includes(tour));
+  return [...sameTheme, ...rest].slice(0, count);
 }
 
 export function themeLabel(id: ThemeId) {

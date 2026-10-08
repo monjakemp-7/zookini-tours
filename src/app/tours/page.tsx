@@ -1,6 +1,8 @@
-import { Suspense } from "react";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { TourMosaic } from "@/components/TourMosaic";
+import { TourIndex } from "@/components/TourIndex";
+import { photos } from "@/content/photos";
+import { defaultWhatsAppMessage, whatsappHref } from "@/content/site";
 import { tours } from "@/content/tours";
 
 export const metadata = {
@@ -9,36 +11,48 @@ export const metadata = {
     "Hand-crafted Zookini journeys: Cape Town, fynbos, food, art, wine, the Garden Route, bushveld, and the Drakensberg.",
 };
 
-export default function ToursPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ theme?: string }>;
-}) {
+export default function ToursPage() {
   return (
     <>
       <PageHero
+        short
         eyebrow="Leisure"
         title="Tours with a point of view"
-        lede="Theme-led journeys for 12 to 16 guests. Anita shapes the quote."
-        image="/images/cape-town.jpg"
-        imageAlt="Cape Town beneath Table Mountain"
+        lede="Theme-led journeys for 12 to 16 guests."
+        image={photos.capeTown.src}
+        imageAlt={photos.capeTown.alt}
       />
+      <nav className="door-row wrap" aria-label="Ways to travel">
+        <Link className="door-link" href="/tours" aria-current="page">
+          Leisure tours
+        </Link>
+        <Link className="door-link" href="/corporate">
+          Corporate
+        </Link>
+        <Link className="door-link" href="/educational">
+          Schools
+        </Link>
+      </nav>
       <section className="band contour-band">
         <div className="wrap-wide">
-          <Suspense fallback={<TourMosaic tours={tours} />}>
-            <FilteredTours searchParams={searchParams} />
-          </Suspense>
+          <TourIndex tours={tours} />
+        </div>
+      </section>
+      <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="handcraft-heading">
+        <div className="wrap">
+          <h2 id="handcraft-heading" className="section-title text-white">
+            Don&apos;t see your celebration? Anita will hand-craft it
+          </h2>
+          <div className="hero-actions justify-start">
+            <Link className="btn btn-light" href="/enquire">
+              Enquire
+            </Link>
+            <a className="btn btn-line" href={whatsappHref(defaultWhatsAppMessage)}>
+              WhatsApp
+            </a>
+          </div>
         </div>
       </section>
     </>
   );
-}
-
-async function FilteredTours({
-  searchParams,
-}: {
-  searchParams: Promise<{ theme?: string }>;
-}) {
-  const { theme } = await searchParams;
-  return <TourMosaic tours={tours} initialTheme={theme} />;
 }

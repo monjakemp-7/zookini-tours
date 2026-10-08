@@ -35,7 +35,10 @@ export function SiteFooter() {
       </div>
       <div className="wrap mt-6 flex flex-col gap-2 border-t border-white/20 pt-4 text-sm text-white/80 sm:flex-row sm:justify-between">
         <p>{site.copyright}</p>
-        <Link href="/policies">Policies</Link>
+        <p className="flex gap-4">
+          <Link href="/credits">Photo credits</Link>
+          <Link href="/policies">Policies</Link>
+        </p>
       </div>
     </footer>
     </>

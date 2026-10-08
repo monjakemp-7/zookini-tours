@@ -9,7 +9,7 @@ export function CommunityGrid({ tiles }: CommunityGridProps) {
   const { title, handle, profileUrl, cta } = communityFeed;
 
   return (
-    <section className="band bg-white" aria-labelledby="community-heading">
+    <section className="band ig-band bg-white" aria-labelledby="community-heading">
       <div className="wrap-wide">
         <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
           <h2 id="community-heading" className="section-title">
@@ -19,7 +19,7 @@ export function CommunityGrid({ tiles }: CommunityGridProps) {
             {cta}
           </a>
         </div>
-        <ul className="community-grid">
+        <ul className="ig-row">
           {tiles.map((tile) => (
             <li key={tile.id}>
               <a
