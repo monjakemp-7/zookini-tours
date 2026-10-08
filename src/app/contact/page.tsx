@@ -1,26 +1,25 @@
 import { EnquireForm } from "@/components/EnquireForm";
 import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
-import { defaultWhatsAppMessage, site, whatsappHref } from "@/content/site";
+import { defaultWhatsAppMessage, homeQuote, site, whatsappHref } from "@/content/site";
 
 export const metadata = {
-  title: "Contact",
-  description: "Call, email, or send a note to Zookini Tours in Paarl, in the Cape Winelands.",
+  title: { absolute: "Contact Us, Winelands, South Africa, Zookini Tours" },
+  description:
+    "We look forward to assist on bringing your dream to life. Please complete the form, send us an e-mail or phone us. We look forward to hear from you!",
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Get in touch"
-        lede="Call, email, or send a note. Someone on the team replies in person."
+        eyebrow="Contact Us"
+        title="Get in Touch"
+        lede="We look forward to assist on bringing your dream to life. Please complete the form, send us an e-mail or phone us. We look forward to hear from you!"
       />
       <section className="band">
         <div className="wrap contact-layout">
           <div className="contact-details">
-            <h2 className="section-title">Talk to us</h2>
-            <p>A note, a call, or a WhatsApp reaches our team directly.</p>
             <p>
               <a className="text-lg text-[var(--color-teal-ink)]" href={`tel:${site.phoneTel}`}>
                 {site.phoneDisplay}
@@ -35,10 +34,19 @@ export default function ContactPage() {
             <a className="btn btn-line" href={whatsappHref(defaultWhatsAppMessage)}>
               WhatsApp
             </a>
+            <p>
+              <a className="text-link" href="#enquire">
+                Complete the enquiry form
+              </a>
+            </p>
+            <blockquote className="quote-block">
+              <p>{homeQuote.text}</p>
+              <footer>{homeQuote.name}</footer>
+            </blockquote>
             <SocialLinks />
           </div>
-          <div className="contact-card">
-            <EnquireForm heading="Send a note" />
+          <div className="contact-card" id="enquire">
+            <EnquireForm heading="Get in Touch" />
           </div>
         </div>
       </section>

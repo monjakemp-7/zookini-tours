@@ -21,15 +21,15 @@ const cookie = Cookie({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Zookini Tours. Celebrating Life!",
-    template: "%s. Zookini Tours",
+    default: "Hand Crafted and Unique Tours, South Africa, Zookini Tours",
+    template: "%s",
   },
   description:
-    "Small South African tours, planned in the Cape Winelands for leisure travellers, teams, and schools.",
+    "Zookini Tours believe in celebrating people, food, nature and art. The finer things that give meaning to our souls! This is the reason why every tour is unique!",
   openGraph: {
-    title: "Zookini Tours. Celebrating Life!",
+    title: "Hand Crafted and Unique Tours, South Africa, Zookini Tours",
     description:
-      "Small South African tours for leisure travellers, teams, and schools.",
+      "Zookini Tours believe in celebrating people, food, nature and art. The finer things that give meaning to our souls! This is the reason why every tour is unique!",
     locale: "en_ZA",
     type: "website",
     siteName: "Zookini Tours",
@@ -54,7 +54,7 @@ const jsonLd = {
   address: {
     "@type": "PostalAddress",
     addressLocality: "Paarl",
-    addressRegion: "Western Cape",
+    addressRegion: "Cape Winelands",
     addressCountry: "ZA",
   },
   sameAs: socials.map((social) => social.href),

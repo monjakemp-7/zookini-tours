@@ -59,12 +59,12 @@ export function TourIndex({ tours }: { tours: Tour[] }) {
             sizes="(min-width: 768px) 42vw, 92vw"
           />
           <div className="split-copy">
-            <p className="eyebrow">Women only</p>
+            <p className="eyebrow">{signature.note}</p>
             <h2 className="section-title">{signature.title}</h2>
             <p>{signature.hook}</p>
             <p>{signature.story[0]}</p>
             <Link className="btn btn-line" href={`/tours/${signature.slug}`}>
-              View tour
+              View Details
             </Link>
           </div>
         </article>
@@ -73,8 +73,8 @@ export function TourIndex({ tours }: { tours: Tour[] }) {
       {visible.length === 0 ? (
         <p className="mt-8 max-w-lg">
           {showSignature
-            ? "That weekend is the tour above."
-            : "Nothing in that theme in this set. Tell us what you are celebrating and we will plan it."}
+            ? "The Woman & Wine Weekend is the tour above."
+            : "We always have something special in mind!"}
         </p>
       ) : (
         <ul className="portrait-grid">

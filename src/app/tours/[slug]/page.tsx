@@ -9,7 +9,7 @@ import { PhotoStrip } from "@/components/PhotoStrip";
 import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { galleryFor } from "@/content/photos";
 import { bookingGlance, tourTailor, tourWhatsAppMessage, whatsappHref } from "@/content/site";
-import { getRelatedTours, getTour, themeLabel, tours } from "@/content/tours";
+import { getRelatedTours, getTour, tours } from "@/content/tours";
 
 export function generateStaticParams() {
   return tours.map((tour) => ({ slug: tour.slug }));
@@ -24,7 +24,7 @@ export async function generateMetadata({
   const tour = getTour(slug);
   if (!tour) return { title: "Tour" };
   return {
-    title: tour.title,
+    title: { absolute: tour.tabTitle },
     description: tour.hook,
   };
 }
@@ -49,7 +49,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
         </div>
         <div className="hero-scrim" aria-hidden="true" />
         <div className="intro wrap relative z-10 py-8 md:py-10">
-          <p className="eyebrow light">{themeLabel(tour.themes[0])}</p>
+          <p className="eyebrow light">{tour.eyebrow}</p>
           <h1 className="display text-white">{tour.title}</h1>
           <p className="lede light">{tour.hook}</p>
         </div>
@@ -69,7 +69,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             <div className="split-copy">
               {tour.note ? <p className="text-sm">{tour.note}</p> : null}
               <h2 id="highlights-heading" className="section-title">
-                On this tour
+                Highlights of the Tour
               </h2>
               <p>{tour.special}</p>
               <ul className="list-disc space-y-2 pl-5">
@@ -113,8 +113,8 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             Itinerary outline
           </h2>
           <p className="mt-2 max-w-xl text-sm">
-            These are the experiences named for this tour. A day-by-day order is not published. We shape the final
-            plan around your group.
+            These are the highlights of this tour. Every tour is tailor made, so the order of the days is planned with
+            you.
           </p>
           <div className="timeline">
             {tour.itinerary.map((day, index) => (
@@ -138,14 +138,14 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
         <div className="wrap grid gap-[var(--space-6)] md:grid-cols-2">
           <div>
             <h2 id="included-heading" className="section-title">
-              Includes
+              Package Includes
             </h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
               {tour.includes.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <h2 className="section-title mt-8">Excludes</h2>
+            <h2 className="section-title mt-8">Package Excludes</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
               {tour.excludes.map((item) => (
                 <li key={item}>{item}</li>
@@ -153,26 +153,24 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             </ul>
           </div>
           <div>
-            <h2 className="section-title">Who it suits</h2>
-            <p className="mt-3">{tour.suits}</p>
-            {tour.practical.some((item) => !item.startsWith("These are the experiences")) ? (
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-sm">
-                {tour.practical
-                  .filter((item) => !item.startsWith("These are the experiences"))
-                  .map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
+            <h2 className="section-title">Booking Conditions</h2>
+            {tour.suits ? <p className="mt-3">{tour.suits}</p> : null}
+            {tour.practical.length > 0 ? (
+              <ul className="mt-4 list-disc space-y-2 pl-5">
+                {tour.practical.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
             ) : null}
-            <h2 className="section-title mt-8">Booking at a glance</h2>
+            <h2 className="section-title mt-8">Terms and Conditions</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5">
               {bookingGlance.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
             <p className="mt-4">
-              <Link className="text-link" href="/policies">
-                How booking works
+              <Link className="text-link" href="/terms">
+                Terms and Conditions
               </Link>
             </p>
           </div>
@@ -182,7 +180,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
       <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="tailor-heading">
         <div className="wrap">
           <h2 id="tailor-heading" className="section-title text-white">
-            Can we change this tour?
+            Tailor Made Tours with a specific theme in mind
           </h2>
           <p className="mt-4 max-w-xl text-white/90">{tourTailor}</p>
         </div>
@@ -192,7 +190,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
         <div className="wrap split">
           <div className="enquire-panel rounded-[var(--radius-lg)] bg-white p-5 md:p-8">
             <h2 id="ready-heading" className="section-title">
-              Ready to celebrate?
+              Come celebrate life with us!
             </h2>
             <div className="mt-4">
               <EnquireForm defaultTour={tour.slug} heading="" />

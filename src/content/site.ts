@@ -4,11 +4,12 @@ export const site = {
   logoTagline: "CELEBRATE LIFE!",
   url: "https://www.zookini.co.za",
   email: "anita@zookini.co.za",
-  phoneDisplay: "+27 82 334 8854",
+  phoneDisplay: "+27 (0)82 334 8854",
   phoneTel: "+27823348854",
   whatsappNumber: "27823348854",
-  address: "Paarl, Cape Winelands, South Africa",
-  copyright: "© 2012 to 2026 Zookini Tours",
+  address: "Paarl, Cape Winelands",
+  copyright: "© 2012 to 2026 Zookini Tours South Africa. All rights reserved.",
+  footerHeading: "Contact Us",
 } as const;
 
 /**
@@ -46,7 +47,7 @@ export const socials = [
 ] as const;
 
 export const nav = [
-  { href: "/tours", label: "Tours" },
+  { href: "/tours", label: "Leisure" },
   { href: "/corporate", label: "Corporate" },
   { href: "/educational", label: "Educational" },
   { href: "/about", label: "About" },
@@ -60,38 +61,42 @@ export function whatsappHref(message: string) {
 export const defaultWhatsAppMessage = "Hello, I would like to enquire about a Zookini tour.";
 
 export function tourWhatsAppMessage(title: string) {
-  return `Hello, I would like to enquire about ${title}.`;
+  return `Hello, I would like to enquire about the ${title}.`;
 }
 
 export const houseStory = {
-  title: "A small house with a long table",
+  title: "Every tour is unique",
+  link: "About Zookini Tours",
   paragraphs: [
-    "Zookini is a small house in the Winelands. We plan leisure journeys, team breaks, and school trips.",
-    "Celebrating life, for us, is time given to people, food, nature, art, and wine. Every tour is built for the people in front of us, not pulled off a shelf.",
-    "If you have been looking for a while, or asking friends, and still do not have a plan, write to us. We bring the ideas together.",
+    "Zookini Tours believe in celebrating life! This is the reason why EVERY tour is unique. We offer a fresh approach to creating a once-in-a-lifetime tour, ensuring that every tour is hand crafted to be enticing, exciting and with you enjoying every minute!",
+    "A good number of people spend hours browsing the Internet or relying on family and friends for ideas for their next tour. Only to be disappointed at the end without special memories to treasure.",
+    "We always have something special in mind!",
   ],
 } as const;
 
 export const hostStory = {
-  title: "Our team answers every enquiry.",
+  title: "We bring all your dreams together.",
   paragraphs: [
-    "A note, a call, or a WhatsApp reaches our team directly. Someone replies in person. There is no call centre between you and the plan.",
+    "We will gladly assist on bringing your dream to life and will help carry it through to the last detail.",
   ],
 } as const;
 
 export const aboutStory = {
-  title: "Every tour is made for the group in front of us.",
+  title: "Celebrating Life!",
+  link: "Leisure Tours",
   paragraphs: [
-    "Our journeys run through Cape Town, the West Coast, the Overberg, the Garden Route, the bushveld near Kruger, and the Northern and Central Drakensberg.",
-    "Anita founded Zookini. Our team plans the journeys and answers every enquiry.",
-    "South Africa holds a great deal in a short distance: landscapes, wildlife, food and wine, and a culture with many strands. Our team is part of that rainbow nation, which is how we can open the country to a guest.",
+    "Zookini Tours is a family run company in Paarl, Cape Winelands, founded by Anita Kemp.",
+    "South Africa is one of the most diverse countries in the world. It is a country of beauty and splendour, a unique and inspiring experience! It is home to one of the most diverse and exotic landscapes, wonderful people, abundant wildlife, excellent food and wine and colourful culture and history. Any visitor to South Africa will be amazed by what the country has to offer.",
+    "Being part of our rainbow nation, our team consists of people that has a passion for their country and its people. That is the reason why we can open up exceptional opportunities to offer the greatness of our country! Come celebrate life with us!",
+    "celebrate, verb, \\ˈse-lə-ˌbrāt\\, to take part in special enjoyable activities or to do something special for an important event, occasion, holiday ......",
   ],
-  approachTitle: "How a tour is made",
+  approachTitle: "We offer:",
   approach: [
-    "Each tour is made for the group, rather than repeated from a shelf.",
-    "We choose the stops for that group, including places a standard coach tour often skips.",
-    "There is time with the people and the places, not only the front door.",
-    "A Zookini Tour Director travels with the group.",
+    "Boutique style tours.",
+    "Every tour is unique with exceptional quality and personalised service.",
+    "Hand Selected excursions on the road less travelled.",
+    "Behind the scenes personal approach.",
+    "Small group tours, only 12 to 16 travellers per tour.",
   ],
 } as const;
 
@@ -99,67 +104,67 @@ export const ways = [
   {
     id: "leisure",
     label: "Leisure",
-    title: "Small-group journeys",
+    title: "Leisure",
     points: [
       {
-        label: "Who it is for",
-        body: "Friends, families, and a guest travelling on their own.",
+        label: "We offer",
+        body: "Boutique style tours. Every tour is unique with exceptional quality and personalised service.",
       },
       {
-        label: "What is included",
-        body: "A coach, the meals and entrances named on that tour, and a Tour Director with the group.",
+        label: "On the road less travelled",
+        body: "Hand Selected excursions on the road less travelled. Behind the scenes personal approach.",
       },
       {
-        label: "How it works",
-        body: "Many tours hold 12 to 16 guests. Some journeys can take a larger group. We confirm the number when you enquire.",
+        label: "Small group tours",
+        body: "Small group tours, only 12 to 16 travellers per tour.",
       },
     ],
     href: "/tours",
-    cta: "Explore tours",
+    cta: "Leisure Tours",
     photo: "wine",
   },
   {
     id: "corporate",
     label: "Corporate",
-    title: "Take the team away",
+    title: "Corporate",
     points: [
       {
-        label: "Who it is for",
-        body: "Teams and colleagues, for a day together or a stay of two to five days.",
+        label: "We offer",
+        body: "Corporate Breakaways, Executive Retreats, Corporate Incentive Programmes, Team Building Events, End of the Year Celebrations, Tailor Made Tours with a specific theme in mind.",
       },
       {
-        label: "What is included",
-        body: "Travel, rooms, catering, and a day programme. Meetings can sit beside the enjoyable parts.",
+        label: "Every detail of your itinerary",
+        body: "Our professional team will manage to plan and organise every detail of your itinerary. This includes all travel arrangements; accommodation requirements; attendance of day excursions etc.",
       },
       {
-        label: "How it works",
-        body: "Tell us the dates and the size of the team. We hold the detail so the organising does not swallow a month.",
+        label: "Business Retreats",
+        body: "These retreats last between two to five days and we give attention to site selection, accommodation, transportation, catering, business meetings and activities.",
       },
     ],
     href: "/corporate",
-    cta: "Plan a team trip",
+    cta: "Corporate Tours",
     photo: "corporate",
   },
   {
     id: "schools",
-    label: "Schools",
-    title: "The outdoor classroom",
+    label: "Educational",
+    title: "The Outdoor Classroom",
     points: [
       {
-        label: "Who it is for",
-        body: "Learners of any age, and the staff travelling with them.",
+        label: "Educational",
+        body: "We will assist in organising educational trips for students of any age and at any academic stage.",
       },
       {
-        label: "What is included",
-        body: "Curriculum days, sport groups, camps, achiever tours, and farewells, planned as a whole.",
+        label: "Camps",
+        body: "Camps: Adventure, Leadership, Choir, Sport, Mother & Daughter Camps etc.",
       },
       {
-        label: "How it works",
-        body: "Share the grade, the dates you hope for, and whether you need a day out or a camp. We carry the plan.",
+        label: "All Inclusive Tours",
+        body: "All Inclusive Tours: Top Ten Achiever Tours; Art Tours; Consumer Study Tours; Recreational Tours etc.",
       },
     ],
     href: "/educational",
-    cta: "Plan a school trip",
+    cta: "School and Educational Tours",
     photo: "educational",
   },
 ] as const;
@@ -168,17 +173,17 @@ export const doors = [
   {
     href: "/tours",
     label: "Leisure",
-    line: "For friends and families.",
+    line: "Boutique style tours.",
   },
   {
     href: "/corporate",
     label: "Corporate",
-    line: "For teams and colleagues.",
+    line: "Corporate Breakaways, Executive Retreats, Team Building Events",
   },
   {
     href: "/educational",
-    label: "Schools",
-    line: "For learners and teachers.",
+    label: "Educational",
+    line: "Every child remembers their school trip",
   },
 ] as const;
 
@@ -186,21 +191,21 @@ export const pillars = [
   {
     href: "/tours",
     title: "Leisure",
-    promise: "Small-group journeys in South Africa.",
+    promise: "Boutique style tours.",
     image: "/images/wine.jpg",
     imageAlt: "Two women toasting with wine glasses",
   },
   {
     href: "/corporate",
     title: "Corporate",
-    promise: "Breakaways, incentives, and team days, planned in full.",
+    promise: "Corporate Breakaways, Executive Retreats, Team Building Events",
     image: "/images/corporate.jpg",
     imageAlt: "A group sharing a terrace lunch",
   },
   {
     href: "/educational",
     title: "Educational",
-    promise: "An outdoor classroom for camps, curriculum days, and farewells.",
+    promise: "Every child remembers their school trip",
     image: "/images/educational.jpg",
     imageAlt: "A child with binoculars in the fynbos",
   },
@@ -209,106 +214,103 @@ export const pillars = [
 export const steps = [
   {
     number: "01",
-    title: "Tell us the celebration",
-    body: "Who is coming, and what you want the days to feel like.",
+    title: "We research",
+    body: "Tell us who is travelling and what you would love to see and do.",
   },
   {
     number: "02",
-    title: "We make the plan",
-    body: "Rooms, tables, and the coach.",
+    title: "We negotiate, we organise",
+    body: "Our professional team will manage to plan and organise every detail of your itinerary.",
   },
   {
     number: "03",
-    title: "You pack your bags",
-    body: "A Tour Director travels with the group and keeps the days moving.",
+    title: "And you ..... pack your bags!",
+    body: "Tour accompanied by a Zookini Tour Director",
   },
 ] as const;
 
 export const corporateStory = {
-  lede: "We plan the travel, the stay, and the day programme.",
+  lede: "It can be an overwhelming task to organise corporate events, team building events and corporate tours.",
   intro:
-    "Organising a breakaway, a team day, or a company tour can swallow a month. Our team holds the detail, including a Tuesday in the Winelands.",
+    "Our professional team will manage to plan and organise every detail of your itinerary. This includes all travel arrangements; accommodation requirements; attendance of day excursions etc. We will gladly assist on bringing your dream to life and will help carry it through to the last detail.",
+  offersTitle: "We offer:",
   offers: [
-    "Corporate breakaways",
-    "Executive retreats",
-    "Incentive programmes",
-    "Team building",
-    "End-of-year celebrations",
-    "Tours built around a theme",
+    "Corporate Breakaways",
+    "Executive Retreats",
+    "Corporate Incentive Programmes",
+    "Team Building Events",
+    "End of the Year Celebrations",
+    "Tailor Made Tours with a specific theme in mind",
   ],
-  clients: "We plan for the size of team you have.",
+  clients:
+    "With names such as KPMG, SBS, Horsch, Terratill and PSG appearing on our client list we are confident that we can cater to your corporate needs.",
+  kindsTitle: "Tours & Retreats",
+  kindsIntro:
+    "We specialise in executive retreats, incentive programmes and corporate themed tours. Business development and organisational planning are typically part of the agenda, but equal weight is given to enjoyable activities as part of the itinerary.",
   kinds: [
     {
-      title: "Business retreats",
-      body: "These last two to five days. We look after the site, the rooms, transport, catering, the meetings, and the activities. Business planning can sit on the agenda, with equal room for the enjoyable parts.",
+      title: "Business Retreats",
+      body: "These retreats last between two to five days and we give attention to site selection, accommodation, transportation, catering, business meetings and activities.",
     },
     {
-      title: "Incentive programmes",
-      body: "A host spends informal time with guests in a relaxed setting. The same shape works for colleagues or for clients.",
+      title: "Incentive Programmes",
+      body: "These programmes allow a host to spend informal time with its guests in a relaxed environment. Appreciation events can range from programmes geared towards employee appreciation to client appreciation.",
     },
     {
-      title: "Themed tours",
-      body: "An end-of-year celebration, a company visit with a theme, golf, a safari, or a food tour.",
+      title: "Corporate Themed Tours",
+      body: "These retreats can include: End of the Year Celebrations, International Company visits with a particular theme in mind, Golf Tours, Safari Tours, Gourmet Tours etc.",
     },
   ],
+  teamIntro:
+    "Team Building events are meant to build the company's strengths while building employee morale, goodwill and confidence. It provides the unique opportunity for employees to spend time together in a non-work environment. Corporate team building events have been epitomised by outdoor and physical group activities, but it can also focus on other types of activities from workshops to sensitivity training to wine blending.",
+  activitiesTitle: "A Taste on Some of Our Activities:",
   activities: [
-    { title: "Active", items: ["Beach Olympics", "Beach, braai, and sunny sky", "Amazing Race"] },
-    { title: "Creative", items: ["Art jamming", "Junk to Funk", "Perfume Power"] },
-    {
-      title: "Cooking",
-      items: ["Braai cook-off", "Master cooking challenge", "Wine blending", "Cocktail making", "Food and wine pairing"],
-    },
-    {
-      title: "Together",
-      items: [
-        "Casino Royale",
-        "60 second challenge",
-        "Battle of the Bands",
-        "Murder mystery",
-        "Lights, camera, action",
-        "The Apprentices",
-        "Minute to win it",
-      ],
-    },
-    { title: "Overnight", items: ["Winelands Amazing Race", "Coastal Amazing Race"] },
+    "Active Adventure: Beach Olympics, Beach, Braai & Sunny Sky, Amazing Race",
+    "Creative: Art Jamming, Junk to Funk, Perfume Power",
+    "Cooking: Braai Cook Off, Master Cooking Challenge, Wine Blending, Mix it Up Cocktail Making, Food and Wine Pairing",
+    "Interactive: Casino Royale, 60 Second Challenge, Battle of the Bands, Murder Mystery, Lights, Camera, Action!, The Apprentices, Minute to Win it",
+    "Overnight Options: Overnight Winelands Amazing Race, Overnight Coastal Amazing Race",
   ],
+  eventsTitle: "A Taste on Some of Our Events:",
   events: [
-    "End-of-year functions can include a murder mystery, Casino Royale, or bubbly.",
-    "Other days we host: dinner and theatre, a day at the race track, day and evening cruises, and private parties at festivals.",
+    "End of the Year Celebration Functions may include: Murder Mystery, Casino Royale, Bubbly at its Best",
+    "Other events: Dinner and theatre, Day at the Race Track, Day and Evening Cruises, Private Parties at Festivals",
   ],
   outcomes:
-    "A team day is time together away from the office. It can steady morale, goodwill, and confidence. A company event can mark the year, introduce something new, or give clients a table.",
-  tailor:
-    "Tell us the dates, the size of the team, and whether you need a day or a stay. We shape the programme around the work and the celebration.",
+    "There are many reasons why corporate events are an integral part of a company. It builds employee morale, market new products and services and they help build client relationships. There are limitless possibilities and types of events that organisations hold throughout the year.",
+  tailorTitle: "Tailor Made Tours with a specific theme in mind",
+  tailor: "We always have something special in mind!",
 } as const;
 
 export const educationalStory = {
-  lede: "A plan that teachers do not have to carry alone.",
+  lede: "We will assist in organising educational trips for students of any age and at any academic stage.",
   intro:
-    "Every child remembers a school trip: learning and laughter, new friends, and a little more found out about themselves and their classmates. They want days out that feel big, and activities where imagination can run.",
+    "Every child remembers their school trip, a time of learning and laughter, making friends, exploring exciting new experiences, as well as discovering a bit more about themselves and their classmates. They want epic, exciting days out, they want activities that allow imaginations to run riot just as freely as their restless bodies. The Outdoor Classroom is the place where:",
   classroom: [
-    "Education can be fun",
-    "Ideas show up more clearly outside the classroom",
-    "Learners can practise looking, asking, and looking after one another",
-    "Interests can be shared",
-    "A day can stay with a learner for a long time",
+    "Education is fun",
+    "Concepts and theories spring to life",
+    "Practical inquiry can be perfected",
+    "Ideas and interests can be shared",
+    "Learners can be inspired for a lifetime",
   ],
+  offersTitle: "We will assist in organising",
   offers: [
-    "Curriculum day excursions",
-    "Sport groups: the day, the stay, and the transport",
-    "Camps for adventure, leadership, choir, sport, or mother and daughter weekends",
-    "All-inclusive tours for achievers, art, consumer studies, and recreation",
-    "Grade farewells, end-of-year functions, and top achiever excursions",
+    "Day Excursions that is curriculum based.",
+    "Day Excursions, Accommodation and Transport for School Sport Groups.",
+    "Camps: Adventure, Leadership, Choir, Sport, Mother & Daughter Camps etc.",
+    "All Inclusive Tours: Top Ten Achiever Tours; Art Tours; Consumer Study Tours; Recreational Tours etc.",
+    "Other events: Grade 7 Farewell; End-of-the-Year Functions; Top Achiever Excursions & Tours etc.",
   ],
   journeys:
-    "Schools often ask about Cape Town, the Overberg, the West Coast, the Garden Route, the bushveld, and the Drakensberg. We shape those outlines around the grade.",
+    "Our educational tours: I Love Cape Town Tour, Overwhelming Overberg Tour, Bushveld Safari Adventure Tour, Wondrous West Coast Tour, Glorious Garden Route Tour and Drakensberg Adventure Tour.",
   outcomes:
-    "We help organise trips for learners of any age and any academic stage. The aim is a day or a camp that is enjoyable and held together.",
-  tailor: "Share the grade, the dates you hope for, and whether you need a day out or a camp.",
+    "We ensure successful, enjoyable stress-free and unique day outings, camps and tours within South Africa.",
+  tailorTitle: "Every child remembers their school trips and tours!",
+  tailor: "We will gladly assist on bringing your dream to life and will help carry it through to the last detail.",
 } as const;
 
 export const tourTailor =
-  "Yes. Tell us who is coming and what you want the days to feel like. We shape the final plan around your group.";
+  "We will gladly assist on bringing your dream to life and will help carry it through to the last detail.";
 
 export const senses = ["People", "Food", "Nature", "Art", "Wine"] as const;
 
@@ -320,7 +322,7 @@ export const clients = [
   },
   {
     name: "STADIO",
-    alt: "STADIO (formerly SBS)",
+    alt: "SBS",
     logo: "/clients/stadio.svg",
     colorLogo: "/clients/stadio-color.svg",
   },
@@ -341,7 +343,12 @@ export const clients = [
 ] as const;
 
 export const bookingGlance = [
-  "A quote is not a booking until the deposit is received.",
-  "The balance is due six weeks before departure.",
-  "Cancellation terms and the full conditions live on one page.",
+  "Upon confirmation of a reservation, ZOOKINI TOURS will immediately request a 50% non-repayable deposit of the total price for a chosen tour/accommodation.",
+  "The balance of the total price for reserved tour/accommodation/holiday needs to reach ZOOKINI TOURS six (6) weeks before the departure date of the tour/holiday, or date of the reserved services and / or performances.",
+  "A cancellation of a reservation must be in writing.",
 ] as const;
+
+export const homeQuote = {
+  text: '"A travel adventure has no substitute. It is the ultimate experience, your one big opportunity for flair."',
+  name: "Rosalind Massow",
+} as const;

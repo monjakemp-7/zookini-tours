@@ -19,7 +19,7 @@ export function PortraitCard({ tour, showRegion = false }: { tour: Tour; showReg
         <span className="card-meta light">
           {tour.duration}
           <span aria-hidden="true"> · </span>
-          {tour.groupSize} guests
+          {tour.groupSize}
           {showRegion ? (
             <>
               <span aria-hidden="true"> · </span>

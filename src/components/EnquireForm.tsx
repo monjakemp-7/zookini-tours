@@ -25,7 +25,7 @@ const fieldIds = {
   dates: "enquiry-to",
 } as const;
 
-export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" }: EnquireFormProps) {
+export function EnquireForm({ defaultTour = "not-sure", heading = "Get in Touch" }: EnquireFormProps) {
   const known = enquiryOptions.some((option) => option.value === defaultTour);
   const initialTour = known ? defaultTour : "not-sure";
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -68,16 +68,16 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
     const body = [
       `Hello,`,
       ``,
-      `I would like to enquire about a Zookini celebration.`,
+      `I would like to enquire about a Zookini tour.`,
       ``,
       `Name: ${name}`,
       `Email: ${email}`,
       `Phone: ${phone}`,
-      `Planning: ${tourName}`,
+      `Tour: ${tourName}`,
       `Dates: ${dateFrom || "Flexible"}${dateTo ? ` to ${dateTo}` : ""}`,
-      `Group size: ${groupSize || "Not sure yet"}`,
+      `Number of persons: ${groupSize || "Not sure yet"}`,
       ``,
-      message || "No extra note.",
+      message || "No message.",
     ].join("\n");
 
     // Opens the guest's own email app. Nothing is sent until they send that message.
@@ -161,7 +161,7 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
             ) : null}
           </label>
           <label className="field" htmlFor="enquiry-tour">
-            <span className="field-label">What you are planning *</span>
+            <span className="field-label">Tour *</span>
             <select
               id="enquiry-tour"
               name="tour"
@@ -185,11 +185,11 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
         </div>
         <div className="form-group">
           <label className="field" htmlFor="enquiry-from">
-            <span className="field-label">Preferred start</span>
+            <span className="field-label">Preferred start date</span>
             <input id="enquiry-from" name="dateFrom" type="date" />
           </label>
           <label className="field" htmlFor="enquiry-to">
-            <span className="field-label">Preferred end</span>
+            <span className="field-label">Preferred end date</span>
             <input
               id="enquiry-to"
               name="dateTo"
@@ -206,14 +206,14 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
         </div>
         <div className="form-group">
           <label className="field field-span" htmlFor="enquiry-group">
-            <span className="field-label">Group size</span>
+            <span className="field-label">Number of persons</span>
             <input
               id="enquiry-group"
               name="groupSize"
               type="number"
               min={1}
               inputMode="numeric"
-              placeholder="Usually 12 to 16"
+              placeholder="Minimum of 12 Persons"
             />
           </label>
           <label className="field field-span" htmlFor="enquiry-message">
@@ -221,19 +221,18 @@ export function EnquireForm({ defaultTour = "not-sure", heading = "Send a note" 
             <textarea
               id="enquiry-message"
               name="message"
-              placeholder="Who is travelling, and what you hope the days will feel like."
+              placeholder="Who is travelling, and what would you like to do?"
             />
           </label>
         </div>
       </div>
       <button className="btn btn-solid w-fit" type="submit">
-        Send the note
+        Send
       </button>
       {status === "success" ? (
         <p role="status" className="form-note">
-          Your email app should open a message to {site.email}. Send it from there, and the note comes to our team. If
-          the app does not open, write to us at that address or{" "}
-          <a href={whatsapp}>send a WhatsApp</a>.
+          Your email app should now open with your message to {site.email}. If it does not, please e-mail us at that
+          address or send us a WhatsApp.
         </p>
       ) : null}
     </form>

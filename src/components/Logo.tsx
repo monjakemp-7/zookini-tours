@@ -18,7 +18,7 @@ export function Logo({ variant = "colour", className = "", labelled = true, prio
     <span className={`relative inline-block aspect-[400/311] shrink-0 ${className}`}>
       <Image
         src={marks[variant]}
-        alt={labelled ? "Zookini Tours. Celebrate Life!" : ""}
+        alt={labelled ? "Zookini Tours logo, Celebrating Life!" : ""}
         fill
         priority={priority}
         sizes="(max-width: 768px) 160px, 240px"

@@ -7,7 +7,7 @@ import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { TravelTabs } from "@/components/TravelTabs";
 import { getCommunityTiles } from "@/content/community";
 import { photos } from "@/content/photos";
-import { clients, defaultWhatsAppMessage, hostStory, houseStory, steps, whatsappHref } from "@/content/site";
+import { clients, defaultWhatsAppMessage, homeQuote, hostStory, houseStory, steps, whatsappHref } from "@/content/site";
 import { getFeaturedTours } from "@/content/tours";
 
 export default function HomePage() {
@@ -33,7 +33,7 @@ export default function HomePage() {
               <p key={paragraph}>{paragraph}</p>
             ))}
             <Link className="text-link" href="/about">
-              Read our story
+              {houseStory.link}
             </Link>
           </div>
         </div>
@@ -43,10 +43,10 @@ export default function HomePage() {
         <div className="wrap-wide">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
             <h2 id="journeys-heading" className="section-title">
-              Find your celebration
+              Leisure
             </h2>
             <Link className="text-link" href="/tours">
-              See the journeys
+              Leisure Tours
             </Link>
           </div>
           <div className="mt-6">
@@ -55,7 +55,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="photo-break on-photo" aria-label="People, food, nature, art, and wine">
+      <section className="photo-break on-photo" aria-label="South Africa is one of the most diverse countries in the world.">
         <div className="parallax-frame" data-parallax>
           <Image
             src={photos.winelands.src}
@@ -67,14 +67,14 @@ export default function HomePage() {
         </div>
         <div className="hero-scrim" aria-hidden="true" />
         <div className="wrap">
-          <p className="section-title text-white">People, food, nature, art, and wine.</p>
+          <p className="section-title text-white">South Africa is one of the most diverse countries in the world.</p>
         </div>
       </section>
 
       <section className="band contour-band" aria-labelledby="ways-heading">
         <div className="wrap">
           <h2 id="ways-heading" className="section-title">
-            Ways to travel
+            Leisure, Educational, Corporate
           </h2>
           <div className="mt-8">
             <TravelTabs />
@@ -121,11 +121,8 @@ export default function HomePage() {
       <section className="band client-strip" aria-label="Clients">
         <div className="wrap relative z-10">
           <blockquote className="quote-block">
-            <p>
-              “A travel adventure has no substitute. It is the ultimate experience, your one big opportunity for
-              flair.”
-            </p>
-            <footer>Rosalind Massow</footer>
+            <p>{homeQuote.text}</p>
+            <footer>{homeQuote.name}</footer>
           </blockquote>
           <ul className="client-names">
             {clients.map((client) => (
@@ -162,11 +159,11 @@ export default function HomePage() {
         <div className="hero-scrim" aria-hidden="true" />
         <div className="wrap center-block">
           <h2 id="close-heading" className="display text-white">
-            Tell us what you&apos;re celebrating
+            Come celebrate life with us!
           </h2>
           <div className="hero-actions">
             <Link className="btn btn-solid" href="/enquire">
-              Enquire
+              Get in touch
             </Link>
             <a className="btn btn-line" href={whatsappHref(defaultWhatsAppMessage)}>
               WhatsApp

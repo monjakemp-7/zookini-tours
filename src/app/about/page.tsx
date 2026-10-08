@@ -5,9 +5,9 @@ import { photos } from "@/content/photos";
 import { aboutStory } from "@/content/site";
 
 export const metadata = {
-  title: "About",
+  title: { absolute: "About Zookini Tours, South Africa, Zookini Tours" },
   description:
-    "Zookini Tours plans leisure, corporate, and school journeys from Paarl. Someone on the team answers every enquiry.",
+    "Zookini Tours believe in celebrating life! We celebrate people, food, nature, art, wine, all the finer things in life that give meaning to our souls!",
 };
 
 export default function AboutPage() {
@@ -33,7 +33,7 @@ export default function AboutPage() {
               <p key={paragraph}>{paragraph}</p>
             ))}
             <Link className="text-link" href="/tours">
-              See the journeys
+              {aboutStory.link}
             </Link>
           </div>
         </div>

@@ -22,7 +22,7 @@ export function TourCard({ tour, large = false }: { tour: Tour; large?: boolean 
           <p className="card-meta">
             {tour.duration}
             <span aria-hidden="true"> · </span>
-            {tour.groupSize} guests
+            {tour.groupSize}
           </p>
         </div>
       </Link>

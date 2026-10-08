@@ -27,7 +27,7 @@ export function PageHero({ eyebrow, title, lede, image, imageAlt, short = false 
       <div className="hero-scrim" aria-hidden="true" />
       <div className="intro wrap relative z-10 py-[var(--space-6)] md:py-[var(--space-7)]">
         <p className="eyebrow light">{eyebrow}</p>
-        <h1 className="display text-white">{title}</h1>
+        <h1 className={`display text-white${title.length > 36 ? " is-long" : ""}`}>{title}</h1>
         <p className="lede light">{lede}</p>
       </div>
     </section>

@@ -3,9 +3,9 @@ import { photoLibrary } from "@/content/photos";
 import { socialPosts, socialSourceLabel, weddingPhotoCredit } from "@/content/social";
 
 export const metadata: Metadata = {
-  title: "Photo credits",
+  title: { absolute: "Photo credits, South Africa, Zookini Tours" },
   description:
-    "The photographs on Zookini Tours. Most are from Unsplash, taken in South Africa. Six frames are our own posts.",
+    "The photographs on the Zookini Tours website. Most are from Unsplash and were taken in South Africa. Six are from our own Facebook and Instagram.",
 };
 
 export default function CreditsPage() {
@@ -14,10 +14,10 @@ export default function CreditsPage() {
       <div className="wrap max-w-3xl">
         <p className="eyebrow">Credits</p>
         <h1 className="section-title">Photographs</h1>
-        <p className="mt-4 max-w-xl">
-          Most of the photographs on this site are from Unsplash, all taken in South Africa. They stand in until
-          our own photographs take their place. They are published under the Unsplash licence. The
-          photographers are credited here. The people in the pictures are not endorsing Zookini Tours.
+        <p className="mt-4 max-w-3xl">
+          Most of the photographs on this website are from Unsplash. They were all taken in South Africa and are used
+          under the Unsplash licence. The photographers are credited below. The people in the photographs do not
+          endorse Zookini Tours.
         </p>
         <ul className="credit-list">
           {photoLibrary.map((photo) => (
@@ -37,9 +37,9 @@ export default function CreditsPage() {
             </li>
           ))}
         </ul>
-        <h2 className="section-title mt-10">Zookini Tours&apos; own posts</h2>
-        <p className="mt-4 max-w-xl">
-          These six frames are from our own Facebook and Instagram. They appear in the row on the homepage.
+        <h2 className="section-title mt-10">From our own Facebook and Instagram</h2>
+        <p className="mt-4 max-w-3xl">
+          These six photographs are from our own Facebook and Instagram pages and appear on our home page.
         </p>
         <ul className="credit-list">
           {socialPosts.map((post) => (

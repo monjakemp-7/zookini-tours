@@ -11,7 +11,7 @@ export function SiteFooter() {
       <div className="wrap grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-start">
         <Logo variant="white" className="h-auto w-36" />
         <div>
-          <p className="eyebrow light">Get in touch</p>
+          <p className="eyebrow light">{site.footerHeading}</p>
           <ul className="mt-2 space-y-1 text-sm">
             <li>
               <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
@@ -28,7 +28,7 @@ export function SiteFooter() {
         <p>{site.copyright}</p>
         <p className="flex gap-4">
           <Link href="/credits">Photo credits</Link>
-          <Link href="/policies">How booking works</Link>
+          <Link href="/terms">Terms and Conditions</Link>
         </p>
       </div>
     </footer>

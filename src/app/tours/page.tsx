@@ -6,9 +6,9 @@ import { defaultWhatsAppMessage, whatsappHref } from "@/content/site";
 import { tours } from "@/content/tours";
 
 export const metadata = {
-  title: "Tours",
+  title: { absolute: "Leisure Tours, South Africa, Zookini Tours" },
   description:
-    "Zookini journeys: Cape Town, fynbos, food, art, wine, the Garden Route, bushveld, and the Drakensberg.",
+    "Come and celebrate our beautiful country, South Africa! We offer boutique styled and unique tours with exceptional quality and personalised service.",
 };
 
 export default function ToursPage() {
@@ -17,20 +17,20 @@ export default function ToursPage() {
       <PageHero
         short
         eyebrow="Leisure"
-        title="The journeys"
-        lede="Many tours hold 12 to 16 guests. Some can take a larger group."
+        title="Come celebrate life with us!"
+        lede="South Africa is one of the most diverse countries in the world. It is a country of beauty and splendour, a unique and inspiring experience!"
         image={photos.capeTown.src}
         imageAlt={photos.capeTown.alt}
       />
       <nav className="door-row wrap" aria-label="Ways to travel">
         <Link className="door-link" href="/tours" aria-current="page">
-          See the journeys
+          Leisure
         </Link>
         <Link className="door-link" href="/corporate">
-          Plan a team trip
+          Corporate
         </Link>
         <Link className="door-link" href="/educational">
-          Plan a school trip
+          Educational
         </Link>
       </nav>
       <section className="band contour-band">
@@ -41,11 +41,11 @@ export default function ToursPage() {
       <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="handcraft-heading">
         <div className="wrap center-block">
           <h2 id="handcraft-heading" className="section-title text-white">
-            Do not see your celebration? We will plan it
+            Tailor Made Tours with a specific theme in mind
           </h2>
           <div className="hero-actions">
             <Link className="btn btn-solid" href="/enquire">
-              Enquire
+              Get in touch
             </Link>
             <a className="btn btn-line" href={whatsappHref(defaultWhatsAppMessage)}>
               WhatsApp

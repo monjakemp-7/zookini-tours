@@ -90,15 +90,17 @@ export function HomeHero() {
       </div>
       <div className="hero-scrim" aria-hidden="true" />
       <div className="intro center relative z-10 text-white">
-        <p className="eyebrow light">Cape Winelands. Small-group tours.</p>
+        <p className="eyebrow light">Hand Crafted and Unique Tours</p>
         <h1 className="display text-white">Celebrating Life!</h1>
-        <p className="lede light">Small South African tours for leisure travellers, teams, and schools.</p>
+        <p className="lede light">
+          We celebrate people, food, nature, art, wine, all the finer things in life that give meaning to our souls!
+        </p>
         <div className="hero-actions">
           <Link className="btn btn-solid" href="/enquire">
-            Enquire
+            Get in touch
           </Link>
           <a className="btn btn-line" href="#tours">
-            Explore tours
+            View Details
           </a>
         </div>
       </div>

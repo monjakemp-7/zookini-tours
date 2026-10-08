@@ -4,8 +4,9 @@ import { PageHero } from "@/components/PageHero";
 import { site, whatsappHref, defaultWhatsAppMessage } from "@/content/site";
 
 export const metadata = {
-  title: "Enquire",
-  description: "Ask us about a Zookini tour, a corporate breakaway, or a school trip.",
+  title: { absolute: "Enquire, South Africa, Zookini Tours" },
+  description:
+    "We look forward to assist on bringing your dream to life. Please complete the form, send us an e-mail or phone us. We look forward to hear from you!",
 };
 
 export default function EnquirePage({
@@ -16,9 +17,9 @@ export default function EnquirePage({
   return (
     <>
       <PageHero
-        eyebrow="Enquire"
-        title="A short note is enough"
-        lede="We reply in person. Tell us who is coming, and the dates you have in mind."
+        eyebrow="Contact Us"
+        title="Get in Touch"
+        lede="We look forward to assist on bringing your dream to life."
       />
       <section className="band">
         <div className="wrap grid gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
@@ -33,7 +34,7 @@ export default function EnquirePage({
               WhatsApp
             </a>
             <a className="btn btn-line btn-block" href={`tel:${site.phoneTel}`}>
-              Call
+              Phone us
             </a>
           </aside>
         </div>
@@ -48,5 +49,5 @@ async function EnquireWithTour({
   searchParams: Promise<{ tour?: string }>;
 }) {
   const { tour } = await searchParams;
-  return <EnquireForm defaultTour={tour ?? "not-sure"} heading="Send a note" />;
+  return <EnquireForm defaultTour={tour ?? "not-sure"} heading="Get in Touch" />;
 }

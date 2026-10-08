@@ -22,7 +22,7 @@ export function FactBar({ facts, enquireHref = "#enquire", whatsappHref }: FactB
       </dl>
       <div className="fact-bar-actions">
         <a className="btn btn-solid" href={enquireHref}>
-          Enquire
+          Get in touch
         </a>
         <a className="btn btn-line" href={whatsappHref}>
           WhatsApp

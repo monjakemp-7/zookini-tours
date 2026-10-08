@@ -7,9 +7,9 @@ import { photos } from "@/content/photos";
 import { defaultWhatsAppMessage, educationalStory, whatsappHref } from "@/content/site";
 
 export const metadata = {
-  title: "Educational",
+  title: { absolute: "School and Educational Tours, South Africa, Zookini Tours" },
   description:
-    "School trips, camps, and curriculum days. We hold the plan so teachers are not carrying it alone.",
+    "Every child remembers their school trips and tours! We ensure successful, enjoyable stress-free and unique day outings, camps and tours within South Africa.",
 };
 
 export default function EducationalPage() {
@@ -18,15 +18,15 @@ export default function EducationalPage() {
       <PageHero
         short
         eyebrow="Educational"
-        title="The outdoor classroom"
+        title="South Africa is a treasure trove waiting to be discovered!"
         lede={educationalStory.lede}
         image={photos.educational.src}
         imageAlt={photos.educational.alt}
       />
       <FactBar
         facts={[
-          { label: "Group size", value: "A class or a camp" },
-          { label: "Typical length", value: "A day out, or a camp" },
+          { label: "Who", value: "Students of any age and at any academic stage" },
+          { label: "What", value: "Day Excursions, Camps, All Inclusive Tours" },
         ]}
         whatsappHref={whatsappHref(defaultWhatsAppMessage)}
       />
@@ -40,7 +40,7 @@ export default function EducationalPage() {
               ))}
             </ul>
             <h2 id="arrange-heading" className="section-title">
-              We can arrange
+              {educationalStory.offersTitle}
             </h2>
             <ul className="list-disc space-y-2 pl-5">
               {educationalStory.offers.map((offer) => (
@@ -63,12 +63,12 @@ export default function EducationalPage() {
         </div>
       </section>
       <div className="wrap-wide pb-[var(--space-7)]">
-        <PhotoStrip photos={[photos.heritage, photos.gardenRoute, photos.educational]} />
+        <PhotoStrip photos={[photos.capeTown, photos.gardenRoute, photos.educational]} />
       </div>
       <section className="band steps-band bg-[var(--color-teal-ink)] text-white" aria-labelledby="tailor-heading">
         <div className="wrap">
           <h2 id="tailor-heading" className="section-title text-white">
-            Can we change this trip?
+            {educationalStory.tailorTitle}
           </h2>
           <p className="mt-4 max-w-xl text-white/90">{educationalStory.tailor}</p>
         </div>
@@ -77,7 +77,7 @@ export default function EducationalPage() {
         <div className="wrap split">
           <div className="split-copy enquire-panel rounded-[var(--radius-lg)] bg-white p-5 md:p-8">
             <h2 id="ready-heading" className="section-title">
-              Ready to celebrate?
+              Get in touch
             </h2>
             <div className="mt-4">
               <EnquireForm defaultTour="educational" heading="" />

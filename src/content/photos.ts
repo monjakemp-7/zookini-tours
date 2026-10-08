@@ -1,6 +1,6 @@
 /**
  * Placeholder photography for the marketing site.
- * Swap the house's own pictures by replacing `src` (and clearing the Unsplash
+ * Swap a photograph by replacing `src` (and clearing the Unsplash
  * credit fields when the photo is no longer from Unsplash).
  * Components read this file only. They do not hard-code photo paths.
  */
@@ -160,7 +160,7 @@ export const photos = {
   winelands: {
     id: "winelands",
     src: "/images/winelands.jpg",
-    alt: "People walking through an oak-lined gateway in Stellenbosch",
+    alt: "People walking through an oak lined gateway in Stellenbosch",
     photographer: "Omar",
     profile: "https://unsplash.com/@ommyjay",
     page: "https://unsplash.com/photos/view-through-a-white-archway-to-people-walking-among-trees-8ErSaR6zpqM",
@@ -186,16 +186,6 @@ export const photos = {
     page: "https://unsplash.com/photos/group-of-people-walking-on-grass-field-during-golden-hour-MVT0Nz9YClY",
     location: "Wild Coast",
     caption: "Wild Coast",
-  },
-  heritage: {
-    id: "heritage",
-    src: "/images/heritage-visit.jpg",
-    alt: "Visitors among exhibits at the Apartheid Museum",
-    photographer: "Michael Schofield",
-    profile: "https://unsplash.com/@coachpotatoes",
-    page: "https://unsplash.com/photos/people-walking-on-sidewalk-during-daytime-IR-64Oe8S7A",
-    location: "Apartheid Museum, Johannesburg",
-    caption: "Johannesburg",
   },
   enquireBand: {
     id: "enquire-band",
@@ -229,7 +219,7 @@ export const heroSlides: readonly Photo[] = [
 export const tourGalleries: Record<string, readonly Photo[]> = {
   "women-and-wine-weekend": [photos.winelands, photos.signature, photos.overberg],
   "i-love-cape-town": [photos.houtBay, photos.foodie, photos.fynbos],
-  "life-is-art": [photos.art, photos.winelands, photos.heritage],
+  "life-is-art": [photos.art, photos.winelands, photos.capeTown],
   "protea-and-fynbos": [photos.fynbos, photos.gardenRoute, photos.overberg],
   "time-to-taste-foodie": [photos.foodie, photos.wine, photos.winelands],
   "wondrous-west-coast": [photos.westCoast, photos.houtBay, photos.gardenRoute],

@@ -16,18 +16,18 @@ export function MobileEnquireBar() {
     <div className="mobile-bar" role="region" aria-label="Quick contact">
       {tour ? (
         <a className="btn btn-solid" href={enquireHref}>
-          Enquire
+          Get in touch
         </a>
       ) : (
         <Link className="btn btn-solid" href={enquireHref}>
-          Enquire
+          Get in touch
         </Link>
       )}
       <a className="btn btn-line" href={whatsappHref(message)}>
         WhatsApp
       </a>
       <a className="btn btn-line" href={`tel:${site.phoneTel}`}>
-        Call
+        Phone us
       </a>
     </div>
   );

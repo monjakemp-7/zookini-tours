@@ -17,7 +17,7 @@ export type CommunityTile = {
 const instagram = socials.find((social) => social.label === "Instagram");
 
 export const communityFeed = {
-  title: "From the road",
+  title: "Follow us on Instagram",
   handle: "@zookinitours",
   profileUrl: instagram?.href ?? "https://www.instagram.com/zookinitours/",
 } as const;
