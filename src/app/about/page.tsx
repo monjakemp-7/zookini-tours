@@ -36,7 +36,7 @@ export default function AboutPage() {
           </p>
           <p>Anita is the person on the phone and in the inbox. There is no call centre between you and the plan.</p>
           <Link className="text-link" href="/tours">
-            Browse tours
+            See the journeys
           </Link>
         </div>
       </div>

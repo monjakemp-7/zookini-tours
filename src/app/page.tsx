@@ -71,11 +71,11 @@ export default function HomePage() {
               A small house with a long table
             </h2>
             <p>
-              Zookini is a small house in the Winelands. Every tour is built for the people in front of us — not
+              Zookini is a small house in the Winelands. Every tour is built for the people in front of us, not
               pulled off a shelf.
             </p>
             <Link className="text-link" href="/about">
-              About
+              Read our story
             </Link>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
               Find your celebration
             </h2>
             <Link className="text-link" href="/tours">
-              All tours
+              See the journeys
             </Link>
           </div>
           <div className="mt-6">

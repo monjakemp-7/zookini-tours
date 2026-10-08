@@ -37,7 +37,7 @@ export function SiteFooter() {
         <p>{site.copyright}</p>
         <p className="flex gap-4">
           <Link href="/credits">Photo credits</Link>
-          <Link href="/policies">Policies</Link>
+          <Link href="/policies">How booking works</Link>
         </p>
       </div>
     </footer>

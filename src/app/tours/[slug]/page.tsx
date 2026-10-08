@@ -159,7 +159,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             </ul>
             <p className="mt-4">
               <Link className="text-link" href="/policies">
-                Booking policies
+                How booking works
               </Link>
             </p>
           </div>

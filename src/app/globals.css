@@ -748,6 +748,10 @@ textarea {
   .portrait-card:focus-visible .card-photo,
   .offer-door:hover .offer-arrow,
   .offer-door:focus-visible .offer-arrow,
+  .door-link:hover::after,
+  .door-link:focus-visible::after,
+  .text-link:hover::after,
+  .text-link:focus-visible::after,
   .day[open] .day-mark::before {
     transform: none;
   }
@@ -1433,6 +1437,20 @@ textarea {
   color: var(--color-teal-ink);
 }
 
+.door-link::after,
+.text-link::after {
+  content: "→";
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.door-link:hover::after,
+.door-link:focus-visible::after,
+.text-link:hover::after,
+.text-link:focus-visible::after {
+  transform: translateX(3px);
+}
+
 .door-link[aria-current="page"] {
   border-color: var(--color-teal-ink);
   background: var(--color-teal-ink);
@@ -1446,6 +1464,9 @@ textarea {
 }
 
 .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--color-teal-ink);
   font-family: var(--font-display);
   font-size: 0.75rem;

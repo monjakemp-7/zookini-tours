@@ -24,13 +24,13 @@ export default function ToursPage() {
       />
       <nav className="door-row wrap" aria-label="Ways to travel">
         <Link className="door-link" href="/tours" aria-current="page">
-          Leisure tours
+          See the journeys
         </Link>
         <Link className="door-link" href="/corporate">
-          Corporate
+          Plan a team trip
         </Link>
         <Link className="door-link" href="/educational">
-          Schools
+          Plan a school trip
         </Link>
       </nav>
       <section className="band contour-band">
