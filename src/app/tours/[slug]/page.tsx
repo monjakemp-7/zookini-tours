@@ -10,8 +10,8 @@ import { PhotoStrip } from "@/components/PhotoStrip";
 import { PolaroidCluster } from "@/components/PolaroidCluster";
 import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { TourListen } from "@/components/TourListen";
-import { lifeArtCluster, lifeArtGallery } from "@/content/life-art";
 import { galleryFor } from "@/content/photos";
+import { framesFor } from "@/content/tour-frames";
 import { bookingGlance, tourTailor, tourWhatsAppMessage, whatsappHref } from "@/content/site";
 import { getRelatedTours, getTour, tours } from "@/content/tours";
 
@@ -38,8 +38,8 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
   const tour = getTour(slug);
   if (!tour) notFound();
 
-  const lifeArt = tour.slug === "life-is-art";
-  const gallery = lifeArt ? lifeArtGallery : galleryFor(tour.slug);
+  const frames = framesFor(tour.slug);
+  const gallery = frames ? frames.gallery : galleryFor(tour.slug);
   const highlightsPhoto = gallery[0];
   const enquirePhoto = gallery[2] ?? gallery[1];
   const lead = tour.story.slice(0, 2);
@@ -94,8 +94,8 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
                 ))}
               </ul>
             </div>
-            {lifeArt ? (
-              <PolaroidCluster frames={lifeArtCluster} />
+            {frames ? (
+              <PolaroidCluster frames={frames.cluster} />
             ) : (
               <PolaroidPhoto
                 photo={highlightsPhoto}

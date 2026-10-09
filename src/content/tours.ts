@@ -1,4 +1,4 @@
-import { lifeArtHero } from "@/content/life-art";
+import { capeTownHero, lifeArtHero, wineWeekendHero } from "@/content/tour-frames";
 
 export const themes = [
   { id: "foodie", label: "Foodie" },
@@ -99,8 +99,9 @@ export const tours: Tour[] = [
       "Tailor made Weekend Tour of 3 days",
       "Woman only",
     ],
-    image: "/images/wine.jpg",
-    imageAlt: "Two women toasting with wine glasses",
+    image: wineWeekendHero.src,
+    imageAlt: wineWeekendHero.alt,
+    imagePosition: wineWeekendHero.position,
     featured: true,
     note: "Woman only",
   },
@@ -186,8 +187,9 @@ export const tours: Tour[] = [
       "Maximum of 52 Persons per tour.",
       "Tailor made tour of 3 to 5 days",
     ],
-    image: "/images/cape-town.jpg",
-    imageAlt: "Table Mountain across the water at dusk",
+    image: capeTownHero.src,
+    imageAlt: capeTownHero.alt,
+    imagePosition: capeTownHero.position,
     featured: true,
   },
   {
