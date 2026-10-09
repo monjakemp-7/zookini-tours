@@ -19,32 +19,21 @@ export function StepRoute({ steps }: { steps: readonly Step[] }) {
     const list = listRef.current;
     if (!list) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const items = [...list.querySelectorAll<HTMLLIElement>("li")];
     const track = list.querySelector<HTMLElement>(".step-track");
     const bus = list.querySelector<HTMLElement>(".step-bus");
-    if (reduce || !track) {
-      items[0]?.classList.add("is-lit");
-      return;
-    }
+    if (reduce || scrollDriven || !track || !bus) return;
 
     let frame = 0;
     const update = () => {
       frame = 0;
       const route = track.getBoundingClientRect();
-      if (route.height < 1 || !bus) return;
+      if (route.height < 1) return;
       const travel = Math.max(0, route.height - bus.offsetHeight);
-      if (!scrollDriven) {
-        const start = window.innerHeight * 0.82;
-        const end = window.innerHeight * 0.22;
-        const span = route.height + (start - end);
-        const progress = Math.min(1, Math.max(0, (start - route.top) / span));
-        bus.style.transform = `translate3d(-50%, ${(progress * travel).toFixed(1)}px, 0) rotate(-90deg)`;
-      }
-      const busY = bus.getBoundingClientRect().top + bus.offsetHeight * 0.55;
-      items.forEach((item) => {
-        const mark = item.getBoundingClientRect().top + 4;
-        item.classList.toggle("is-lit", busY >= mark);
-      });
+      const start = window.innerHeight * 0.82;
+      const end = window.innerHeight * 0.22;
+      const span = route.height + (start - end);
+      const progress = Math.min(1, Math.max(0, (start - route.top) / span));
+      bus.style.transform = `translate3d(-50%, ${(progress * travel).toFixed(1)}px, 0) rotate(-90deg)`;
     };
     const onScroll = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
@@ -58,8 +47,7 @@ export function StepRoute({ steps }: { steps: readonly Step[] }) {
       window.removeEventListener("resize", onScroll);
       window.cancelAnimationFrame(first);
       if (frame) window.cancelAnimationFrame(frame);
-      if (bus) bus.style.transform = "";
-      items.forEach((item) => item.classList.remove("is-lit"));
+      bus.style.transform = "";
     };
   }, []);
 

@@ -2144,35 +2144,20 @@ textarea {
 
 .step-list li {
   display: grid;
-  grid-template-columns: 2.6rem minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr);
   gap: var(--space-3);
+  align-items: first baseline;
 }
 
 .step-num {
-  position: relative;
-  z-index: 0;
   margin: 0;
   color: var(--color-teal-ink);
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  line-height: 1.3;
-}
-
-.step-num::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: -0.12em -0.28em;
-  border-radius: 999px;
-  background: #80a6ad;
-  opacity: 0;
-  transition: opacity 280ms ease;
-}
-
-.step-list li.is-lit .step-num::before {
-  opacity: 0.35;
+  line-height: var(--leading-display);
+  white-space: nowrap;
 }
 
 .step-track {
@@ -2226,12 +2211,6 @@ textarea {
 @keyframes bus-drive {
   to {
     transform: translate3d(-50%, calc(100cqb - var(--bus-size)), 0) rotate(-90deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .step-route li:first-child .step-num::before {
-    opacity: 0.35;
   }
 }
 
