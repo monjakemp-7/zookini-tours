@@ -4,11 +4,13 @@ import { BrushHeading } from "@/components/BrushHeading";
 import { CommunityGrid } from "@/components/CommunityGrid";
 import { ExperienceCarousel } from "@/components/ExperienceCarousel";
 import { HomeHero } from "@/components/HomeHero";
+import { PolaroidCluster } from "@/components/PolaroidCluster";
 import { PolaroidPhoto } from "@/components/PolaroidPhoto";
 import { TravelTabs } from "@/components/TravelTabs";
 import { StepRoute } from "@/components/StepRoute";
 import { getCommunityTiles } from "@/content/community";
 import { photos } from "@/content/photos";
+import { houseCluster } from "@/content/travel-clusters";
 import { clients, defaultWhatsAppMessage, homeQuote, hostStory, houseStory, steps, whatsappHref } from "@/content/site";
 import { getFeaturedTours } from "@/content/tours";
 
@@ -21,12 +23,7 @@ export default function HomePage() {
 
       <section className="band" aria-labelledby="house-heading">
         <div className="wrap split">
-          <PolaroidPhoto
-            photo={photos.signature}
-            tilt="left"
-            className="split-photo"
-            sizes="(min-width: 768px) 42vw, 92vw"
-          />
+          <PolaroidCluster frames={houseCluster} />
           <div className="split-copy">
             <BrushHeading id="house-heading" className="section-title">
               {houseStory.title}

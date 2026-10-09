@@ -17,6 +17,19 @@ function socialFrame(id: string, caption: string): ClusterFrame {
 }
 
 /**
+ * Five frames for the home "Every tour is unique" block.
+ * None of these photographs are in the Leisure, Corporate, or Educational piles.
+ * The Stellenbosch lunch stays at the front. Back photos are listed first.
+ */
+export const houseCluster = [
+  photos.drakensberg,
+  photos.gardenRoute,
+  photos.overberg,
+  photos.hero,
+  photos.signature,
+] as const satisfies readonly ClusterFrame[];
+
+/**
  * Five frames for the home Leisure, Corporate, and Educational panels.
  * Back photos are listed first so the existing drop settles the front frame last.
  * Captions are place names or what the photograph shows.
