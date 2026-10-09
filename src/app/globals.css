@@ -2577,7 +2577,7 @@ textarea {
   }
 }
 
-/* Dotted route beside the three enquiry steps. The bus is parked at 01 unless motion is allowed. */
+/* Dotted route beside the three enquiry steps. The van is parked at 01 unless motion is allowed. */
 .step-route {
   position: relative;
   margin-top: var(--space-5);
@@ -2625,41 +2625,42 @@ textarea {
 }
 
 .step-bus {
-  --bus-size: 16px;
+  --bus-span: 22px;
+  --bus-length: calc(var(--bus-span) * 126 / 56);
   position: absolute;
   top: 0;
   left: 50%;
-  width: var(--bus-size);
-  height: var(--bus-size);
-  transform: translate3d(-50%, 0, 0) rotate(-90deg);
+  width: var(--bus-span);
+  height: var(--bus-length);
+  transform: translate3d(-50%, 0, 0);
 }
 
-.step-bus svg {
+.step-bus img {
   display: block;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  filter: drop-shadow(0 1px 1px rgb(34 48 51 / 0.32));
 }
 
 @media (min-width: 768px) {
   .step-bus {
-    --bus-size: 22px;
+    --bus-span: 28px;
   }
 }
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .step-bus {
-      animation: bus-drive linear both;
+      animation: van-drive linear both;
       animation-timeline: --step-route;
       animation-range: entry 8% cover 86%;
     }
   }
 }
 
-@keyframes bus-drive {
+@keyframes van-drive {
   to {
-    transform: translate3d(-50%, calc(100cqb - var(--bus-size)), 0) rotate(-90deg);
+    transform: translate3d(-50%, calc(100cqb - var(--bus-length)), 0);
   }
 }
 
