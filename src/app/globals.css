@@ -2437,14 +2437,13 @@ textarea {
   scroll-margin-top: 6.5rem;
 }
 
-/* Tour-bus cursor. Hotspot is the front bumper. The hand and the I-beam stay on controls. */
+/* Camper-van cursor. Hotspot is the front bumper. The hand and the I-beam stay on controls. */
 @media (hover: hover) and (pointer: fine) {
   body {
-    cursor: url("/cursors/bus.svg") 2 16, url("/cursors/bus-32.png") 2 16, auto;
+    cursor: url("/cursors/van-48.png") 4 18, auto;
     cursor:
-      image-set(url("/cursors/bus-32.png") 1x, url("/cursors/bus-64.png") 2x) 2 16,
-      url("/cursors/bus.svg") 2 16,
-      url("/cursors/bus-32.png") 2 16,
+      image-set(url("/cursors/van-48.png") 1x, url("/cursors/van-96.png") 2x) 4 18,
+      url("/cursors/van-48.png") 4 18,
       auto;
   }
 
