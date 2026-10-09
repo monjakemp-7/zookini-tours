@@ -427,6 +427,101 @@
   color: var(--color-text-on-teal);
 }
 
+.tour-listen-slot {
+  position: relative;
+  margin-top: 0.35rem;
+}
+
+.tour-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.15rem;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tour-listen:focus {
+  outline: none;
+}
+
+.tour-listen:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.tour-listen-label {
+  white-space: nowrap;
+}
+
+.record-disc {
+  position: relative;
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  flex: none;
+  transform-origin: center;
+}
+
+.record-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.record-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.record-hole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #3e5559;
+  transform: translate(-50%, -50%);
+}
+
+.tour-audio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour-listen[aria-pressed="true"] .record-disc {
+    animation: record-spin 3.6s linear infinite;
+  }
+}
+
+@keyframes record-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .hero-scrim {
   position: absolute;
   inset: 0;
@@ -2431,6 +2526,16 @@ textarea {
 
 .credit-list a {
   color: var(--color-teal-ink);
+}
+
+.sounds-subhead {
+  margin: var(--space-6) 0 0;
+  color: var(--color-teal-ink);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: var(--leading-display);
 }
 
 #tours {

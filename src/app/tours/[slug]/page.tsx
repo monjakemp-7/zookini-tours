@@ -8,6 +8,7 @@ import { ExperienceCarousel } from "@/components/ExperienceCarousel";
 import { FactBar } from "@/components/FactBar";
 import { PhotoStrip } from "@/components/PhotoStrip";
 import { PolaroidPhoto } from "@/components/PolaroidPhoto";
+import { TourListen } from "@/components/TourListen";
 import { galleryFor } from "@/content/photos";
 import { bookingGlance, tourTailor, tourWhatsAppMessage, whatsappHref } from "@/content/site";
 import { getRelatedTours, getTour, tours } from "@/content/tours";
@@ -55,6 +56,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             {tour.title}
           </BrushHeading>
           <p className="lede light">{tour.hook}</p>
+          <TourListen slug={tour.slug} title={tour.title} />
         </div>
       </section>
 

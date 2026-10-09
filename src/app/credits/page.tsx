@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { photoLibrary } from "@/content/photos";
 import { socialPosts, socialSourceLabel, weddingPhotoCredit } from "@/content/social";
+import { soundCredits } from "@/content/sounds";
 
 export const metadata: Metadata = {
   title: { absolute: "Photo credits, South Africa, Zookini Tours" },
   description:
-    "The photographs on the Zookini Tours website. Most are from Unsplash and were taken in South Africa. Six are from our own Facebook and Instagram.",
+    "The photographs and tour sounds on the Zookini Tours website. Most photographs are from Unsplash and were taken in South Africa. Six are from our own Facebook and Instagram.",
 };
 
 export default function CreditsPage() {
@@ -69,6 +70,55 @@ export default function CreditsPage() {
             {weddingPhotoCredit.label}
           </a>
         </p>
+        <h2 id="sounds" className="section-title mt-10">
+          Sounds
+        </h2>
+        <p className="mt-4 max-w-3xl">
+          The listen buttons on the tour pages play short loops mixed for Zookini Tours. These Freesound recordings
+          require attribution.
+        </p>
+        <ul className="credit-list">
+          {soundCredits.required.map((sound) => (
+            <li key={sound.page}>
+              <p className="text-sm">
+                &quot;
+                <a href={sound.page} target="_blank" rel="noopener noreferrer">
+                  {sound.title}
+                </a>
+                &quot; by{" "}
+                <a href={sound.authorUrl} target="_blank" rel="noopener noreferrer">
+                  {sound.author}
+                </a>
+                , licensed under{" "}
+                <a href={sound.licenceUrl} target="_blank" rel="noopener noreferrer">
+                  {sound.licence}
+                </a>
+                . {sound.note}
+              </p>
+            </li>
+          ))}
+        </ul>
+        <h3 className="sounds-subhead">Public domain recordings</h3>
+        <p className="mt-3 max-w-3xl text-sm">
+          These public domain recordings were also used. Attribution is not required.
+        </p>
+        <ul className="credit-list">
+          {soundCredits.courtesy.map((sound) => (
+            <li key={sound.page}>
+              <p className="text-sm">
+                &quot;
+                <a href={sound.page} target="_blank" rel="noopener noreferrer">
+                  {sound.title}
+                </a>
+                &quot; by{" "}
+                <a href={sound.authorUrl} target="_blank" rel="noopener noreferrer">
+                  {sound.author}
+                </a>
+                .
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
