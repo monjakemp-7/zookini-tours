@@ -1,7 +1,12 @@
 import Image from "next/image";
-import type { Photo } from "@/content/photos";
 
-export function PhotoStrip({ photos }: { photos: Photo[] }) {
+type StripPhoto = {
+  id: string;
+  src: string;
+  alt: string;
+};
+
+export function PhotoStrip({ photos }: { photos: readonly StripPhoto[] }) {
   return (
     <ul className="photo-strip">
       {photos.map((photo) => (

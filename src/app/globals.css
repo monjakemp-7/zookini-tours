@@ -2210,6 +2210,39 @@ textarea {
     --polaroid-tilt: -1.5deg;
   }
 
+  /* Four prints: two along the top, two along the bottom, overlapping in the middle. */
+  .polaroid-cluster.is-four .cluster-frame-1 {
+    top: 40%;
+    left: 0;
+    width: 48%;
+    z-index: 1;
+    --polaroid-tilt: -4deg;
+  }
+
+  .polaroid-cluster.is-four .cluster-frame-2 {
+    top: 42%;
+    right: 0;
+    width: 48%;
+    z-index: 1;
+    --polaroid-tilt: 5deg;
+  }
+
+  .polaroid-cluster.is-four .cluster-frame-3 {
+    top: 0;
+    left: 1%;
+    width: 50%;
+    z-index: 3;
+    --polaroid-tilt: -5deg;
+  }
+
+  .polaroid-cluster.is-four .cluster-frame-4 {
+    top: 1%;
+    right: 1%;
+    width: 48%;
+    z-index: 3;
+    --polaroid-tilt: 4.5deg;
+  }
+
   .polaroid-cluster .polaroid-caption {
     min-height: 2.5rem;
     padding: 0.2rem 0.35rem 0.35rem;

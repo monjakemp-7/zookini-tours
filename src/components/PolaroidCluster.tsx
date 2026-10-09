@@ -73,7 +73,7 @@ export function PolaroidCluster({ frames }: { frames: readonly ClusterFrame[] })
   }, []);
 
   return (
-    <div className="polaroid-cluster" ref={ref}>
+    <div className={frames.length === 4 ? "polaroid-cluster is-four" : "polaroid-cluster"} ref={ref}>
       {frames.map((frame, index) => (
         <PolaroidPhoto
           key={frame.src}

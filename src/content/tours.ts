@@ -1,3 +1,5 @@
+import { lifeArtHero } from "@/content/life-art";
+
 export const themes = [
   { id: "foodie", label: "Foodie" },
   { id: "wine", label: "Women & Wine" },
@@ -37,6 +39,8 @@ export type Tour = {
   practical: string[];
   image: string;
   imageAlt: string;
+  /** CSS object-position for the page hero crop. */
+  imagePosition?: string;
   featured: boolean;
   note?: string;
 };
@@ -279,8 +283,9 @@ export const tours: Tour[] = [
       "Maximum of 16 Persons per tour.",
       "Tailor made tour of 3 to 5 days",
     ],
-    image: "/images/art.jpg",
-    imageAlt: "A sculpture resting in the grass at a Franschhoek wine estate",
+    image: lifeArtHero.src,
+    imageAlt: lifeArtHero.alt,
+    imagePosition: lifeArtHero.position,
     featured: true,
   },
   {
