@@ -47,7 +47,7 @@ export default function CorporatePage() {
             photo={photos.signature}
             tilt="left"
             className="split-photo"
-            sizes="(min-width: 768px) 42vw, 92vw"
+            sizes="(min-width: 768px) 640px, 92vw"
           />
           <div className="split-copy">
             <p>{corporateStory.intro}</p>
@@ -130,7 +130,7 @@ export default function CorporatePage() {
             photo={photos.corporate}
             tilt="right"
             className="split-photo"
-            sizes="(min-width: 768px) 40vw, 92vw"
+            sizes="(min-width: 768px) 640px, 92vw"
           />
         </div>
       </section>

@@ -22,7 +22,7 @@ export default function AboutPage() {
             tape
             priority
             className="split-photo"
-            sizes="(min-width: 768px) 42vw, 92vw"
+            sizes="(min-width: 768px) 640px, 92vw"
           />
           <div className="split-copy">
             <Logo variant="colour" className="h-auto w-40" />

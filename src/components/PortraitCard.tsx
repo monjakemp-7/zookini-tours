@@ -9,7 +9,8 @@ export function PortraitCard({ tour, showRegion = false }: { tour: Tour; showReg
         src={tour.image}
         alt={tour.imageAlt}
         fill
-        sizes="(min-width: 1024px) 320px, 78vw"
+        sizes="(min-width: 1024px) 640px, 78vw"
+        quality={82}
         className="card-photo object-cover"
       />
       <span className="portrait-scrim" aria-hidden="true" />

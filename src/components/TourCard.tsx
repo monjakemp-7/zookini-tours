@@ -11,7 +11,8 @@ export function TourCard({ tour, large = false }: { tour: Tour; large?: boolean 
             src={tour.image}
             alt={tour.imageAlt}
             fill
-            sizes={large ? "(min-width: 1024px) 60vw, 100vw" : "(min-width: 1024px) 30vw, 100vw"}
+            sizes={large ? "(min-width: 1024px) 720px, 100vw" : "(min-width: 1024px) 480px, 100vw"}
+            quality={82}
             className="card-photo object-cover"
           />
         </div>

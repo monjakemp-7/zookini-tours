@@ -56,6 +56,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             fill
             priority
             sizes="100vw"
+            quality={82}
             className="object-cover"
             style={tour.imagePosition ? { objectPosition: tour.imagePosition } : undefined}
           />
@@ -101,7 +102,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
                 photo={highlightsPhoto}
                 tilt="left"
                 className="split-photo"
-                sizes="(min-width: 768px) 42vw, 92vw"
+                sizes="(min-width: 768px) 640px, 92vw"
               />
             )}
           </div>
@@ -220,7 +221,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             photo={enquirePhoto}
             tilt="right"
             className="split-photo"
-            sizes="(min-width: 768px) 40vw, 92vw"
+            sizes="(min-width: 768px) 640px, 92vw"
           />
         </div>
       </section>

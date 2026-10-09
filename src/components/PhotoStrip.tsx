@@ -11,7 +11,14 @@ export function PhotoStrip({ photos }: { photos: readonly StripPhoto[] }) {
     <ul className="photo-strip">
       {photos.map((photo) => (
         <li key={photo.id}>
-          <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            sizes="(min-width: 768px) 33vw, 100vw"
+            quality={82}
+            className="object-cover"
+          />
         </li>
       ))}
     </ul>

@@ -17,7 +17,7 @@ export function PolaroidPhoto({
   tilt = "left",
   tape = false,
   priority = false,
-  sizes = "(min-width: 768px) 42vw, 92vw",
+  sizes = "(min-width: 768px) 640px, 92vw",
   className,
 }: PolaroidPhotoProps) {
   const classes = [
@@ -38,6 +38,7 @@ export function PolaroidPhoto({
           fill
           priority={priority}
           sizes={sizes}
+          quality={82}
           className="object-cover"
           style={photo.objectPosition ? { objectPosition: photo.objectPosition } : undefined}
         />

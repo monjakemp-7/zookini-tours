@@ -52,7 +52,7 @@ export default function EducationalPage() {
             photo={photos.fynbos}
             tilt="left"
             className="split-photo"
-            sizes="(min-width: 768px) 42vw, 92vw"
+            sizes="(min-width: 768px) 640px, 92vw"
           />
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function EducationalPage() {
             photo={photos.houtBay}
             tilt="right"
             className="split-photo"
-            sizes="(min-width: 768px) 40vw, 92vw"
+            sizes="(min-width: 768px) 640px, 92vw"
           />
         </div>
       </section>

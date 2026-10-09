@@ -78,7 +78,8 @@ export function RoadCollage({ tiles }: { tiles: CommunityTile[] }) {
                 src={tile.src}
                 alt={tile.alt}
                 fill
-                sizes="(min-width: 1100px) 22vw, (min-width: 768px) 28vw, 46vw"
+                sizes="(min-width: 1100px) 420px, (min-width: 768px) 42vw, 80vw"
+                quality={82}
                 className="object-cover"
                 style={{ objectPosition: tile.objectPosition }}
               />

@@ -21,6 +21,7 @@ export function PageHero({ eyebrow, title, lede, image, imageAlt, short = false 
             fill
             priority
             sizes="100vw"
+            quality={82}
             className="object-cover"
           />
         </div>

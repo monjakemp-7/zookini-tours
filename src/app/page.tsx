@@ -61,6 +61,7 @@ export default function HomePage() {
             alt={photos.winelands.alt}
             fill
             sizes="100vw"
+            quality={82}
             className="object-cover"
           />
         </div>
@@ -99,7 +100,7 @@ export default function HomePage() {
               tilt="left"
               tape
               className="host-frame split-photo"
-              sizes="(min-width: 768px) 40vw, 92vw"
+              sizes="(min-width: 768px) 640px, 92vw"
             />
           </div>
         </div>
@@ -140,6 +141,7 @@ export default function HomePage() {
             alt={photos.enquireBand.alt}
             fill
             sizes="100vw"
+            quality={82}
             className="object-cover object-close"
           />
         </div>

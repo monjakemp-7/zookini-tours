@@ -80,7 +80,7 @@ export function PolaroidCluster({ frames }: { frames: readonly ClusterFrame[] })
           photo={frame}
           tilt={tilts[index] ?? "left"}
           tape
-          sizes="(min-width: 1024px) 18vw, (min-width: 768px) 28vw, 46vw"
+          sizes="(min-width: 1024px) 480px, (min-width: 768px) 40vw, 72vw"
           className={`cluster-frame cluster-frame-${index + 1}`}
         />
       ))}

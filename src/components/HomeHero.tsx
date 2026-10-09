@@ -80,7 +80,7 @@ export function HomeHero() {
                     priority={slideIndex === 0}
                     loading={slideIndex === 0 ? undefined : "lazy"}
                     sizes="100vw"
-                    quality={slideIndex === 0 ? 75 : 68}
+                    quality={82}
                     className="object-cover"
                   />
                 </div>
