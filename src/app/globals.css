@@ -1767,6 +1767,46 @@ textarea {
   aspect-ratio: 4 / 3;
 }
 
+/* Five small prints scattered in the photo column. The box is reserved so the pile does not shift the copy. */
+.polaroid-cluster {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.9rem;
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: clip;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0.15rem;
+  padding: 0.85rem 0.15rem 0.95rem;
+}
+
+.polaroid-cluster .polaroid {
+  --polaroid-tilt: -1.5deg;
+  position: relative;
+  flex: 0 0 11.25rem;
+  width: 11.25rem;
+  margin: 0.2rem 0;
+  scroll-snap-align: start;
+  padding: 7px 7px 0;
+}
+
+.polaroid-cluster .cluster-frame-2,
+.polaroid-cluster .cluster-frame-4 {
+  --polaroid-tilt: 1.5deg;
+}
+
+.polaroid-cluster .polaroid-caption {
+  min-height: 2.35rem;
+  overflow-wrap: break-word;
+  font-size: 1.15rem;
+}
+
+.polaroid-cluster .polaroid-photo {
+  aspect-ratio: 4 / 5;
+}
+
 .travel-panel-copy {
   display: flex;
   flex-direction: column;
@@ -1791,6 +1831,80 @@ textarea {
   .travel-panel {
     grid-template-columns: 1.15fr 0.85fr;
     gap: var(--space-8);
+  }
+
+  .polaroid-cluster {
+    display: block;
+    position: relative;
+    overflow: visible;
+    aspect-ratio: 5 / 6;
+    min-height: 28rem;
+    padding: 0;
+    scroll-snap-type: none;
+    overscroll-behavior-x: auto;
+  }
+
+  .polaroid-cluster .polaroid {
+    position: absolute;
+    flex: none;
+    margin: 0;
+    padding: 8px 8px 0;
+    scroll-snap-align: none;
+  }
+
+  /* Two prints across the top, three along the bottom. Lower prints sit
+     behind so every caption strip stays readable. Tilts stay inside the box. */
+  .polaroid-cluster .cluster-frame-1 {
+    top: 46%;
+    left: 1%;
+    width: 36%;
+    z-index: 1;
+    --polaroid-tilt: -4deg;
+  }
+
+  .polaroid-cluster .cluster-frame-2 {
+    top: 48%;
+    right: 1%;
+    width: 36%;
+    z-index: 1;
+    --polaroid-tilt: 5deg;
+  }
+
+  .polaroid-cluster .cluster-frame-3 {
+    top: 1%;
+    left: 2%;
+    width: 42%;
+    z-index: 3;
+    --polaroid-tilt: -5.5deg;
+  }
+
+  .polaroid-cluster .cluster-frame-4 {
+    top: 0;
+    right: 3%;
+    width: 40%;
+    z-index: 3;
+    --polaroid-tilt: 4.5deg;
+  }
+
+  .polaroid-cluster .cluster-frame-5 {
+    top: 34%;
+    left: 28%;
+    width: 44%;
+    z-index: 4;
+    --polaroid-tilt: -1.5deg;
+  }
+
+  .polaroid-cluster .polaroid-caption {
+    min-height: 2.5rem;
+    padding: 0.2rem 0.35rem 0.35rem;
+    font-size: 1.15rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .polaroid-cluster .polaroid:hover,
+  .polaroid-cluster .polaroid:focus-within {
+    z-index: 6;
   }
 }
 

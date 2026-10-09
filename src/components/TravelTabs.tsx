@@ -2,15 +2,13 @@
 
 import Link from "next/link";
 import { useId, useState } from "react";
-import { PolaroidPhoto } from "@/components/PolaroidPhoto";
-import { photos } from "@/content/photos";
+import { PolaroidCluster } from "@/components/PolaroidCluster";
+import { travelClusters } from "@/content/travel-clusters";
 import { ways } from "@/content/site";
 
 export function TravelTabs() {
   const base = useId();
   const [active, setActive] = useState<(typeof ways)[number]["id"]>("leisure");
-  const current = ways.find((way) => way.id === active) ?? ways[0];
-  const photo = photos[current.photo];
 
   return (
     <div className="travel-tabs">
@@ -22,7 +20,7 @@ export function TravelTabs() {
             role="tab"
             id={`${base}-${way.id}`}
             aria-selected={active === way.id}
-            aria-controls={`${base}-panel`}
+            aria-controls={`${base}-panel-${way.id}`}
             className="chip"
             onClick={() => setActive(way.id)}
           >
@@ -30,33 +28,32 @@ export function TravelTabs() {
           </button>
         ))}
       </div>
-      <div
-        role="tabpanel"
-        id={`${base}-panel`}
-        aria-labelledby={`${base}-${current.id}`}
-        className="travel-panel"
-      >
-        <PolaroidPhoto
-          photo={photo}
-          tilt="right"
-          className="travel-panel-photo"
-          sizes="(min-width: 768px) 46vw, 92vw"
-        />
-        <div className="travel-panel-copy">
-          <h3 className="section-title">{current.title}</h3>
-          <ul className="way-points">
-            {current.points.map((point) => (
-              <li key={point.label}>
-                <p className="eyebrow">{point.label}</p>
-                <p>{point.body}</p>
-              </li>
-            ))}
-          </ul>
-          <Link className="btn btn-line" href={current.href}>
-            {current.cta}
-          </Link>
+      {ways.map((way) => (
+        <div
+          key={way.id}
+          role="tabpanel"
+          id={`${base}-panel-${way.id}`}
+          aria-labelledby={`${base}-${way.id}`}
+          hidden={active !== way.id}
+          className="travel-panel"
+        >
+          <PolaroidCluster frames={travelClusters[way.id]} />
+          <div className="travel-panel-copy">
+            <h3 className="section-title">{way.title}</h3>
+            <ul className="way-points">
+              {way.points.map((point) => (
+                <li key={point.label}>
+                  <p className="eyebrow">{point.label}</p>
+                  <p>{point.body}</p>
+                </li>
+              ))}
+            </ul>
+            <Link className="btn btn-line" href={way.href}>
+              {way.cta}
+            </Link>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

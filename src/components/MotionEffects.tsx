@@ -96,7 +96,9 @@ export function MotionEffects() {
         else brushObserver.observe(heading);
       });
 
-      const polaroids = [...root.querySelectorAll<HTMLElement>(".polaroid")];
+      const polaroids = [...root.querySelectorAll<HTMLElement>(".polaroid")].filter(
+        (frame) => !frame.closest(".polaroid-cluster"),
+      );
       const polaroidGroups = new Map<Element, HTMLElement[]>();
       polaroids.forEach((frame) => {
         frame.classList.add("drop");

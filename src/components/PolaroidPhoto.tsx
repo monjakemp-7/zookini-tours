@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Photo } from "@/content/photos";
 
 type PolaroidPhotoProps = {
-  photo: Pick<Photo, "src" | "alt" | "caption">;
+  photo: Pick<Photo, "src" | "alt" | "caption"> & { objectPosition?: string };
   /** Deterministic lean. Left is about -2deg, right about +2.5deg. */
   tilt?: "left" | "right";
   /** One or two frames only. A short strip of muted tape on the top corner. */
@@ -39,6 +39,7 @@ export function PolaroidPhoto({
           priority={priority}
           sizes={sizes}
           className="object-cover"
+          style={photo.objectPosition ? { objectPosition: photo.objectPosition } : undefined}
         />
       </div>
       <figcaption className="polaroid-caption">{photo.caption}</figcaption>
