@@ -965,70 +965,291 @@ textarea {
   color: var(--color-teal-ink);
 }
 
-.ig-band.band {
-  padding-block: var(--space-6);
+.road-band {
+  overflow-x: clip;
+  background-color: #f6f3ee;
+  background-image:
+    linear-gradient(rgba(246, 243, 238, 0.94), rgba(246, 243, 238, 0.96)),
+    url("/textures/paper-grain.webp");
+  background-size: auto, 420px;
 }
 
-.ig-row {
+.road-intro {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
   gap: var(--space-3);
+}
+
+.road-intro .section-title {
+  margin: 0;
+}
+
+.road-line {
+  margin: 0.35rem 0 0;
+  color: var(--color-teal-ink);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.road-collage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  min-height: 34rem;
   margin: var(--space-5) 0 0;
-  padding: 0 0 var(--space-2);
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
+  padding: 0;
   list-style: none;
 }
 
-.ig-row > li {
-  flex: 0 0 calc((100% - 5 * var(--space-3)) / 6);
-  min-width: 7.5rem;
-  scroll-snap-align: start;
-}
-
-.community-tile {
-  position: relative;
-  display: block;
-  aspect-ratio: 1;
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-  background: var(--color-teal-accent);
-}
-
-.community-tile img {
-  transition: transform 420ms ease;
-}
-
-.community-scrim {
+.road-slot {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgb(62 85 89 / 0.55), rgb(128 166 173 / 0.08) 55%, transparent);
-  opacity: 0.35;
-  transition: opacity 280ms ease;
+  margin: 0;
 }
 
-.community-handle {
+.road-collage .polaroid {
+  width: 100%;
+  margin: 0;
+  text-decoration: none;
+  --polaroid-tilt: inherit;
+}
+
+.road-collage .polaroid-caption {
+  min-height: 2.35rem;
+  padding-right: 1.7rem;
+  overflow-wrap: break-word;
+  font-size: 1.15rem;
+}
+
+.road-mark {
   position: absolute;
-  right: 0.55rem;
-  bottom: 0.45rem;
-  left: 0.55rem;
+  z-index: 3;
+  right: 0.4rem;
+  bottom: 0.55rem;
+  display: flex;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--color-teal-ink);
+  pointer-events: none;
+}
+
+.road-mark svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Upper prints sit in front so each caption stays readable. */
+.road-slot-1 {
+  top: 1%;
+  left: 3%;
+  width: 46%;
+  z-index: 5;
+  --polaroid-tilt: -4deg;
+  --fly-x: -16vw;
+  --fly-y: 8px;
+  --fly-spin: -14deg;
+  --fly-delay: 0ms;
+}
+
+.road-slot-2 {
+  top: 2%;
+  right: 3%;
+  width: 44%;
+  z-index: 6;
+  --polaroid-tilt: 5deg;
+  --fly-x: 16vw;
+  --fly-y: -8px;
+  --fly-spin: 16deg;
+  --fly-delay: 150ms;
+}
+
+.road-slot-3 {
+  top: 32%;
+  left: 2%;
+  width: 48%;
+  z-index: 3;
+  --polaroid-tilt: -3deg;
+  --fly-x: -12vw;
+  --fly-y: 20px;
+  --fly-spin: -10deg;
+  --fly-delay: 300ms;
+}
+
+.road-slot-4 {
+  top: 34%;
+  right: 2%;
+  width: 44%;
+  z-index: 4;
+  --polaroid-tilt: 4deg;
+  --fly-x: 14vw;
+  --fly-y: 12px;
+  --fly-spin: 12deg;
+  --fly-delay: 450ms;
+}
+
+.road-slot-5 {
+  top: 58%;
+  left: 5%;
+  width: 46%;
   z-index: 1;
-  color: var(--color-text-on-teal);
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-shadow: 0 1px 8px rgb(36 52 56 / 0.65);
+  --polaroid-tilt: -3.5deg;
+  --fly-x: -8vw;
+  --fly-y: 12vh;
+  --fly-spin: -8deg;
+  --fly-delay: 600ms;
 }
 
-.community-tile:hover img,
-.community-tile:focus-visible img {
-  transform: scale(1.03);
+.road-slot-6 {
+  top: 59%;
+  right: 4%;
+  width: 42%;
+  z-index: 2;
+  --polaroid-tilt: 3deg;
+  --fly-x: 10vw;
+  --fly-y: 10vh;
+  --fly-spin: 9deg;
+  --fly-delay: 750ms;
 }
 
-.community-tile:hover .community-scrim,
-.community-tile:focus-visible .community-scrim {
-  opacity: 1;
+.road-slot:focus-within {
+  z-index: 8;
+}
+
+@media (min-width: 768px) {
+  .road-collage {
+    aspect-ratio: 5 / 3;
+    min-height: 32rem;
+  }
+
+  .road-collage .polaroid-caption {
+    min-height: 2.5rem;
+    font-size: 1.28rem;
+  }
+
+  .road-slot-1 {
+    top: 3%;
+    right: auto;
+    left: 2%;
+    width: 28%;
+    z-index: 5;
+    --polaroid-tilt: -7deg;
+    --fly-x: -14vw;
+    --fly-y: -4vh;
+    --fly-spin: -18deg;
+  }
+
+  .road-slot-2 {
+    top: 1%;
+    right: auto;
+    left: 33%;
+    width: 26%;
+    z-index: 4;
+    --polaroid-tilt: 5deg;
+    --fly-x: 2vw;
+    --fly-y: -12vh;
+    --fly-spin: 14deg;
+  }
+
+  .road-slot-3 {
+    top: 5%;
+    right: auto;
+    left: 60%;
+    width: 28%;
+    z-index: 6;
+    --polaroid-tilt: -4deg;
+    --fly-x: 14vw;
+    --fly-y: -2vh;
+    --fly-spin: -12deg;
+  }
+
+  .road-slot-4 {
+    top: 46%;
+    right: auto;
+    left: 4%;
+    width: 28%;
+    z-index: 2;
+    --polaroid-tilt: 6deg;
+    --fly-x: -10vw;
+    --fly-y: 14vh;
+    --fly-spin: 11deg;
+  }
+
+  .road-slot-5 {
+    top: 44%;
+    right: auto;
+    left: 34%;
+    width: 26%;
+    z-index: 3;
+    --polaroid-tilt: -5deg;
+    --fly-x: 4vw;
+    --fly-y: 16vh;
+    --fly-spin: -9deg;
+  }
+
+  .road-slot-6 {
+    top: 48%;
+    right: auto;
+    left: 62%;
+    width: 28%;
+    z-index: 1;
+    --polaroid-tilt: 7deg;
+    --fly-x: 12vw;
+    --fly-y: 12vh;
+    --fly-spin: 15deg;
+  }
+}
+
+@media (min-width: 1100px) {
+  .road-slot-1 {
+    top: 4%;
+    left: 3%;
+    width: 24%;
+  }
+
+  .road-slot-2 {
+    top: 2%;
+    left: 30%;
+    width: 22%;
+  }
+
+  .road-slot-3 {
+    top: 6%;
+    left: 56%;
+    width: 24%;
+  }
+
+  .road-slot-4 {
+    top: 42%;
+    left: 6%;
+    width: 26%;
+  }
+
+  .road-slot-5 {
+    top: 40%;
+    left: 34%;
+    width: 24%;
+  }
+
+  .road-slot-6 {
+    top: 44%;
+    left: 60%;
+    width: 26%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .road-slot:hover {
+    z-index: 7;
+  }
+
+  .road-collage .polaroid:hover {
+    transform: rotate(var(--polaroid-tilt)) translateY(-8px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2510,6 +2731,28 @@ textarea {
   html.motion-ok .polaroid.drop.is-settled {
     animation: polaroid-settle 820ms cubic-bezier(0.22, 1.05, 0.36, 1) both;
     animation-delay: var(--drop-delay, 0ms);
+  }
+}
+
+html.motion-ok .road-shot.fly {
+  opacity: 0;
+  transform: translate3d(var(--fly-x), var(--fly-y), 0) rotate(var(--fly-spin));
+}
+
+html.motion-ok .road-shot.fly.is-in {
+  animation: road-fly 780ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--fly-delay, 0ms);
+}
+
+@keyframes road-fly {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--fly-x), var(--fly-y), 0) rotate(var(--fly-spin));
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(var(--polaroid-tilt));
   }
 }
 

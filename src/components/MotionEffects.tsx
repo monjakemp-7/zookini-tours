@@ -34,6 +34,7 @@ export function MotionEffects() {
         nodes.push(el);
       });
       root.querySelectorAll<HTMLElement>("section.band").forEach((section) => {
+        if (section.classList.contains("road-band")) return;
         if (section.querySelector(".split, .portrait-card, .card, .community-tile, .contact-details")) return;
         nodes.push(section);
       });
@@ -97,7 +98,7 @@ export function MotionEffects() {
       });
 
       const polaroids = [...root.querySelectorAll<HTMLElement>(".polaroid")].filter(
-        (frame) => !frame.closest(".polaroid-cluster"),
+        (frame) => !frame.closest(".polaroid-cluster") && !frame.closest(".road-collage"),
       );
       const polaroidGroups = new Map<Element, HTMLElement[]>();
       polaroids.forEach((frame) => {

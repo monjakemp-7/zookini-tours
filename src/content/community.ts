@@ -12,6 +12,17 @@ export type CommunityTile = {
   href: string;
   source: SocialSource;
   objectPosition: string;
+  /** Place or subject already named in the photograph's alt text. */
+  caption: string;
+};
+
+const roadCaptions: Record<string, string> = {
+  "post-01": "Cape Town City Hall",
+  "post-02": "Aquarium",
+  "post-03": "Wedding",
+  "post-04": "Botanical garden",
+  "post-05": "Newlands",
+  "post-08": "Flowering garden",
 };
 
 const instagram = socials.find((social) => social.label === "Instagram");
@@ -30,6 +41,7 @@ export function getCommunityTiles(): CommunityTile[] {
     href: post.permalink,
     source: post.source,
     objectPosition: post.objectPosition,
+    caption: roadCaptions[post.id] ?? post.alt,
   }));
 }
 

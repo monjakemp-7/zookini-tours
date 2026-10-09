@@ -14,11 +14,16 @@ type SocialLabel = (typeof socials)[number]["label"];
 type SocialLinksProps = {
   tone?: "ink" | "on-dark";
   only?: SocialLabel;
+  include?: readonly SocialLabel[];
   className?: string;
 };
 
-export function SocialLinks({ tone = "ink", only, className }: SocialLinksProps) {
-  const links = only ? socials.filter((social) => social.label === only) : socials;
+export function SocialLinks({ tone = "ink", only, include, className }: SocialLinksProps) {
+  const links = socials.filter((social) => {
+    if (include) return include.includes(social.label);
+    if (only) return social.label === only;
+    return true;
+  });
 
   return (
     <ul className={["social-links", tone === "on-dark" ? "on-dark" : "", className].filter(Boolean).join(" ")}>
