@@ -30,12 +30,19 @@ const boKaap: LifeArtPhoto = {
   caption: "Bo-Kaap",
 };
 
+const streetArt: LifeArtPhoto = {
+  id: "street-art",
+  src: "/images/tours/life-is-art/street-art.jpg",
+  alt: "Street art mural of two boys in beaded caps on a gable wall",
+  caption: "Street art",
+};
+
 /**
- * Four prints for the Life is Art highlights pile.
- * Back photos are listed first so the front pair drops last.
+ * Five prints for the Life is Art highlights pile.
+ * Back photos are listed first so the front print drops last.
  * These photographs are Monja's and are not listed on the credits page.
  */
-export const lifeArtCluster = [canvases, boKaap, zeitz, silo] as const satisfies readonly LifeArtPhoto[];
+export const lifeArtCluster = [canvases, boKaap, zeitz, silo, streetArt] as const satisfies readonly LifeArtPhoto[];
 
 /** Replaces the generic gallery. The third frame sits beside the enquire form. */
 export const lifeArtGallery = [zeitz, silo, canvases] as const satisfies readonly LifeArtPhoto[];
