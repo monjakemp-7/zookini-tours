@@ -2153,8 +2153,8 @@ textarea {
     display: block;
     position: relative;
     overflow: visible;
-    aspect-ratio: 5 / 6;
-    min-height: 28rem;
+    aspect-ratio: 5 / 7;
+    min-height: 32rem;
     padding: 0;
     scroll-snap-type: none;
     overscroll-behavior-x: auto;
@@ -2168,46 +2168,47 @@ textarea {
     scroll-snap-align: none;
   }
 
-  /* Two prints across the top, three along the bottom. Lower prints sit
-     behind so every caption strip stays readable. Tilts stay inside the box. */
+  /* Two prints across the top, three along the bottom. The top pair sits in
+     front, and the centre print stays narrow enough to miss every caption
+     strip. Overlap is on the photographs only. */
   .polaroid-cluster .cluster-frame-1 {
-    top: 46%;
-    left: 1%;
-    width: 36%;
-    z-index: 1;
-    --polaroid-tilt: -4deg;
+    top: 56%;
+    left: 0;
+    width: 32%;
+    z-index: 3;
+    --polaroid-tilt: -3deg;
   }
 
   .polaroid-cluster .cluster-frame-2 {
-    top: 48%;
-    right: 1%;
-    width: 36%;
-    z-index: 1;
-    --polaroid-tilt: 5deg;
+    top: 58%;
+    right: 0;
+    width: 32%;
+    z-index: 3;
+    --polaroid-tilt: 3.5deg;
   }
 
   .polaroid-cluster .cluster-frame-3 {
-    top: 1%;
-    left: 2%;
-    width: 42%;
-    z-index: 3;
-    --polaroid-tilt: -5.5deg;
+    top: 0;
+    left: 0;
+    width: 46%;
+    z-index: 5;
+    --polaroid-tilt: -4deg;
   }
 
   .polaroid-cluster .cluster-frame-4 {
     top: 0;
-    right: 3%;
-    width: 40%;
-    z-index: 3;
-    --polaroid-tilt: 4.5deg;
+    right: 0;
+    width: 46%;
+    z-index: 5;
+    --polaroid-tilt: 4deg;
   }
 
   .polaroid-cluster .cluster-frame-5 {
     top: 34%;
-    left: 28%;
-    width: 44%;
-    z-index: 4;
-    --polaroid-tilt: -1.5deg;
+    left: 33%;
+    width: 34%;
+    z-index: 2;
+    --polaroid-tilt: -1deg;
   }
 
   /* Four prints: two along the top, two along the bottom, overlapping in the middle. */
