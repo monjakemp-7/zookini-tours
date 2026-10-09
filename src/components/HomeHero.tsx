@@ -110,8 +110,19 @@ export function HomeHero() {
       <nav className="offer-bar" aria-label="Ways to travel">
         <ul className="offer-doors">
           {doors.map((door) => (
-            <li key={door.href}>
+            <li key={door.href} className="offer-slot">
+              <svg className="tag-string" viewBox="0 0 40 28" aria-hidden="true" focusable="false">
+                <path
+                  d="M20 28V16M20 16c0 0-7-1-7-7s7-7 7-7 7 1 7 7-7 7-7 7"
+                  fill="none"
+                  stroke="#f6f3ee"
+                  strokeWidth="1.35"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
               <Link className="offer-door" href={door.href}>
+                <span className="tag-hole" aria-hidden="true" />
                 <span className="offer-label">{door.label}</span>
                 <span className="offer-line">{door.line}</span>
                 <span className="offer-arrow" aria-hidden="true">
